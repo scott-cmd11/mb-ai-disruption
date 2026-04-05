@@ -1,0 +1,622 @@
+[
+  {
+    "naicsCode": "54",
+    "sectorLabel": "Professional Services",
+    "actions12Month": [
+      "Deploy AI for document review, research synthesis, and proposal drafting",
+      "Establish data governance and security protocols for client data",
+      "Audit current billable-hour revenue model for automation vulnerability",
+      "Begin shifting pricing toward fixed-fee or outcome-based models for repeatable work"
+    ],
+    "actions1to3Year": [
+      "Transition entirely to outcome-based pricing for all standardized deliverables",
+      "Build proprietary data assets and internal AI agent workflows",
+      "Redesign staffing from pyramid to obelisk model — fewer juniors, more senior advisors",
+      "Invest in trust-based relationship management as core differentiator"
+    ],
+    "biggestMistake": "Continuing to rely on junior billable hours for revenue while AI commoditizes the work those hours produce.",
+    "strategicPriority": "Reorienting human capital toward high-value strategic advisory and trust-based relationships.",
+    "underestimationRisk": {
+      "reason": "Firms believe regulatory complexity and long-standing client trust are unassailable moats.",
+      "gettingWrong": "Underestimating AI's ability to execute audits, contract drafting, and market research at higher accuracy and a fraction of the cost.",
+      "consequence": "Total loss of competitive pricing power; client defection to leaner, faster models.",
+      "urgency": "Critical"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 420,
+      "aiNativeStartMultiplier": 1.6,
+      "aiNativeFloorMultiplier": 0.38,
+      "typicalClientsPerEmployee": 6,
+      "aiNativeClientsPerEmployee": 60
+    }
+  },
+  {
+    "naicsCode": "52",
+    "sectorLabel": "Finance & Insurance",
+    "actions12Month": [
+      "Modernize legacy data architecture to permit real-time data flow",
+      "Deploy AI for claims processing, data ingestion, and compliance checks",
+      "Implement contextual vector databases for persistent policyholder profiles",
+      "Establish AI governance framework for regulated decision-making"
+    ],
+    "actions1to3Year": [
+      "Build internal multi-agent systems for end-to-end underwriting workflows",
+      "Deploy agentic systems for autonomous risk profiling and pricing",
+      "Transition customer onboarding to AI-first self-service channels",
+      "Develop proprietary risk models trained on institutional data"
+    ],
+    "biggestMistake": "Attempting to bolt AI onto legacy systems without first fixing foundational data architecture.",
+    "strategicPriority": "Modernizing data infrastructure while deploying governed AI for operational efficiency.",
+    "underestimationRisk": {
+      "reason": "Rely heavily on regulatory barriers, capital requirements, and established brand trust.",
+      "gettingWrong": "Assuming AI-native startups cannot penetrate regulated markets — they are already attacking distribution and niche underwriting.",
+      "consequence": "Margin compression as tech-enabled entrants offer faster, cheaper services in less-regulated niches.",
+      "urgency": "High"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 890,
+      "aiNativeStartMultiplier": 1.8,
+      "aiNativeFloorMultiplier": 0.32,
+      "typicalClientsPerEmployee": 4,
+      "aiNativeClientsPerEmployee": 38
+    }
+  },
+  {
+    "naicsCode": "48-49",
+    "sectorLabel": "Transportation & Logistics",
+    "actions12Month": [
+      "Integrate predictive analytics and automated dispatching systems",
+      "Deploy AI for load matching, route optimization, and compliance documentation",
+      "Audit manual communication channels between drivers, brokers, and shippers",
+      "Begin digitizing paper-based freight documentation"
+    ],
+    "actions1to3Year": [
+      "Connect internal systems to autonomous multi-agent supply chain networks",
+      "Deploy real-time visibility tools across the full supply chain",
+      "Automate carrier negotiations and dynamic pricing execution",
+      "Build 24/7 AI-powered customer service and exception handling"
+    ],
+    "biggestMistake": "Maintaining siloed, manual communication channels while competitors deploy frictionless digital freight platforms.",
+    "strategicPriority": "End-to-end supply chain visibility and automated execution.",
+    "underestimationRisk": {
+      "reason": "View established relationships and carrier networks as unassailable competitive moats.",
+      "gettingWrong": "Failing to see that AI agents will seamlessly connect shippers to carriers instantly without human brokers.",
+      "consequence": "Sudden obsolescence of dispatching and brokering divisions as AI platforms scale volumes 300-400%.",
+      "urgency": "High"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 290,
+      "aiNativeStartMultiplier": 1.5,
+      "aiNativeFloorMultiplier": 0.43,
+      "typicalClientsPerEmployee": 7,
+      "aiNativeClientsPerEmployee": 40
+    }
+  },
+  {
+    "naicsCode": "56",
+    "sectorLabel": "Administrative Support",
+    "actions12Month": [
+      "Implement AI voice and text agents for tier-1 support and scheduling",
+      "Deploy automated data ingestion and document processing pipelines",
+      "Redesign customer service workflows around AI deflection and human escalation",
+      "Train staff on AI oversight, quality assurance, and exception handling"
+    ],
+    "actions1to3Year": [
+      "Rebuild entire service offering as an AI-first, tech-enabled product",
+      "Reallocate staff from routine processing to complex relationship management",
+      "Develop AI-powered quality monitoring and continuous improvement systems",
+      "Create hybrid delivery models combining AI scale with human judgment"
+    ],
+    "biggestMistake": "Competing on human labor cost rather than automated speed and consistency.",
+    "strategicPriority": "Total workflow redesign around AI-first service delivery.",
+    "underestimationRisk": {
+      "reason": "Believe that volume contracts and established client relationships provide protection.",
+      "gettingWrong": "Underestimating how quickly AI voice agents can deflect 80% of routine inquiries at near-zero marginal cost.",
+      "consequence": "Rapid loss of contracts to tech-enabled competitors offering dramatically lower per-unit pricing.",
+      "urgency": "Critical"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 220,
+      "aiNativeStartMultiplier": 1.4,
+      "aiNativeFloorMultiplier": 0.38,
+      "typicalClientsPerEmployee": 10,
+      "aiNativeClientsPerEmployee": 65
+    }
+  },
+  {
+    "naicsCode": "51",
+    "sectorLabel": "Information & Cultural Industries",
+    "actions12Month": [
+      "Audit content production workflows for AI augmentation opportunities",
+      "Deploy AI for content generation, editing, and localization at scale",
+      "Establish brand guidelines and quality frameworks for AI-generated content",
+      "Invest in data analytics and audience measurement capabilities"
+    ],
+    "actions1to3Year": [
+      "Transition to AI-first content production pipelines",
+      "Develop proprietary content models trained on institutional archives",
+      "Shift human talent toward editorial judgment, brand strategy, and creative direction",
+      "Build direct audience relationships and first-party data assets"
+    ],
+    "biggestMistake": "Treating AI as a threat to resist rather than a production multiplier to embrace.",
+    "strategicPriority": "Leveraging AI to scale content while differentiating on editorial quality and brand trust.",
+    "underestimationRisk": {
+      "reason": "Believe creative judgment and cultural sensitivity cannot be replicated by machines.",
+      "gettingWrong": "Underestimating AI's capacity for high-volume content production that is 'good enough' for most commercial use cases.",
+      "consequence": "Employment decreases in publishing, video, and content production as AI handles routine creative work.",
+      "urgency": "High"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 560,
+      "aiNativeStartMultiplier": 1.7,
+      "aiNativeFloorMultiplier": 0.35,
+      "typicalClientsPerEmployee": 5,
+      "aiNativeClientsPerEmployee": 55
+    }
+  },
+  {
+    "naicsCode": "31-33",
+    "sectorLabel": "Manufacturing",
+    "actions12Month": [
+      "Clean up operational data and standardize formats across production systems",
+      "Deploy IoT sensors for real-time quality monitoring and predictive maintenance",
+      "Pilot AI-driven quality inspection on highest-volume production lines",
+      "Train maintenance teams on AI-assisted diagnostics"
+    ],
+    "actions1to3Year": [
+      "Integrate agentic AI for dynamic supply chain sourcing and procurement",
+      "Deploy generative AI in product design and rapid prototyping",
+      "Build comprehensive digital twins of production processes",
+      "Automate inventory forecasting and supply chain scheduling"
+    ],
+    "biggestMistake": "Purchasing AI tools before fixing foundational data architecture and sensor infrastructure.",
+    "strategicPriority": "Data interoperability and operational automation built on clean, real-time data.",
+    "underestimationRisk": {
+      "reason": "Capital-intensive nature of manufacturing creates high barriers to entry.",
+      "gettingWrong": "Assuming physical assets alone provide adequate protection while competitors optimize operations 30-40% more efficiently.",
+      "consequence": "Gradual margin erosion as AI-enabled manufacturers achieve superior yield and lower waste.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 450,
+      "aiNativeStartMultiplier": 1.6,
+      "aiNativeFloorMultiplier": 0.40,
+      "typicalClientsPerEmployee": 6,
+      "aiNativeClientsPerEmployee": 35
+    }
+  },
+  {
+    "naicsCode": "11",
+    "sectorLabel": "Agriculture",
+    "actions12Month": [
+      "Standardize farm data formats using frameworks like the ADAPT standard",
+      "Invest in IoT sensors and drone imaging for high-quality datasets",
+      "Evaluate precision agriculture platforms for crop health monitoring",
+      "Begin digitizing compliance and regulatory documentation"
+    ],
+    "actions1to3Year": [
+      "Deploy AI-driven agrochemical optimization and fertilizer calibration",
+      "Integrate autonomous field operations and agent-led supply chain decisions",
+      "Build weather-predictive modeling into operational planning",
+      "Form strategic partnerships with AgTech startups"
+    ],
+    "biggestMistake": "Maintaining fragmented, incompatible farm data that prevents effective AI deployment.",
+    "strategicPriority": "Data interoperability across the agricultural supply chain.",
+    "underestimationRisk": {
+      "reason": "Physical land assets and local knowledge feel like permanent moats.",
+      "gettingWrong": "While farms themselves are safe, the advisory ecosystem around agriculture (agronomy, compliance, equipment sales, insurance) is highly exposed.",
+      "consequence": "Loss of advisory margins as AI platforms commoditize the services wrapped around physical farming.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 280,
+      "aiNativeStartMultiplier": 1.5,
+      "aiNativeFloorMultiplier": 0.42,
+      "typicalClientsPerEmployee": 8,
+      "aiNativeClientsPerEmployee": 45
+    }
+  },
+  {
+    "naicsCode": "62",
+    "sectorLabel": "Health Care",
+    "actions12Month": [
+      "Automate medical coding, billing, and scheduling workflows",
+      "Deploy AI triage routing for patient intake and preliminary assessment",
+      "Implement automated transcription and clinical documentation tools",
+      "Establish governance frameworks for AI in clinical decision support"
+    ],
+    "actions1to3Year": [
+      "Build comprehensive AI-powered administrative automation across all back-office functions",
+      "Deploy predictive models for patient flow optimization and resource allocation",
+      "Integrate AI decision support into clinical workflows under physician oversight",
+      "Develop training programs for clinical staff on AI-augmented practice"
+    ],
+    "biggestMistake": "Ignoring administrative automation opportunities while focusing exclusively on clinical AI debates.",
+    "strategicPriority": "Automating back-office functions while safeguarding patient data compliance.",
+    "underestimationRisk": {
+      "reason": "Core clinical work requires physical presence, empathy, and complex judgment.",
+      "gettingWrong": "While clinical roles are resilient, the massive administrative layer (coding, billing, scheduling, triage) is immediately automatable.",
+      "consequence": "Healthcare organizations that delay admin automation face growing cost disadvantages vs. AI-optimized competitors.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 480,
+      "aiNativeStartMultiplier": 1.8,
+      "aiNativeFloorMultiplier": 0.42,
+      "typicalClientsPerEmployee": 5,
+      "aiNativeClientsPerEmployee": 30
+    }
+  },
+  {
+    "naicsCode": "91",
+    "sectorLabel": "Public Administration",
+    "actions12Month": [
+      "Adopt AI-powered invoice automation and document processing",
+      "Deploy citizen self-service portals for routine government interactions",
+      "Implement comprehensive AI governance frameworks for public sector use",
+      "Pilot automated data validation for high-volume processing workflows"
+    ],
+    "actions1to3Year": [
+      "Redesign service delivery workflows around AI-first automation",
+      "Build automated compliance monitoring and reporting systems",
+      "Transition procurement to evaluate AI-enabled service providers",
+      "Develop internal AI capabilities to reduce dependence on external consultants"
+    ],
+    "biggestMistake": "Relying on rigid procurement cycles and bureaucratic inertia as protection from disruption.",
+    "strategicPriority": "Safe, governed automation of high-volume administrative processes.",
+    "underestimationRisk": {
+      "reason": "Government cannot be 'disrupted' in the traditional startup sense.",
+      "gettingWrong": "Ignoring that governments are actively seeking massive cost reductions via AI — Winnipeg's $730K invoice automation pilot is just the start.",
+      "consequence": "Traditional government IT vendors and consultants lose contracts to tech-enabled firms offering cheaper AI-powered solutions.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 520,
+      "aiNativeStartMultiplier": 1.7,
+      "aiNativeFloorMultiplier": 0.48,
+      "typicalClientsPerEmployee": 5,
+      "aiNativeClientsPerEmployee": 28
+    }
+  },
+  {
+    "naicsCode": "23",
+    "sectorLabel": "Construction",
+    "actions12Month": [
+      "Deploy AI for automated bidding, estimation, and project scheduling",
+      "Implement digital project management tools with AI-assisted planning",
+      "Begin digitizing safety compliance and inspection documentation",
+      "Explore AI-powered architectural design and building information modeling"
+    ],
+    "actions1to3Year": [
+      "Integrate AI into full project lifecycle from design through commissioning",
+      "Deploy predictive analytics for project risk and delay forecasting",
+      "Automate procurement and subcontractor management workflows",
+      "Build data-driven safety monitoring and compliance systems"
+    ],
+    "biggestMistake": "Assuming physical labor requirements make the industry immune to AI disruption.",
+    "strategicPriority": "Automating back-office and project management while physical execution remains human-led.",
+    "underestimationRisk": {
+      "reason": "Construction work happens in unstructured physical environments that robots cannot navigate.",
+      "gettingWrong": "While field work is safe, project management, bidding, design, and compliance functions are all exposed to AI automation.",
+      "consequence": "Firms that automate back-office functions gain 15-25% cost advantages in competitive bidding.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 380,
+      "aiNativeStartMultiplier": 1.5,
+      "aiNativeFloorMultiplier": 0.45,
+      "typicalClientsPerEmployee": 7,
+      "aiNativeClientsPerEmployee": 38
+    }
+  },
+  {
+    "naicsCode": "44-45",
+    "sectorLabel": "Retail Trade",
+    "actions12Month": [
+      "Deploy AI-powered product copy generation and marketing automation",
+      "Implement intelligent customer support with chatbot deflection",
+      "Begin AI-driven inventory planning and demand forecasting",
+      "Personalize customer experience using first-party purchase data"
+    ],
+    "actions1to3Year": [
+      "Build omnichannel AI-powered customer engagement platforms",
+      "Deploy dynamic pricing and promotional optimization engines",
+      "Automate supply chain and vendor management workflows",
+      "Develop loyalty and retention programs driven by predictive analytics"
+    ],
+    "biggestMistake": "Treating AI as a backend optimization tool rather than a customer experience differentiator.",
+    "strategicPriority": "Omnichannel data integration and AI-powered customer loyalty.",
+    "underestimationRisk": {
+      "reason": "Physical retail locations and local relationships feel protective.",
+      "gettingWrong": "E-commerce competitors using AI for personalization, pricing, and support are raising customer expectations that physical retailers must match.",
+      "consequence": "Gradual loss of customer share to AI-optimized competitors offering superior convenience and personalization.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 180,
+      "aiNativeStartMultiplier": 1.4,
+      "aiNativeFloorMultiplier": 0.38,
+      "typicalClientsPerEmployee": 12,
+      "aiNativeClientsPerEmployee": 70
+    }
+  },
+  {
+    "naicsCode": "61",
+    "sectorLabel": "Education",
+    "actions12Month": [
+      "Deploy AI tutoring and adaptive learning tools for student support",
+      "Automate course content creation, assessment generation, and grading",
+      "Establish AI literacy programs for educators and administrators",
+      "Pilot AI-powered student advising and enrollment management"
+    ],
+    "actions1to3Year": [
+      "Build personalized learning pathways driven by AI analytics",
+      "Redesign credential and certification programs for AI-era skills",
+      "Deploy AI for institutional research and outcome measurement",
+      "Develop micro-credentialing programs focused on AI-adjacent skills"
+    ],
+    "biggestMistake": "Banning AI tools instead of integrating them into pedagogy and administration.",
+    "strategicPriority": "Credential value, delivery quality, and measurable outcomes.",
+    "underestimationRisk": {
+      "reason": "Education is seen as fundamentally human — learning requires mentorship and social interaction.",
+      "gettingWrong": "While deep mentorship is safe, content delivery, assessment, and administrative functions are highly automatable.",
+      "consequence": "Institutions that resist AI integration lose students to adaptive, AI-enhanced competitors.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 310,
+      "aiNativeStartMultiplier": 1.5,
+      "aiNativeFloorMultiplier": 0.45,
+      "typicalClientsPerEmployee": 8,
+      "aiNativeClientsPerEmployee": 42
+    }
+  },
+  {
+    "naicsCode": "72",
+    "sectorLabel": "Accommodation & Food",
+    "actions12Month": [
+      "Deploy AI for reservation management, dynamic pricing, and guest communications",
+      "Automate inventory tracking, food cost analysis, and supplier ordering",
+      "Implement AI-powered marketing and review management",
+      "Streamline staff scheduling with demand prediction models"
+    ],
+    "actions1to3Year": [
+      "Build personalized guest experience platforms using AI analytics",
+      "Deploy AI for menu optimization and food waste reduction",
+      "Automate compliance documentation and health inspection preparation",
+      "Develop AI-augmented loyalty and retention programs"
+    ],
+    "biggestMistake": "Overlooking how AI can optimize operations while believing hospitality is purely a human-touch business.",
+    "strategicPriority": "Operational efficiency through AI while preserving the human hospitality experience.",
+    "underestimationRisk": {
+      "reason": "Hospitality is inherently physical and personal.",
+      "gettingWrong": "While front-of-house human interaction is essential, back-of-house operations (ordering, scheduling, pricing, marketing) are highly automatable.",
+      "consequence": "Cost disadvantages vs. AI-optimized competitors who deliver the same guest experience at lower operational cost.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 160,
+      "aiNativeStartMultiplier": 1.4,
+      "aiNativeFloorMultiplier": 0.40,
+      "typicalClientsPerEmployee": 14,
+      "aiNativeClientsPerEmployee": 60
+    }
+  },
+  {
+    "naicsCode": "53",
+    "sectorLabel": "Real Estate",
+    "actions12Month": [
+      "Deploy AI for lead generation, CRM follow-up, and listing copy",
+      "Automate comparable market analysis and property valuation",
+      "Implement AI-powered scheduling and client communication",
+      "Build digital marketing automation for property listings"
+    ],
+    "actions1to3Year": [
+      "Develop predictive market analytics for investment advising",
+      "Deploy virtual staging and AI-generated property visualization",
+      "Build AI-powered transaction management and closing automation",
+      "Create hyperlocal market intelligence platforms"
+    ],
+    "biggestMistake": "Relying solely on personal relationships while competitors automate every touchpoint except the handshake.",
+    "strategicPriority": "Hyperlocal expertise and trust combined with AI-powered speed and efficiency.",
+    "underestimationRisk": {
+      "reason": "Real estate is relationship-driven and locally specific.",
+      "gettingWrong": "While trust matters for high-stakes transactions, all the marketing, admin, and research surrounding those transactions is immediately automatable.",
+      "consequence": "AI-native brokerages offering lower commissions and faster turnaround capture market share from traditional agents.",
+      "urgency": "High"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 340,
+      "aiNativeStartMultiplier": 1.5,
+      "aiNativeFloorMultiplier": 0.40,
+      "typicalClientsPerEmployee": 9,
+      "aiNativeClientsPerEmployee": 52
+    }
+  },
+  {
+    "naicsCode": "41",
+    "sectorLabel": "Wholesale Trade",
+    "actions12Month": [
+      "Deploy AI for demand forecasting and inventory optimization",
+      "Automate order processing and supplier communication",
+      "Implement AI-driven pricing and promotion management",
+      "Digitize product catalog management and descriptions"
+    ],
+    "actions1to3Year": [
+      "Build AI-powered supply chain orchestration platforms",
+      "Deploy predictive analytics for customer purchasing patterns",
+      "Automate credit assessment and accounts receivable management",
+      "Develop smart warehousing with AI-optimized fulfillment"
+    ],
+    "biggestMistake": "Maintaining manual order processing and static pricing in an era of AI-optimized competitors.",
+    "strategicPriority": "Supply chain intelligence and automated customer service.",
+    "underestimationRisk": {
+      "reason": "Wholesale relies on established supplier and buyer relationships.",
+      "gettingWrong": "AI platforms can match buyers to suppliers faster and cheaper than human sales reps, especially for commodity products.",
+      "consequence": "Disintermediation as manufacturers and retailers connect directly through AI-powered platforms.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 320,
+      "aiNativeStartMultiplier": 1.5,
+      "aiNativeFloorMultiplier": 0.42,
+      "typicalClientsPerEmployee": 8,
+      "aiNativeClientsPerEmployee": 50
+    }
+  },
+  {
+    "naicsCode": "21",
+    "sectorLabel": "Mining & Oil",
+    "actions12Month": [
+      "Deploy predictive maintenance systems for heavy equipment",
+      "Automate environmental compliance monitoring and reporting",
+      "Implement AI-driven geological analysis and resource estimation",
+      "Digitize safety documentation and incident tracking"
+    ],
+    "actions1to3Year": [
+      "Build autonomous operations monitoring and optimization systems",
+      "Deploy AI for production planning and yield optimization",
+      "Integrate real-time environmental monitoring with automated reporting",
+      "Develop digital twin models of extraction operations"
+    ],
+    "biggestMistake": "Underinvesting in data infrastructure while commodity prices are high.",
+    "strategicPriority": "Operational efficiency and compliance automation.",
+    "underestimationRisk": {
+      "reason": "Extraction is physically intensive and capital-protected.",
+      "gettingWrong": "Engineering, compliance, and planning functions are exposed to AI even if physical extraction is not.",
+      "consequence": "AI-optimized competitors achieve better yields and lower compliance costs per unit of output.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 1200,
+      "aiNativeStartMultiplier": 1.7,
+      "aiNativeFloorMultiplier": 0.35,
+      "typicalClientsPerEmployee": 4,
+      "aiNativeClientsPerEmployee": 28
+    }
+  },
+  {
+    "naicsCode": "22",
+    "sectorLabel": "Utilities",
+    "actions12Month": [
+      "Deploy AI for grid management and load forecasting",
+      "Automate meter reading, billing, and customer service",
+      "Implement predictive maintenance for distribution infrastructure",
+      "Pilot AI-driven energy efficiency optimization"
+    ],
+    "actions1to3Year": [
+      "Build smart grid management with autonomous load balancing",
+      "Deploy AI for infrastructure planning and capital allocation",
+      "Automate regulatory compliance and environmental reporting",
+      "Develop customer-facing AI tools for usage optimization"
+    ],
+    "biggestMistake": "Treating AI as only a grid optimization tool and ignoring customer-facing and administrative automation.",
+    "strategicPriority": "Grid intelligence and customer service automation.",
+    "underestimationRisk": {
+      "reason": "Utilities are natural monopolies with guaranteed revenue.",
+      "gettingWrong": "While the monopoly is safe, regulatory pressure for efficiency and customer expectations are rising — AI-optimized utilities set the benchmark.",
+      "consequence": "Regulatory scrutiny increases when comparable utilities demonstrate dramatically better service at lower cost.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 620,
+      "aiNativeStartMultiplier": 1.8,
+      "aiNativeFloorMultiplier": 0.40,
+      "typicalClientsPerEmployee": 5,
+      "aiNativeClientsPerEmployee": 32
+    }
+  },
+  {
+    "naicsCode": "55",
+    "sectorLabel": "Corporate Management",
+    "actions12Month": [
+      "Deploy AI for executive reporting, financial analysis, and board preparation",
+      "Automate compliance monitoring and regulatory reporting across subsidiaries",
+      "Implement AI-driven strategic planning and scenario modeling tools",
+      "Pilot AI-powered due diligence and M&A analysis"
+    ],
+    "actions1to3Year": [
+      "Build enterprise AI governance and audit frameworks",
+      "Deploy multi-agent systems for cross-subsidiary coordination",
+      "Automate portfolio performance monitoring and rebalancing",
+      "Develop AI-powered talent assessment and succession planning"
+    ],
+    "biggestMistake": "Using AI for surface-level productivity gains while leaving strategic decision-making processes unchanged.",
+    "strategicPriority": "AI-augmented strategic judgment and enterprise-wide automation governance.",
+    "underestimationRisk": {
+      "reason": "Corporate management is about judgment, strategy, and relationships — inherently human.",
+      "gettingWrong": "While final decisions remain human, the analysis, reporting, and compliance work that feeds those decisions is heavily automatable.",
+      "consequence": "Leaner corporate structures with AI-augmented analysis outperform traditional management overhead.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 1100,
+      "aiNativeStartMultiplier": 1.7,
+      "aiNativeFloorMultiplier": 0.35,
+      "typicalClientsPerEmployee": 3,
+      "aiNativeClientsPerEmployee": 25
+    }
+  },
+  {
+    "naicsCode": "71",
+    "sectorLabel": "Arts & Entertainment",
+    "actions12Month": [
+      "Deploy AI for marketing, ticket pricing, and audience analytics",
+      "Automate content creation for promotional materials and social media",
+      "Implement AI-driven event scheduling and resource optimization",
+      "Explore AI tools for creative production and design iteration"
+    ],
+    "actions1to3Year": [
+      "Build AI-powered audience engagement and personalization platforms",
+      "Deploy AI for creative workflow acceleration and concept iteration",
+      "Automate venue management, scheduling, and logistics",
+      "Develop hybrid human-AI creative production pipelines"
+    ],
+    "biggestMistake": "Viewing AI as a threat to creativity rather than a tool that amplifies creative output.",
+    "strategicPriority": "AI-enhanced creative production while differentiating on authentic human expression.",
+    "underestimationRisk": {
+      "reason": "Art and entertainment are fundamentally about human creativity and live experience.",
+      "gettingWrong": "While live performance is safe, all the business operations around it (marketing, booking, production, management) are highly automatable.",
+      "consequence": "AI-optimized entertainment businesses deliver more content and better audience targeting at lower cost.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 190,
+      "aiNativeStartMultiplier": 1.4,
+      "aiNativeFloorMultiplier": 0.45,
+      "typicalClientsPerEmployee": 10,
+      "aiNativeClientsPerEmployee": 48
+    }
+  },
+  {
+    "naicsCode": "81",
+    "sectorLabel": "Other Services",
+    "actions12Month": [
+      "Deploy AI for appointment scheduling, customer communication, and marketing",
+      "Automate bookkeeping, invoicing, and business administration",
+      "Implement AI-powered customer relationship management",
+      "Explore AI tools relevant to specific service specialties"
+    ],
+    "actions1to3Year": [
+      "Build AI-powered service delivery and quality management systems",
+      "Automate supply ordering and inventory management",
+      "Develop online booking and customer self-service platforms",
+      "Create AI-driven marketing and local SEO optimization"
+    ],
+    "biggestMistake": "Ignoring AI due to perceived lack of time or technical expertise — the 'not relevant to my business' trap.",
+    "strategicPriority": "Protecting margins through back-office automation and customer acquisition efficiency.",
+    "underestimationRisk": {
+      "reason": "Small service businesses feel too specialized or too small for AI to matter.",
+      "gettingWrong": "AI is embedded in the software they already use — competitors who leverage it gain 20-30% efficiency advantages.",
+      "consequence": "Slow margin erosion as AI-savvy competitors offer better service at lower prices.",
+      "urgency": "Moderate"
+    },
+    "costCurve": {
+      "avgMonthlyClientCost": 240,
+      "aiNativeStartMultiplier": 1.5,
+      "aiNativeFloorMultiplier": 0.42,
+      "typicalClientsPerEmployee": 9,
+      "aiNativeClientsPerEmployee": 50
+    }
+  }
+]
