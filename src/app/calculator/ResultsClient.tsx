@@ -520,6 +520,7 @@ export function ResultsClient({
   onReset: () => void;
 }) {
   const { breakdown, riskTier } = result;
+  const [provenanceOpen, setProvenanceOpen] = useState(false);
   const modifierNote =
     breakdown.adoptionModifier < 1
       ? `Your AI adoption reduces exposure by ${Math.round((1 - breakdown.adoptionModifier) * 100)}%.`
@@ -596,18 +597,75 @@ export function ResultsClient({
                 <span className="text-sm" style={{ color: "var(--color-text-primary)", fontFamily: "var(--font-body)" }}>
                   {occ.shortTitle}
                 </span>
-                <span
-                  className={`text-xs font-mono tabular-nums font-semibold ${
-                    occ.riskTier === "high" ? "risk-badge-high" : occ.riskTier === "medium" ? "risk-badge-medium" : "risk-badge-low"
-                  }`}
-                >
-                  {occ.compositeScore}
+                <span className="flex items-center gap-1">
+                  <span
+                    className={`text-xs font-mono tabular-nums font-semibold ${
+                      occ.riskTier === "high" ? "risk-badge-high" : occ.riskTier === "medium" ? "risk-badge-medium" : "risk-badge-low"
+                    }`}
+                  >
+                    {occ.compositeScore}
+                  </span>
+                  <span className="text-[0.55rem] ml-1"
+                    style={{
+                      color: occ.scoreConfidence === "published"
+                        ? "var(--color-risk-low)"
+                        : "var(--color-text-tertiary)",
+                    }}
+                  >
+                    {occ.scoreConfidence === "published" ? "✓ published" : "~ est."}
+                  </span>
                 </span>
               </div>
             ))}
           </div>
         </div>
       )}
+
+      {/* ── Data Provenance Panel ─────────────────────────────── */}
+      <div className="rounded-xl border overflow-hidden mt-4" style={{ borderColor: "var(--color-border)" }}>
+        <button
+          onClick={() => setProvenanceOpen(!provenanceOpen)}
+          className="w-full flex items-center justify-between px-4 py-3 text-left transition-colors hover:bg-[var(--color-surface-muted)]"
+        >
+          <span className="text-sm font-semibold" style={{ color: "var(--color-text-primary)" }}>
+            {provenanceOpen ? "▾" : "▸"} How is this score calculated?
+          </span>
+          <span className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>Data sources</span>
+        </button>
+
+        {provenanceOpen && (
+          <div className="border-t px-4 py-4 text-xs leading-relaxed flex flex-col gap-3"
+            style={{ borderColor: "var(--color-border)", backgroundColor: "var(--color-surface-muted)", color: "var(--color-text-secondary)" }}>
+
+            <p>
+              Your score is a weighted composite of three published data sources, calibrated to Manitoba&apos;s labour market.
+            </p>
+
+            <div className="flex flex-col gap-2">
+              <div className="flex gap-3">
+                <span className="font-semibold w-28 flex-shrink-0" style={{ color: "var(--color-text-primary)" }}>30% — Automation risk</span>
+                <span>Frey &amp; Osborne (2013) Oxford probability-of-computerisation estimates for 702 US occupations, mapped to Canadian NOC codes.</span>
+              </div>
+              <div className="flex gap-3">
+                <span className="font-semibold w-28 flex-shrink-0" style={{ color: "var(--color-text-primary)" }}>30% — AI exposure</span>
+                <span>Felten, Raj &amp; Seamans (2021) AI Occupational Impact scores linking O*NET task descriptions to AI capability domains.</span>
+              </div>
+              <div className="flex gap-3">
+                <span className="font-semibold w-28 flex-shrink-0" style={{ color: "var(--color-text-primary)" }}>25% — LLM exposure</span>
+                <span>Eloundou et al. (2023) <em>GPTs are GPTs</em> — human-annotated <code className="text-[0.6rem] px-1 py-0.5 rounded bg-white">human_rating_beta</code> scores for 923 O*NET occupations. <span style={{ color: "var(--color-risk-low)" }}>✓ Published data</span> for all 49 occupations shown.</span>
+              </div>
+              <div className="flex gap-3">
+                <span className="font-semibold w-28 flex-shrink-0" style={{ color: "var(--color-text-primary)" }}>15% — Adoption gap</span>
+                <span>Sector-level AI adoption rate vs. Manitoba baseline (~2%, StatsCan CSBC Table 33-10-0825-01, 2024). Sectors below the baseline score higher.</span>
+              </div>
+            </div>
+
+            <p className="pt-1 border-t" style={{ borderColor: "var(--color-border)", color: "var(--color-text-tertiary)" }}>
+              Occupation scores marked <span style={{ color: "var(--color-risk-low)" }}>✓ published</span> use direct values from the source datasets. Scores marked <span>~ est.</span> use category-level averages where direct crosswalks were unavailable.
+            </p>
+          </div>
+        )}
+      </div>
 
       {/* Recommendations */}
       <div
