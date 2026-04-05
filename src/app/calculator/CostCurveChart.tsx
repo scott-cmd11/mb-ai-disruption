@@ -312,6 +312,12 @@ export function CostCurveChart({ industry, playbook, result }: Props) {
           )}
         </div>
 
+        {/* Data provenance note */}
+        <p className="text-[0.65rem] mt-3 leading-relaxed" style={{ color: "var(--color-text-tertiary)" }}>
+          <span className="font-semibold">Illustrative model.</span>{" "}
+          Crossover timing and cost projections are derived from sector parameters and published AI adoption research — not empirical forecasts. Scenario speeds reflect Manitoba&apos;s current ~2% AI adoption rate (StatsCan CSBC 2024) relative to national acceleration trends.
+        </p>
+
       </div>
     </div>
   );
