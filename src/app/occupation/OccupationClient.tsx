@@ -3,6 +3,20 @@
 import { useState, useMemo } from "react";
 import type { Industry, Occupation, RiskTier, TaskCategory } from "@/types";
 
+// ── AI Buildout Demand Set (OpenAI Industrial Policy, April 2026) ─────────────
+// These occupations face *rising* demand from AI infrastructure buildout,
+// directly named in OpenAI's industrial policy report (~20% more skilled trades needed).
+
+const AI_BUILDOUT_NOC_CODES = new Set(["72400", "72020", "72106", "73200", "92100"]);
+
+const AI_BUILDOUT_ROLES: Record<string, string> = {
+  "72400": "electricians",
+  "72020": "carpenters",
+  "72106": "metal and ironworkers",
+  "73200": "heavy equipment operators",
+  "92100": "mechanics",
+};
+
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 const TASK_LABELS: Record<TaskCategory, string> = {
@@ -295,6 +309,16 @@ export function OccupationClient({ occupations, industries }: Props) {
                       {TIER_LABELS[occ.riskTier]}
                     </span>
                   </div>
+                  {/* AI buildout rising demand indicator */}
+                  {AI_BUILDOUT_NOC_CODES.has(occ.nocCode) && (
+                    <span
+                      className="text-[0.55rem] px-1.5 py-0.5 rounded border font-semibold"
+                      style={{ color: "#15803D", borderColor: "#15803D", backgroundColor: "rgba(21, 128, 61, 0.06)" }}
+                    >
+                      ↑ rising demand
+                    </span>
+                  )}
+
                   {/* scoreConfidence micro-badge */}
                   <span className="text-[0.55rem] px-1.5 py-0.5 rounded border font-medium"
                     style={{
@@ -576,6 +600,45 @@ export function OccupationClient({ occupations, industries }: Props) {
                     : "Estimated"}
               </span>
             </div>
+
+            {/* AI Buildout Rising Demand signal */}
+            {AI_BUILDOUT_NOC_CODES.has(selected.nocCode) && (
+              <div className="mt-4 pt-4 border-t" style={{ borderColor: "var(--color-border)" }}>
+                <p
+                  className="text-[0.6rem] font-bold tracking-widest uppercase mb-2"
+                  style={{ color: "#15803D" }}
+                >
+                  Rising Demand Signal
+                </p>
+                <div
+                  className="rounded-sm border-l-4 px-3 py-2.5 mb-2"
+                  style={{ borderColor: "#15803D", backgroundColor: "rgba(21, 128, 61, 0.05)" }}
+                >
+                  <p className="text-xs font-semibold mb-1" style={{ color: "#15803D" }}>
+                    ↑ AI buildout is increasing demand for {AI_BUILDOUT_ROLES[selected.nocCode]}
+                  </p>
+                  <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                    The low exposure score reflects low displacement risk — and that&apos;s only
+                    half the story. OpenAI&apos;s 2026 industrial policy report projects that
+                    AI infrastructure buildout (data centres, power grids, cooling systems)
+                    will require approximately 20% more skilled trades workers than currently
+                    exist. Demand for this role is likely to <em>increase</em>, not decrease.
+                  </p>
+                </div>
+                <p className="text-[0.6rem]" style={{ color: "var(--color-text-tertiary)" }}>
+                  Source: OpenAI,{" "}
+                  <a
+                    href="https://openai.com/index/industrial-policy-for-the-intelligence-age/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:opacity-80"
+                  >
+                    Industrial Policy for the Intelligence Age
+                  </a>
+                  , April 2026.
+                </p>
+              </div>
+            )}
 
             {/* Anthropic Economic Index supplementary context */}
             {selected.anthropicUsageGroup !== undefined && selected.anthropicUsageIntensity !== undefined && (
