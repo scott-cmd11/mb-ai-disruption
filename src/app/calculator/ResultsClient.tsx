@@ -439,6 +439,70 @@ function UnderestimationWarning({ playbook, sectorLabel }: { playbook: SectorPla
   );
 }
 
+// ── RLI Reality-Check Callout ────────────────────────────────────────────────
+
+function RLICallout() {
+  return (
+    <div
+      className="rounded-sm border p-5 mb-6"
+      style={{ borderColor: "var(--color-border)", backgroundColor: "var(--color-paper-deep)" }}
+    >
+      <p
+        className="text-[0.6rem] tracking-[0.2em] uppercase font-bold mb-2"
+        style={{ color: "var(--color-text-tertiary)" }}
+      >
+        Reality check · Remote Labor Index (2025)
+      </p>
+      <p className="text-sm font-semibold mb-4" style={{ color: "var(--color-text-primary)", fontFamily: "var(--font-body)" }}>
+        Where frontier AI agents actually are today
+      </p>
+
+      <div className="grid grid-cols-3 gap-3 mb-4 text-center">
+        <div>
+          <p className="font-display text-2xl font-bold" style={{ color: "var(--color-navy)" }}>0.8–4.2%</p>
+          <p className="text-[0.65rem] leading-tight mt-0.5" style={{ color: "var(--color-text-tertiary)" }}>
+            of complex projects completed autonomously by frontier AI
+          </p>
+        </div>
+        <div>
+          <p className="font-display text-2xl font-bold" style={{ color: "var(--color-navy)" }}>240</p>
+          <p className="text-[0.65rem] leading-tight mt-0.5" style={{ color: "var(--color-text-tertiary)" }}>
+            real freelance projects tested across 23 skill categories
+          </p>
+        </div>
+        <div>
+          <p className="font-display text-2xl font-bold" style={{ color: "var(--color-navy)" }}>45.6%</p>
+          <p className="text-[0.65rem] leading-tight mt-0.5" style={{ color: "var(--color-text-tertiary)" }}>
+            of failures due to poor output quality — not missing capability
+          </p>
+        </div>
+      </div>
+
+      <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)", fontFamily: "var(--font-body)" }}>
+        The disruption scores above reflect theoretical AI capability — what AI{" "}
+        <em>could</em> automate. The Remote Labor Index benchmarks what frontier AI
+        agents <em>actually</em> complete on real paid projects today: just 0.83%
+        (Gemini 2.5 Pro) to 4.17% (Claude Opus) — a tiny fraction of the theoretical
+        ceiling. The cost-convergence curve below shows how the gap between capability
+        and deployment is expected to close.
+      </p>
+      <p className="text-[0.6rem] mt-2" style={{ color: "var(--color-text-tertiary)" }}>
+        Source:{" "}
+        <a
+          href="https://www.remotelabor.ai/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:opacity-80"
+        >
+          remotelabor.ai
+        </a>{" "}
+        — 240 projects, 358 freelancers, Feb–Mar 2025. Illustrative range; actual rates
+        vary by task type and model version.
+      </p>
+    </div>
+  );
+}
+
 // ── Competitive Threat Preview ───────────────────────────────────────────────
 
 function ThreatPreview({ scenario }: { scenario: ThreatScenario }) {
@@ -704,6 +768,9 @@ export function ResultsClient({
           <ThreatPreview scenario={threatScenario} />
         </div>
       )}
+
+      {/* RLI Reality-Check Callout */}
+      {playbook && industry && <RLICallout />}
 
       {/* Cost Curve Convergence */}
       {playbook && industry && (

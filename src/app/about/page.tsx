@@ -64,6 +64,20 @@ const DATA_SOURCES = [
     vintage: "Q1 2026 (quarterly updates)",
     url: "https://huggingface.co/datasets/Anthropic/EconomicIndex",
   },
+  {
+    source: "Remote Labor Index — remotelabor.ai (2025)",
+    description:
+      "Benchmarks actual autonomous AI agent performance on 240 real paid freelance projects across 23 Upwork skill categories, tested with 358 freelancers. Measures what frontier AI agents actually complete end-to-end today (0.83%–4.17%), providing real-world calibration for the theoretical exposure scores in this tool. Used as a contextual callout in calculator results to ground the gap between capability and deployment. Not incorporated into the composite score formula.",
+    vintage: "Feb–Mar 2025",
+    url: "https://www.remotelabor.ai/",
+  },
+  {
+    source: "MIT Project Iceberg (2024)",
+    description:
+      "Maps AI capability to occupational tasks across 923 O*NET occupations and 32,000+ skills, producing a skill-level AI augmentation index. Distinguishes between AI substitution (tasks AI replaces) and AI augmentation (tasks AI enhances). Referenced as a methodological anchor for understanding AI's 'below the waterline' augmentation potential in knowledge-work occupations — a complement to the primarily substitution-focused Frey & Osborne and AIOE measures.",
+    vintage: "2024",
+    url: "https://iceberg.mit.edu/",
+  },
 ] as const;
 
 export default function AboutPage() {
@@ -349,6 +363,20 @@ export default function AboutPage() {
           <li>
             <strong>Anthropic Economic Index data is at the SOC major-group level</strong> — all occupations within a group (e.g., all &ldquo;Computer and Mathematical&rdquo; occupations) receive the same usage intensity value. Shown as supplementary context only; not incorporated into composite scores.
           </li>
+          <li>
+            <strong>Remote Labor Index reflects a point-in-time snapshot.</strong>{" "}
+            The 0.83%–4.17% autonomous completion range is from a Feb–Mar 2025 benchmark
+            across 23 Upwork categories. AI agent capability is improving rapidly; this
+            figure should be treated as a lower-bound calibration anchor, not a permanent
+            ceiling.
+          </li>
+          <li>
+            <strong>MIT Iceberg occupation scores are not yet incorporated.</strong>{" "}
+            The Iceberg project&apos;s skill-level augmentation index covers 923 O*NET occupations
+            but is published as an interactive web application rather than a downloadable dataset.
+            It is referenced in the methodology as context for understanding augmentation
+            vs. substitution dynamics, but does not contribute to the composite score formula.
+          </li>
         </ul>
       </section>
 
@@ -407,6 +435,37 @@ export default function AboutPage() {
               Their effective exposure to disruption from AI adoption is lower because
               they are driving the change rather than being surprised by it. The 30%
               reduction reflects this first-mover advantage, not immunity.
+            </p>
+          </div>
+          <div>
+            <strong className="text-[var(--color-text-primary)]">
+              Capability vs. deployment gap
+            </strong>
+            <p className="mt-1">
+              All four composite score components measure theoretical AI capability exposure —
+              what AI <em>could</em> automate, based on task and skill overlap. Real-world
+              deployment lags significantly behind theoretical capability. The Remote Labor
+              Index (2025) found that frontier AI agents complete just 0.83%–4.17% of
+              complex professional projects end-to-end without human intervention. The
+              composite scores in this tool reflect the destination of the disruption curve,
+              not its current position. The cost convergence charts in the calculator
+              results are explicitly modelled as a 24-month trajectory, not an instantaneous
+              shift.
+            </p>
+          </div>
+          <div>
+            <strong className="text-[var(--color-text-primary)]">
+              Why the Anthropic Economic Index is display-only
+            </strong>
+            <p className="mt-1">
+              The Anthropic Economic Index (March 2026) measures actual Claude usage patterns
+              across 22 SOC major occupational groups — a 2026-vintage real-world signal.
+              Adding it to the composite formula at 15–25% weight would flatten
+              within-group differentiation: Software Developers and Network Technicians
+              would both become &ldquo;Computer and Mathematical = same score,&rdquo; which is
+              methodologically dishonest for a precision tool. It is shown as supplementary
+              context in occupation detail panels instead, with a note about the
+              group-level granularity.
             </p>
           </div>
         </div>
