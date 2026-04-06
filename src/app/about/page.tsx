@@ -72,6 +72,13 @@ const DATA_SOURCES = [
     url: "https://www.remotelabor.ai/",
   },
   {
+    source: "OpenAI — Industrial Policy for the Intelligence Age (2026)",
+    description:
+      "Policy paper projecting that AI infrastructure buildout (data centres, power grids, cooling systems) will require approximately 20% more skilled trades workers — electricians, mechanics, ironworkers, carpenters, plumbers — than currently exist. Used as a counter-exposure signal on trades occupations in the explorer: low AI displacement risk combined with rising infrastructure demand. Not a research dataset; cited as a policy reference only.",
+    vintage: "April 2026",
+    url: "https://openai.com/index/industrial-policy-for-the-intelligence-age/",
+  },
+  {
     source: "MIT Project Iceberg (2024)",
     description:
       "Maps 13,000+ deployed AI tools against 32,000+ skills across 923 O*NET occupations (151 million workers) to produce an Iceberg Index: the percentage of an occupation's wage value where AI has demonstrated capability. Key finding: visible tech-sector disruption is just 2.2% of the U.S. labour market's wage value, while hidden white-collar and administrative exposure is 11.7% — five times larger and geographically distributed across all states. Referenced as a methodological context source; not incorporated into composite scores because occupation-level Index values are not published as a downloadable dataset.",
