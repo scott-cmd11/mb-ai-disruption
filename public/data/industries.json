@@ -1,0 +1,402 @@
+[
+  {
+    "naicsCode": "11",
+    "sector": "Agriculture, Forestry, Fishing and Hunting",
+    "shortName": "Agriculture",
+    "mbEmployment": 35000,
+    "mbEmploymentShare": 0.05,
+    "mbGdpShare": 0.05,
+    "aiAdoptionRate": 0.08,
+    "aiAdoptionGap": 0.92,
+    "sectorRiskScore": 42,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "HyLife Foods",
+      "Manitoba Pork Council producers",
+      "Richardson International",
+      "Parrish & Heimbecker"
+    ],
+    "dataYear": 2023,
+    "notes": "Precision agriculture and grain trading analytics are growing AI applications. Physical task dominance and rural connectivity gaps keep overall score medium."
+  },
+  {
+    "naicsCode": "21",
+    "sector": "Mining, Quarrying, and Oil and Gas Extraction",
+    "shortName": "Mining & Oil",
+    "mbEmployment": 8500,
+    "mbEmploymentShare": 0.012,
+    "mbGdpShare": 0.03,
+    "aiAdoptionRate": 0.19,
+    "aiAdoptionGap": 0.81,
+    "sectorRiskScore": 38,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "Vale Canada (Thompson nickel)",
+      "HudBay Minerals",
+      "Husky Energy"
+    ],
+    "dataYear": 2023,
+    "notes": "Exploration analytics, predictive maintenance, and geological modelling are high-AI-exposure functions. Physical extraction and underground work buffer the overall score."
+  },
+  {
+    "naicsCode": "22",
+    "sector": "Utilities",
+    "shortName": "Utilities",
+    "mbEmployment": 9000,
+    "mbEmploymentShare": 0.013,
+    "mbGdpShare": 0.028,
+    "aiAdoptionRate": 0.31,
+    "aiAdoptionGap": 0.69,
+    "sectorRiskScore": 51,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "Manitoba Hydro",
+      "Centra Gas Manitoba",
+      "City of Winnipeg Water & Waste"
+    ],
+    "dataYear": 2023,
+    "notes": "Manitoba Hydro dominates this sector. Grid management, customer billing, and call centre roles are high LLM-exposure. Field technicians and lineworkers carry lower risk."
+  },
+  {
+    "naicsCode": "23",
+    "sector": "Construction",
+    "shortName": "Construction",
+    "mbEmployment": 48000,
+    "mbEmploymentShare": 0.069,
+    "mbGdpShare": 0.067,
+    "aiAdoptionRate": 0.09,
+    "aiAdoptionGap": 0.91,
+    "sectorRiskScore": 28,
+    "riskTier": "low",
+    "keyEmployers": [
+      "PCL Construction",
+      "Bockstael Construction",
+      "Canmar Constructors",
+      "Gardon Construction"
+    ],
+    "dataYear": 2023,
+    "notes": "Physical dexterity and site variability make construction trades highly resistant to near-term automation. Estimating, scheduling, and project management roles carry medium exposure."
+  },
+  {
+    "naicsCode": "31-33",
+    "sector": "Manufacturing",
+    "shortName": "Manufacturing",
+    "mbEmployment": 55000,
+    "mbEmploymentShare": 0.079,
+    "mbGdpShare": 0.09,
+    "aiAdoptionRate": 0.22,
+    "aiAdoptionGap": 0.78,
+    "sectorRiskScore": 55,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "StandardAero",
+      "Magellan Aerospace",
+      "Boeing Winnipeg",
+      "New Flyer Industries",
+      "Canada Bread / Weston Bakeries",
+      "Simplot Canada"
+    ],
+    "dataYear": 2023,
+    "notes": "Bimodal sector. Aerospace MRO (inspection, documentation) has moderate AI exposure. Food processing repetitive-line work faces higher automation risk. Overall: medium-high."
+  },
+  {
+    "naicsCode": "41",
+    "sector": "Wholesale Trade",
+    "shortName": "Wholesale Trade",
+    "mbEmployment": 28000,
+    "mbEmploymentShare": 0.04,
+    "mbGdpShare": 0.055,
+    "aiAdoptionRate": 0.21,
+    "aiAdoptionGap": 0.79,
+    "sectorRiskScore": 61,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "Richardson International",
+      "Parrish & Heimbecker",
+      "Sysco Canada (Manitoba operations)"
+    ],
+    "dataYear": 2023,
+    "notes": "Order processing, inventory management, and demand forecasting are prime AI automation targets. Relationship-based sales roles carry lower exposure."
+  },
+  {
+    "naicsCode": "44-45",
+    "sector": "Retail Trade",
+    "shortName": "Retail Trade",
+    "mbEmployment": 85000,
+    "mbEmploymentShare": 0.121,
+    "mbGdpShare": 0.057,
+    "aiAdoptionRate": 0.18,
+    "aiAdoptionGap": 0.82,
+    "sectorRiskScore": 63,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "Walmart Canada",
+      "Sobeys / Safeway Manitoba",
+      "Costco Wholesale",
+      "Hudson's Bay Company"
+    ],
+    "dataYear": 2023,
+    "notes": "Largest private-sector employer in Manitoba. Cashier roles face self-checkout displacement. Buying, merchandising, and customer service carry elevated LLM exposure."
+  },
+  {
+    "naicsCode": "48-49",
+    "sector": "Transportation and Warehousing",
+    "shortName": "Transportation",
+    "mbEmployment": 42000,
+    "mbEmploymentShare": 0.06,
+    "mbGdpShare": 0.072,
+    "aiAdoptionRate": 0.17,
+    "aiAdoptionGap": 0.83,
+    "sectorRiskScore": 49,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "CN Rail (Winnipeg headquarters)",
+      "Canadian Pacific Kansas City",
+      "Winnipeg Airports Authority",
+      "Canada Post (Manitoba operations)",
+      "Bison Transport"
+    ],
+    "dataYear": 2023,
+    "notes": "Routing optimization and dispatch are heavily AI-exposed. Long-haul trucking mid-range given autonomous vehicle timelines. Warehousing sortation at higher risk."
+  },
+  {
+    "naicsCode": "51",
+    "sector": "Information and Cultural Industries",
+    "shortName": "Information",
+    "mbEmployment": 12000,
+    "mbEmploymentShare": 0.017,
+    "mbGdpShare": 0.026,
+    "aiAdoptionRate": 0.42,
+    "aiAdoptionGap": 0.58,
+    "sectorRiskScore": 72,
+    "riskTier": "high",
+    "keyEmployers": [
+      "CBC Manitoba",
+      "Winnipeg Free Press",
+      "Shaw Communications (Manitoba)",
+      "Ubisoft Winnipeg",
+      "Bold Commerce"
+    ],
+    "dataYear": 2023,
+    "notes": "Highest AI adoption rate in the Manitoba economy. Content creation, software development, and media production face direct LLM and generative AI exposure. Highest-risk sector."
+  },
+  {
+    "naicsCode": "52",
+    "sector": "Finance and Insurance",
+    "shortName": "Finance & Insurance",
+    "mbEmployment": 32000,
+    "mbEmploymentShare": 0.046,
+    "mbGdpShare": 0.075,
+    "aiAdoptionRate": 0.38,
+    "aiAdoptionGap": 0.62,
+    "sectorRiskScore": 68,
+    "riskTier": "high",
+    "keyEmployers": [
+      "Canada Life (Great-West Lifeco, Winnipeg HQ)",
+      "Wawanesa Mutual Insurance (Winnipeg HQ)",
+      "IG Wealth Management (Winnipeg HQ)",
+      "Westoba Credit Union",
+      "Steinbach Credit Union"
+    ],
+    "dataYear": 2023,
+    "notes": "Winnipeg is a major Canadian insurance HQ city. Underwriting, claims processing, and financial advisory roles face significant AI displacement risk. High-wage sector at elevated exposure."
+  },
+  {
+    "naicsCode": "53",
+    "sector": "Real Estate and Rental and Leasing",
+    "shortName": "Real Estate",
+    "mbEmployment": 14000,
+    "mbEmploymentShare": 0.02,
+    "mbGdpShare": 0.115,
+    "aiAdoptionRate": 0.13,
+    "aiAdoptionGap": 0.87,
+    "sectorRiskScore": 44,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "Artis REIT",
+      "Qualico Developments",
+      "Broadstreet Properties",
+      "Winnipeg Real Estate Board members"
+    ],
+    "dataYear": 2023,
+    "notes": "High GDP share driven by imputed rent, not employment. Agent and broker roles at medium risk from AI valuation tools. Property management administration has higher LLM exposure."
+  },
+  {
+    "naicsCode": "54",
+    "sector": "Professional, Scientific and Technical Services",
+    "shortName": "Professional Services",
+    "mbEmployment": 42000,
+    "mbEmploymentShare": 0.06,
+    "mbGdpShare": 0.065,
+    "aiAdoptionRate": 0.35,
+    "aiAdoptionGap": 0.65,
+    "sectorRiskScore": 69,
+    "riskTier": "high",
+    "keyEmployers": [
+      "KPMG / Deloitte / PwE / EY (Winnipeg offices)",
+      "Thompson Dorfman Sweatman LLP",
+      "WSP Global (Manitoba)",
+      "Tetra Tech"
+    ],
+    "dataYear": 2023,
+    "notes": "Accounting, legal research, software consulting, and engineering documentation are highly exposed to LLMs. Strong adoption momentum. Third-highest risk sector."
+  },
+  {
+    "naicsCode": "55",
+    "sector": "Management of Companies and Enterprises",
+    "shortName": "Corporate Management",
+    "mbEmployment": 8000,
+    "mbEmploymentShare": 0.011,
+    "mbGdpShare": 0.012,
+    "aiAdoptionRate": 0.29,
+    "aiAdoptionGap": 0.71,
+    "sectorRiskScore": 55,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "James Richardson & Sons",
+      "Bison Transport Holdings",
+      "Gendis Inc."
+    ],
+    "dataYear": 2023,
+    "notes": "Holding companies and corporate HQ functions. Middle-management coordination and reporting roles face medium AI exposure. Executive strategy and relationship roles are lower risk."
+  },
+  {
+    "naicsCode": "56",
+    "sector": "Administrative and Support, Waste Management and Remediation Services",
+    "shortName": "Administrative Support",
+    "mbEmployment": 29000,
+    "mbEmploymentShare": 0.041,
+    "mbGdpShare": 0.025,
+    "aiAdoptionRate": 0.16,
+    "aiAdoptionGap": 0.84,
+    "sectorRiskScore": 70,
+    "riskTier": "high",
+    "keyEmployers": [
+      "Adecco / Manpower (staffing, Manitoba operations)",
+      "ADESA Winnipeg",
+      "Miller Waste Systems"
+    ],
+    "dataYear": 2023,
+    "notes": "Data entry, transcription, scheduling, and contact-centre work face very high LLM exposure. Second-highest risk sector. Physical waste-collection work buffers the aggregate score."
+  },
+  {
+    "naicsCode": "61",
+    "sector": "Educational Services",
+    "shortName": "Education",
+    "mbEmployment": 52000,
+    "mbEmploymentShare": 0.074,
+    "mbGdpShare": 0.048,
+    "aiAdoptionRate": 0.14,
+    "aiAdoptionGap": 0.86,
+    "sectorRiskScore": 45,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "University of Manitoba",
+      "University of Winnipeg",
+      "Red River College Polytechnic",
+      "Manitoba public school divisions (37)"
+    ],
+    "dataYear": 2023,
+    "notes": "Classroom instruction relies heavily on human relationship and adaptive judgment. AI tools are aids, not replacements at K-12. Post-secondary research and curriculum roles face medium LLM exposure."
+  },
+  {
+    "naicsCode": "62",
+    "sector": "Health Care and Social Assistance",
+    "shortName": "Health Care",
+    "mbEmployment": 105000,
+    "mbEmploymentShare": 0.15,
+    "mbGdpShare": 0.082,
+    "aiAdoptionRate": 0.16,
+    "aiAdoptionGap": 0.84,
+    "sectorRiskScore": 36,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "Shared Health Manitoba",
+      "Winnipeg Regional Health Authority",
+      "St. Boniface Hospital",
+      "CancerCare Manitoba",
+      "Interlake-Eastern Regional Health Authority"
+    ],
+    "dataYear": 2023,
+    "notes": "Largest employer in Manitoba. Direct patient care requires human judgment, empathy, and physical presence. Medical coding, radiology reading, and administrative billing face higher AI exposure."
+  },
+  {
+    "naicsCode": "71",
+    "sector": "Arts, Entertainment and Recreation",
+    "shortName": "Arts & Entertainment",
+    "mbEmployment": 14000,
+    "mbEmploymentShare": 0.02,
+    "mbGdpShare": 0.013,
+    "aiAdoptionRate": 0.11,
+    "aiAdoptionGap": 0.89,
+    "sectorRiskScore": 56,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "True North Sports & Entertainment (Winnipeg Jets)",
+      "Royal Winnipeg Ballet",
+      "Manitoba Museum",
+      "BCLC / Manitoba Liquor & Lotteries"
+    ],
+    "dataYear": 2023,
+    "notes": "Live performance and in-person experience are resistant to direct AI replacement. Back-office roles in ticketing, marketing, and content creation face medium-high LLM exposure."
+  },
+  {
+    "naicsCode": "72",
+    "sector": "Accommodation and Food Services",
+    "shortName": "Accommodation & Food",
+    "mbEmployment": 52000,
+    "mbEmploymentShare": 0.074,
+    "mbGdpShare": 0.03,
+    "aiAdoptionRate": 0.09,
+    "aiAdoptionGap": 0.91,
+    "sectorRiskScore": 41,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "Delta Hotels Winnipeg",
+      "Inn at the Forks",
+      "Earls Kitchen + Bar (franchise owners)",
+      "Tim Hortons / McDonald's franchisees"
+    ],
+    "dataYear": 2023,
+    "notes": "Physical food preparation is resistant in the near term. Front-desk check-in and order-taking face kiosk and AI displacement. Scheduling and back-office management roles have medium exposure."
+  },
+  {
+    "naicsCode": "81",
+    "sector": "Other Services (except Public Administration)",
+    "shortName": "Other Services",
+    "mbEmployment": 30000,
+    "mbEmploymentShare": 0.043,
+    "mbGdpShare": 0.022,
+    "aiAdoptionRate": 0.07,
+    "aiAdoptionGap": 0.93,
+    "sectorRiskScore": 35,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "Birchwood Automotive Group",
+      "Winnipeg Auto Group",
+      "Various personal care service SMBs"
+    ],
+    "dataYear": 2023,
+    "notes": "Personal care, repair, and religious organizations. Hands-on service nature keeps risk low to medium. Auto service writing and appointment booking have AI exposure."
+  },
+  {
+    "naicsCode": "91",
+    "sector": "Public Administration",
+    "shortName": "Public Administration",
+    "mbEmployment": 58000,
+    "mbEmploymentShare": 0.083,
+    "mbGdpShare": 0.072,
+    "aiAdoptionRate": 0.12,
+    "aiAdoptionGap": 0.88,
+    "sectorRiskScore": 47,
+    "riskTier": "medium",
+    "keyEmployers": [
+      "Government of Manitoba",
+      "City of Winnipeg",
+      "Government of Canada (Manitoba federal employees)",
+      "RCMP D Division"
+    ],
+    "dataYear": 2023,
+    "notes": "Large, stable employer. Procurement, policy drafting, and records management face LLM exposure. Direct citizen services and enforcement roles carry lower risk. Adoption slow due to procurement barriers."
+  }
+]

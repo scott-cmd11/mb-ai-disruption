@@ -1,0 +1,1038 @@
+[
+  {
+    "nocCode": "14200",
+    "title": "Data Entry Clerks",
+    "shortTitle": "Data entry clerks",
+    "naicsSectors": [
+      "52",
+      "56",
+      "91"
+    ],
+    "mbEmployment": 5500,
+    "freyOsborne": 92,
+    "aioeScore": 68,
+    "llmExposure": 50,
+    "compositeScore": 74,
+    "riskTier": "high",
+    "taskCategories": [
+      "data_processing",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "13100",
+    "title": "Administrative Assistants",
+    "shortTitle": "Administrative assistants",
+    "naicsSectors": [
+      "54",
+      "52",
+      "91",
+      "62"
+    ],
+    "mbEmployment": 22000,
+    "freyOsborne": 78,
+    "aioeScore": 72,
+    "llmExposure": 57,
+    "compositeScore": 70,
+    "riskTier": "high",
+    "taskCategories": [
+      "data_processing",
+      "coordination",
+      "content_creation"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "12200",
+    "title": "Accounting Technicians and Bookkeepers",
+    "shortTitle": "Bookkeepers",
+    "naicsSectors": [
+      "54",
+      "52"
+    ],
+    "mbEmployment": 12000,
+    "freyOsborne": 71,
+    "aioeScore": 65,
+    "llmExposure": 31,
+    "compositeScore": 59,
+    "riskTier": "medium",
+    "taskCategories": [
+      "data_processing",
+      "technical_analysis"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "11102",
+    "title": "Financial Analysts and Financial Advisors",
+    "shortTitle": "Financial analysts",
+    "naicsSectors": [
+      "52",
+      "55"
+    ],
+    "mbEmployment": 8000,
+    "freyOsborne": 45,
+    "aioeScore": 78,
+    "llmExposure": 59,
+    "compositeScore": 61,
+    "riskTier": "medium",
+    "taskCategories": [
+      "technical_analysis",
+      "decision_making",
+      "data_processing"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "12202",
+    "title": "Insurance Agents, Brokers and Direct Writers",
+    "shortTitle": "Insurance agents",
+    "naicsSectors": [
+      "52"
+    ],
+    "mbEmployment": 5200,
+    "freyOsborne": 52,
+    "aioeScore": 62,
+    "llmExposure": 53,
+    "compositeScore": 57,
+    "riskTier": "medium",
+    "taskCategories": [
+      "customer_service",
+      "data_processing",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "13102",
+    "title": "Payroll Administrators",
+    "shortTitle": "Payroll administrators",
+    "naicsSectors": [
+      "54",
+      "56",
+      "91"
+    ],
+    "mbEmployment": 4000,
+    "freyOsborne": 68,
+    "aioeScore": 60,
+    "llmExposure": 49,
+    "compositeScore": 61,
+    "riskTier": "medium",
+    "taskCategories": [
+      "data_processing",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "64410",
+    "title": "Customer and Information Services Representatives",
+    "shortTitle": "Customer service representatives",
+    "naicsSectors": [
+      "52",
+      "44-45",
+      "48-49",
+      "22"
+    ],
+    "mbEmployment": 18000,
+    "freyOsborne": 61,
+    "aioeScore": 58,
+    "llmExposure": 70,
+    "compositeScore": 63,
+    "riskTier": "medium",
+    "taskCategories": [
+      "customer_service",
+      "data_processing"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "64409",
+    "title": "Other Customer and Information Services Representatives",
+    "shortTitle": "Call centre agents",
+    "naicsSectors": [
+      "56",
+      "52",
+      "22"
+    ],
+    "mbEmployment": 7000,
+    "freyOsborne": 65,
+    "aioeScore": 60,
+    "llmExposure": 70,
+    "compositeScore": 65,
+    "riskTier": "medium",
+    "taskCategories": [
+      "customer_service",
+      "data_processing"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "11110",
+    "title": "Auditors and Accountants",
+    "shortTitle": "Accountants and auditors",
+    "naicsSectors": [
+      "54",
+      "52",
+      "91"
+    ],
+    "mbEmployment": 9500,
+    "freyOsborne": 58,
+    "aioeScore": 62,
+    "llmExposure": 52,
+    "compositeScore": 58,
+    "riskTier": "medium",
+    "taskCategories": [
+      "technical_analysis",
+      "data_processing",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "21232",
+    "title": "Software Developers and Programmers",
+    "shortTitle": "Software developers",
+    "naicsSectors": [
+      "51",
+      "54"
+    ],
+    "mbEmployment": 14000,
+    "freyOsborne": 22,
+    "aioeScore": 68,
+    "llmExposure": 57,
+    "compositeScore": 49,
+    "riskTier": "medium",
+    "taskCategories": [
+      "technical_analysis",
+      "creative_design",
+      "content_creation"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "22220",
+    "title": "Computer Network Technicians",
+    "shortTitle": "Network technicians",
+    "naicsSectors": [
+      "51",
+      "54"
+    ],
+    "mbEmployment": 5000,
+    "freyOsborne": 37,
+    "aioeScore": 55,
+    "llmExposure": 55,
+    "compositeScore": 49,
+    "riskTier": "medium",
+    "taskCategories": [
+      "technical_analysis",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "51120",
+    "title": "Editors",
+    "shortTitle": "Editors",
+    "naicsSectors": [
+      "51"
+    ],
+    "mbEmployment": 1800,
+    "freyOsborne": 38,
+    "aioeScore": 65,
+    "llmExposure": 65,
+    "compositeScore": 56,
+    "riskTier": "medium",
+    "taskCategories": [
+      "content_creation",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "51110",
+    "title": "Journalists",
+    "shortTitle": "Journalists",
+    "naicsSectors": [
+      "51"
+    ],
+    "mbEmployment": 900,
+    "freyOsborne": 32,
+    "aioeScore": 68,
+    "llmExposure": 63,
+    "compositeScore": 55,
+    "riskTier": "medium",
+    "taskCategories": [
+      "content_creation",
+      "technical_analysis"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "41101",
+    "title": "Lawyers and Quebec Notaries",
+    "shortTitle": "Lawyers",
+    "naicsSectors": [
+      "54"
+    ],
+    "mbEmployment": 3800,
+    "freyOsborne": 35,
+    "aioeScore": 70,
+    "llmExposure": 48,
+    "compositeScore": 54,
+    "riskTier": "medium",
+    "taskCategories": [
+      "technical_analysis",
+      "content_creation",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "21300",
+    "title": "Civil Engineers",
+    "shortTitle": "Civil engineers",
+    "naicsSectors": [
+      "54",
+      "23"
+    ],
+    "mbEmployment": 3500,
+    "freyOsborne": 28,
+    "aioeScore": 48,
+    "llmExposure": 38,
+    "compositeScore": 39,
+    "riskTier": "medium",
+    "taskCategories": [
+      "technical_analysis",
+      "decision_making",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "11200",
+    "title": "Human Resources Managers",
+    "shortTitle": "HR managers",
+    "naicsSectors": [
+      "54",
+      "55",
+      "91"
+    ],
+    "mbEmployment": 4500,
+    "freyOsborne": 42,
+    "aioeScore": 62,
+    "llmExposure": 45,
+    "compositeScore": 52,
+    "riskTier": "medium",
+    "taskCategories": [
+      "decision_making",
+      "coordination",
+      "content_creation"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "10022",
+    "title": "Advertising, Marketing and Public Relations Managers",
+    "shortTitle": "Marketing managers",
+    "naicsSectors": [
+      "54",
+      "51",
+      "44-45"
+    ],
+    "mbEmployment": 3800,
+    "freyOsborne": 38,
+    "aioeScore": 65,
+    "llmExposure": 58,
+    "compositeScore": 56,
+    "riskTier": "medium",
+    "taskCategories": [
+      "content_creation",
+      "decision_making",
+      "data_processing"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "14301",
+    "title": "Dispatchers",
+    "shortTitle": "Dispatchers",
+    "naicsSectors": [
+      "48-49",
+      "22",
+      "62"
+    ],
+    "mbEmployment": 4200,
+    "freyOsborne": 58,
+    "aioeScore": 48,
+    "llmExposure": 65,
+    "compositeScore": 56,
+    "riskTier": "medium",
+    "taskCategories": [
+      "coordination",
+      "data_processing",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "13312",
+    "title": "Property Administrators",
+    "shortTitle": "Property managers",
+    "naicsSectors": [
+      "53"
+    ],
+    "mbEmployment": 3500,
+    "freyOsborne": 52,
+    "aioeScore": 55,
+    "llmExposure": 43,
+    "compositeScore": 51,
+    "riskTier": "medium",
+    "taskCategories": [
+      "coordination",
+      "customer_service",
+      "data_processing"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "22302",
+    "title": "Construction Estimators",
+    "shortTitle": "Construction estimators",
+    "naicsSectors": [
+      "23"
+    ],
+    "mbEmployment": 2800,
+    "freyOsborne": 45,
+    "aioeScore": 52,
+    "llmExposure": 48,
+    "compositeScore": 48,
+    "riskTier": "medium",
+    "taskCategories": [
+      "technical_analysis",
+      "data_processing",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "62010",
+    "title": "Retail Salespersons and Visual Merchandisers",
+    "shortTitle": "Retail salespersons",
+    "naicsSectors": [
+      "44-45"
+    ],
+    "mbEmployment": 38000,
+    "freyOsborne": 55,
+    "aioeScore": 32,
+    "llmExposure": 36,
+    "compositeScore": 42,
+    "riskTier": "medium",
+    "taskCategories": [
+      "customer_service",
+      "physical_manual"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "65200",
+    "title": "Food Counter Attendants, Kitchen Helpers and Related Support Occupations",
+    "shortTitle": "Food counter attendants",
+    "naicsSectors": [
+      "72"
+    ],
+    "mbEmployment": 21000,
+    "freyOsborne": 82,
+    "aioeScore": 15,
+    "llmExposure": 7,
+    "compositeScore": 40,
+    "riskTier": "medium",
+    "taskCategories": [
+      "physical_manual",
+      "customer_service"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "65310",
+    "title": "Security Guards and Related Security Service Occupations",
+    "shortTitle": "Security guards",
+    "naicsSectors": [
+      "56",
+      "71"
+    ],
+    "mbEmployment": 5500,
+    "freyOsborne": 42,
+    "aioeScore": 18,
+    "llmExposure": 25,
+    "compositeScore": 30,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "75110",
+    "title": "Transport Truck Drivers",
+    "shortTitle": "Truck drivers",
+    "naicsSectors": [
+      "48-49"
+    ],
+    "mbEmployment": 22000,
+    "freyOsborne": 68,
+    "aioeScore": 22,
+    "llmExposure": 17,
+    "compositeScore": 39,
+    "riskTier": "medium",
+    "taskCategories": [
+      "physical_manual",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "86102",
+    "title": "Agricultural Equipment Operators",
+    "shortTitle": "Agricultural equipment operators",
+    "naicsSectors": [
+      "11"
+    ],
+    "mbEmployment": 8000,
+    "freyOsborne": 55,
+    "aioeScore": 20,
+    "llmExposure": 0,
+    "compositeScore": 33,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual",
+      "technical_analysis"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "72400",
+    "title": "Electricians (Except Industrial and Power System)",
+    "shortTitle": "Electricians",
+    "naicsSectors": [
+      "23",
+      "22"
+    ],
+    "mbEmployment": 9000,
+    "freyOsborne": 11,
+    "aioeScore": 18,
+    "llmExposure": 15,
+    "compositeScore": 19,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual",
+      "technical_analysis"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "72020",
+    "title": "Carpenters",
+    "shortTitle": "Carpenters",
+    "naicsSectors": [
+      "23"
+    ],
+    "mbEmployment": 7500,
+    "freyOsborne": 18,
+    "aioeScore": 12,
+    "llmExposure": 9,
+    "compositeScore": 16,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "72106",
+    "title": "Welders and Related Machine Operators",
+    "shortTitle": "Welders",
+    "naicsSectors": [
+      "31-33",
+      "23"
+    ],
+    "mbEmployment": 5800,
+    "freyOsborne": 48,
+    "aioeScore": 15,
+    "llmExposure": 4,
+    "compositeScore": 26,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual",
+      "technical_analysis"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "73200",
+    "title": "Heavy Equipment Operators (Except Crane)",
+    "shortTitle": "Heavy equipment operators",
+    "naicsSectors": [
+      "23",
+      "11",
+      "21"
+    ],
+    "mbEmployment": 6500,
+    "freyOsborne": 38,
+    "aioeScore": 12,
+    "llmExposure": 9,
+    "compositeScore": 24,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "31102",
+    "title": "General Practitioners and Family Physicians",
+    "shortTitle": "Family physicians",
+    "naicsSectors": [
+      "62"
+    ],
+    "mbEmployment": 3200,
+    "freyOsborne": 8,
+    "aioeScore": 35,
+    "llmExposure": 38,
+    "compositeScore": 29,
+    "riskTier": "low",
+    "taskCategories": [
+      "decision_making",
+      "customer_service",
+      "technical_analysis"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "31301",
+    "title": "Registered Nurses and Registered Psychiatric Nurses",
+    "shortTitle": "Registered nurses",
+    "naicsSectors": [
+      "62"
+    ],
+    "mbEmployment": 19000,
+    "freyOsborne": 9,
+    "aioeScore": 28,
+    "llmExposure": 38,
+    "compositeScore": 27,
+    "riskTier": "low",
+    "taskCategories": [
+      "decision_making",
+      "physical_manual",
+      "customer_service"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "32101",
+    "title": "Licensed Practical Nurses",
+    "shortTitle": "Licensed practical nurses",
+    "naicsSectors": [
+      "62"
+    ],
+    "mbEmployment": 8000,
+    "freyOsborne": 14,
+    "aioeScore": 22,
+    "llmExposure": 25,
+    "compositeScore": 22,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual",
+      "customer_service",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "32120",
+    "title": "Medical Laboratory Technologists",
+    "shortTitle": "Medical lab technologists",
+    "naicsSectors": [
+      "62"
+    ],
+    "mbEmployment": 2800,
+    "freyOsborne": 22,
+    "aioeScore": 45,
+    "llmExposure": 10,
+    "compositeScore": 28,
+    "riskTier": "low",
+    "taskCategories": [
+      "technical_analysis",
+      "data_processing"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "41200",
+    "title": "Social Workers",
+    "shortTitle": "Social workers",
+    "naicsSectors": [
+      "62",
+      "91"
+    ],
+    "mbEmployment": 7500,
+    "freyOsborne": 12,
+    "aioeScore": 18,
+    "llmExposure": 30,
+    "compositeScore": 23,
+    "riskTier": "low",
+    "taskCategories": [
+      "customer_service",
+      "decision_making",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "41210",
+    "title": "Elementary School and Kindergarten Teachers",
+    "shortTitle": "Elementary teachers",
+    "naicsSectors": [
+      "61"
+    ],
+    "mbEmployment": 9500,
+    "freyOsborne": 8,
+    "aioeScore": 22,
+    "llmExposure": 31,
+    "compositeScore": 23,
+    "riskTier": "low",
+    "taskCategories": [
+      "customer_service",
+      "content_creation",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "41220",
+    "title": "Secondary School Teachers",
+    "shortTitle": "Secondary school teachers",
+    "naicsSectors": [
+      "61"
+    ],
+    "mbEmployment": 7500,
+    "freyOsborne": 10,
+    "aioeScore": 28,
+    "llmExposure": 34,
+    "compositeScore": 26,
+    "riskTier": "low",
+    "taskCategories": [
+      "content_creation",
+      "decision_making",
+      "customer_service"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "42201",
+    "title": "College and Other Vocational Instructors",
+    "shortTitle": "College instructors",
+    "naicsSectors": [
+      "61"
+    ],
+    "mbEmployment": 5800,
+    "freyOsborne": 15,
+    "aioeScore": 38,
+    "llmExposure": 43,
+    "compositeScore": 33,
+    "riskTier": "low",
+    "taskCategories": [
+      "content_creation",
+      "technical_analysis"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "21211",
+    "title": "Biological and Related Scientists",
+    "shortTitle": "Biologists and scientists",
+    "naicsSectors": [
+      "62",
+      "54",
+      "11"
+    ],
+    "mbEmployment": 2200,
+    "freyOsborne": 12,
+    "aioeScore": 45,
+    "llmExposure": 42,
+    "compositeScore": 34,
+    "riskTier": "low",
+    "taskCategories": [
+      "technical_analysis",
+      "data_processing"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "63200",
+    "title": "Transport Equipment Assemblers and Inspectors",
+    "shortTitle": "Equipment assemblers",
+    "naicsSectors": [
+      "31-33"
+    ],
+    "mbEmployment": 4500,
+    "freyOsborne": 72,
+    "aioeScore": 18,
+    "llmExposure": 9,
+    "compositeScore": 39,
+    "riskTier": "medium",
+    "taskCategories": [
+      "physical_manual",
+      "technical_analysis"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "84120",
+    "title": "Agricultural Service Contractors and Farm Supervisors",
+    "shortTitle": "Farm supervisors",
+    "naicsSectors": [
+      "11"
+    ],
+    "mbEmployment": 5500,
+    "freyOsborne": 28,
+    "aioeScore": 18,
+    "llmExposure": 16,
+    "compositeScore": 25,
+    "riskTier": "low",
+    "taskCategories": [
+      "coordination",
+      "physical_manual",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "12104",
+    "title": "Purchasing Agents and Officers",
+    "shortTitle": "Purchasing agents",
+    "naicsSectors": [
+      "41",
+      "31-33",
+      "91"
+    ],
+    "mbEmployment": 4800,
+    "freyOsborne": 62,
+    "aioeScore": 58,
+    "llmExposure": 37,
+    "compositeScore": 54,
+    "riskTier": "medium",
+    "taskCategories": [
+      "data_processing",
+      "decision_making",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "52120",
+    "title": "Industrial and Manufacturing Engineers",
+    "shortTitle": "Manufacturing engineers",
+    "naicsSectors": [
+      "31-33"
+    ],
+    "mbEmployment": 2200,
+    "freyOsborne": 22,
+    "aioeScore": 52,
+    "llmExposure": 61,
+    "compositeScore": 45,
+    "riskTier": "medium",
+    "taskCategories": [
+      "technical_analysis",
+      "decision_making",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "90010",
+    "title": "Production Supervisors and Foremen/Forewomen",
+    "shortTitle": "Production supervisors",
+    "naicsSectors": [
+      "31-33"
+    ],
+    "mbEmployment": 3800,
+    "freyOsborne": 32,
+    "aioeScore": 28,
+    "llmExposure": 22,
+    "compositeScore": 29,
+    "riskTier": "low",
+    "taskCategories": [
+      "coordination",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "92100",
+    "title": "Aircraft Mechanics and Aircraft Inspectors",
+    "shortTitle": "Aircraft mechanics",
+    "naicsSectors": [
+      "31-33",
+      "48-49"
+    ],
+    "mbEmployment": 3500,
+    "freyOsborne": 25,
+    "aioeScore": 30,
+    "llmExposure": 6,
+    "compositeScore": 23,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual",
+      "technical_analysis"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "64100",
+    "title": "Store Shelf Stockers, Clerks and Order Fillers",
+    "shortTitle": "Shelf stockers and order fillers",
+    "naicsSectors": [
+      "44-45",
+      "41"
+    ],
+    "mbEmployment": 14000,
+    "freyOsborne": 72,
+    "aioeScore": 15,
+    "llmExposure": 36,
+    "compositeScore": 43,
+    "riskTier": "medium",
+    "taskCategories": [
+      "physical_manual"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "62200",
+    "title": "Chefs",
+    "shortTitle": "Chefs",
+    "naicsSectors": [
+      "72"
+    ],
+    "mbEmployment": 3200,
+    "freyOsborne": 18,
+    "aioeScore": 12,
+    "llmExposure": 26,
+    "compositeScore": 20,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual",
+      "creative_design"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "62020",
+    "title": "Cooks",
+    "shortTitle": "Cooks",
+    "naicsSectors": [
+      "72"
+    ],
+    "mbEmployment": 9500,
+    "freyOsborne": 35,
+    "aioeScore": 10,
+    "llmExposure": 12,
+    "compositeScore": 22,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "44200",
+    "title": "Police Officers (Except Commissioned)",
+    "shortTitle": "Police officers",
+    "naicsSectors": [
+      "91"
+    ],
+    "mbEmployment": 4500,
+    "freyOsborne": 12,
+    "aioeScore": 20,
+    "llmExposure": 23,
+    "compositeScore": 21,
+    "riskTier": "low",
+    "taskCategories": [
+      "decision_making",
+      "physical_manual",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  },
+  {
+    "nocCode": "43100",
+    "title": "Government Managers — Health and Social Policy Development and Program Administration",
+    "shortTitle": "Government policy managers",
+    "naicsSectors": [
+      "91"
+    ],
+    "mbEmployment": 4000,
+    "freyOsborne": 28,
+    "aioeScore": 52,
+    "llmExposure": 49,
+    "compositeScore": 45,
+    "riskTier": "medium",
+    "taskCategories": [
+      "content_creation",
+      "decision_making",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published"
+  }
+]

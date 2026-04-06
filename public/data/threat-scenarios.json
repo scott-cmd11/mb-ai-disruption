@@ -1,0 +1,122 @@
+[
+  {
+    "id": "marketing-agency",
+    "label": "B2B Marketing Agency",
+    "icon": "megaphone",
+    "relevantNaicsCodes": ["54"],
+    "traditional": {
+      "teamSize": 18,
+      "roles": ["Account Executives", "SDRs", "Copywriters", "Analysts", "Designers"],
+      "annualCost": 850000,
+      "output": "15,000 leads/year",
+      "costPerUnit": 56.67,
+      "unitLabel": "cost per lead"
+    },
+    "aiNative": {
+      "teamSize": 3,
+      "roles": ["Founder/Strategist", "AI Orchestrator", "Client Lead"],
+      "annualCost": 120000,
+      "output": "22,000 leads/year",
+      "costPerUnit": 5.45,
+      "unitLabel": "cost per lead"
+    },
+    "keyInsight": "85% lower operational cost with 47% more output. The AI-native agency achieves hyper-personalized outreach at scale, dropping cost-per-lead from $56.67 to $5.45.",
+    "source": "Compiled from industry benchmarks and AI-native startup financial disclosures (2025-2026)"
+  },
+  {
+    "id": "bookkeeping-cas",
+    "label": "Outsourced Bookkeeping / CAS",
+    "icon": "calculator",
+    "relevantNaicsCodes": ["52"],
+    "traditional": {
+      "teamSize": 12,
+      "roles": ["Partners", "Senior CPAs", "Junior Data Clerks", "Admin Support"],
+      "annualCost": 720000,
+      "output": "80 client accounts/year",
+      "costPerUnit": 9000,
+      "unitLabel": "cost per client"
+    },
+    "aiNative": {
+      "teamSize": 2,
+      "roles": ["Founder (CPA)", "Prompt Engineer"],
+      "annualCost": 180000,
+      "output": "120 client accounts/year",
+      "costPerUnit": 1500,
+      "unitLabel": "cost per client"
+    },
+    "keyInsight": "Real-time reporting replaces batch processing. A two-person AI firm delivers instant scenario modeling and predictive cash flow — services that traditional firms charge premium advisory fees for.",
+    "source": "Derived from professional services AI adoption benchmarks and CAS industry analysis (2025-2026)"
+  },
+  {
+    "id": "legal-review",
+    "label": "Specialized Legal Review",
+    "icon": "scale",
+    "relevantNaicsCodes": ["54"],
+    "traditional": {
+      "teamSize": 22,
+      "roles": ["Partners", "Associates", "Paralegals", "Legal Assistants", "Admin"],
+      "annualCost": 1800000,
+      "output": "200 matters/year",
+      "costPerUnit": 9000,
+      "unitLabel": "cost per matter"
+    },
+    "aiNative": {
+      "teamSize": 4,
+      "roles": ["Founding Partners", "Tech Lead", "Legal Engineer"],
+      "annualCost": 450000,
+      "output": "350 matters/year",
+      "costPerUnit": 1286,
+      "unitLabel": "cost per matter"
+    },
+    "keyInsight": "Infinite reading capacity with near-instant turnaround. AI-native legal firms treat each matter as a standalone model, eliminating the billable hour in favor of outcome-based pricing.",
+    "source": "Based on AI-native legal firm case studies and professional services disruption analysis (2025-2026)"
+  },
+  {
+    "id": "freight-brokerage",
+    "label": "Freight Brokerage",
+    "icon": "truck",
+    "relevantNaicsCodes": ["48-49"],
+    "traditional": {
+      "teamSize": 25,
+      "roles": ["Dispatchers", "Sales Reps", "Support Staff", "Operations Managers", "Admin"],
+      "annualCost": 1200000,
+      "output": "5,000 loads/year",
+      "costPerUnit": 240,
+      "unitLabel": "cost per load"
+    },
+    "aiNative": {
+      "teamSize": 3,
+      "roles": ["Founder", "Logistics Engineer", "Client Manager"],
+      "annualCost": 280000,
+      "output": "18,000 loads/year",
+      "costPerUnit": 15.56,
+      "unitLabel": "cost per load"
+    },
+    "keyInsight": "AI platforms scale freight volumes 300-400% without increasing headcount. Predictive load matching and autonomous carrier negotiations eliminate communication latency that plagues legacy supply chains.",
+    "source": "Based on AI freight platform performance data and logistics industry analysis (2025-2026)"
+  },
+  {
+    "id": "customer-support-bpo",
+    "label": "Customer Support / BPO",
+    "icon": "headset",
+    "relevantNaicsCodes": ["56"],
+    "traditional": {
+      "teamSize": 30,
+      "roles": ["Agents", "Team Leads", "QA Specialists", "Trainers", "IT Support"],
+      "annualCost": 950000,
+      "output": "120,000 tickets/year",
+      "costPerUnit": 7.92,
+      "unitLabel": "cost per ticket"
+    },
+    "aiNative": {
+      "teamSize": 5,
+      "roles": ["Operations Lead", "AI Trainers", "Escalation Specialists"],
+      "annualCost": 250000,
+      "output": "200,000 tickets/year",
+      "costPerUnit": 1.25,
+      "unitLabel": "cost per ticket"
+    },
+    "keyInsight": "AI voice and text agents deflect up to 80% of routine inquiries. The remaining human team focuses exclusively on complex escalations and relationship management.",
+    "source": "Based on customer support automation benchmarks and BPO industry disruption analysis (2025-2026)"
+  }
+]
