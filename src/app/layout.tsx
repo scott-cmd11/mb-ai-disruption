@@ -27,7 +27,10 @@ const instrumentSans = Instrument_Sans({
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
 
+const BASE_URL = "https://mb-ai-disruption.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "Manitoba AI Disruption Explorer",
     template: "%s — Manitoba AI Disruption Explorer",
@@ -35,6 +38,22 @@ export const metadata: Metadata = {
   description:
     "A data-driven risk assessment tool for Manitoba industries and occupations. Understand how AI may affect your business, sector, and workforce.",
   keywords: ["AI disruption", "Manitoba", "labour market", "automation risk", "NAICS", "NOC"],
+  openGraph: {
+    type: "website",
+    url: BASE_URL,
+    siteName: "Manitoba AI Disruption Explorer",
+    title: "Manitoba AI Disruption Explorer",
+    description:
+      "How exposed is your business to AI disruption? A data-driven risk assessment for Manitoba industries and occupations.",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Manitoba AI Disruption Explorer",
+    description:
+      "How exposed is your business to AI disruption? A data-driven risk assessment for Manitoba industries and occupations.",
+    images: ["/opengraph-image"],
+  },
 };
 
 // ── Layout ────────────────────────────────────────────────────────────────────

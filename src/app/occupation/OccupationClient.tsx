@@ -60,6 +60,7 @@ export function OccupationClient({ occupations, industries }: Props) {
   const [sectorFilter, setSectorFilter] = useState<string>("all");
   const [tierFilter, setTierFilter] = useState<RiskTier | "all">("all");
   const [sortMode, setSortMode] = useState<"risk" | "employment" | "alpha">("risk");
+  const [risingDemandOnly, setRisingDemandOnly] = useState(false);
   const [selectedNocCode, setSelectedNocCode] = useState<string | null>(null);
 
   // Build sector options from industries
@@ -78,6 +79,10 @@ export function OccupationClient({ occupations, industries }: Props) {
   // Filtered + sorted occupations
   const filtered = useMemo(() => {
     let list = occupations;
+
+    if (risingDemandOnly) {
+      list = list.filter((o) => AI_BUILDOUT_NOC_CODES.has(o.nocCode));
+    }
 
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
@@ -110,7 +115,7 @@ export function OccupationClient({ occupations, industries }: Props) {
         break;
     }
     return sorted;
-  }, [occupations, searchQuery, sectorFilter, tierFilter, sortMode]);
+  }, [occupations, searchQuery, sectorFilter, tierFilter, sortMode, risingDemandOnly]);
 
   const selected = selectedNocCode
     ? occupations.find((o) => o.nocCode === selectedNocCode) ?? null
@@ -229,6 +234,23 @@ export function OccupationClient({ occupations, industries }: Props) {
             ))}
           </div>
         </fieldset>
+
+        {/* Rising demand toggle */}
+        <div className="flex flex-col gap-1 justify-end">
+          <button
+            type="button"
+            onClick={() => setRisingDemandOnly(!risingDemandOnly)}
+            className="rounded-md border px-3 py-1.5 text-xs font-semibold transition-colors whitespace-nowrap"
+            style={{
+              borderColor: risingDemandOnly ? "#15803D" : "var(--color-border)",
+              backgroundColor: risingDemandOnly ? "rgba(21, 128, 61, 0.08)" : "var(--color-paper)",
+              color: risingDemandOnly ? "#15803D" : "var(--color-text-secondary)",
+            }}
+            aria-pressed={risingDemandOnly}
+          >
+            ↑ Rising demand only
+          </button>
+        </div>
 
         {/* Sort */}
         <div className="flex flex-col gap-1">
