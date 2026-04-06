@@ -57,6 +57,13 @@ const DATA_SOURCES = [
     vintage: "2022–23",
     url: "https://www.gov.mb.ca/mbs/",
   },
+  {
+    source: "Anthropic Economic Index (2026)",
+    description:
+      "Tracks actual Claude usage patterns across occupations, sampled from real interactions (Feb 5-12, 2026). Unlike the other sources which measure theoretical AI capability, this index measures what AI is doing in practice — based on 94GB of Claude conversation data categorized by the Clio privacy-preserving analysis tool. Displayed as supplementary context in occupation detail panels; not included in the composite score formula due to SOC major-group granularity (22 groups vs. 923 individual occupations in the other datasets).",
+    vintage: "Q1 2026 (quarterly updates)",
+    url: "https://huggingface.co/datasets/Anthropic/EconomicIndex",
+  },
 ] as const;
 
 export default function AboutPage() {
@@ -338,6 +345,9 @@ export default function AboutPage() {
             Sectors with fewer than 10,000 Manitoba employees (e.g., Mining &amp; Oil,
             Corporate Management) have fewer reference occupations, making sector-level
             score aggregation noisier.
+          </li>
+          <li>
+            <strong>Anthropic Economic Index data is at the SOC major-group level</strong> — all occupations within a group (e.g., all &ldquo;Computer and Mathematical&rdquo; occupations) receive the same usage intensity value. Shown as supplementary context only; not incorporated into composite scores.
           </li>
         </ul>
       </section>

@@ -76,6 +76,10 @@ export interface Occupation {
   dataYear: number;
   /** Provenance of scores — how confident we are in the data */
   scoreConfidence: ScoreConfidence;
+  /** SOC major group label from the Anthropic Economic Index (2026) — supplementary display only */
+  anthropicUsageGroup?: string;
+  /** Normalized usage intensity 0–100 from Anthropic Economic Index, group-level (same value for all occupations in this SOC group) */
+  anthropicUsageIntensity?: number;
 }
 
 // ─── Scoring formula configuration ───────────────────────────────────────────

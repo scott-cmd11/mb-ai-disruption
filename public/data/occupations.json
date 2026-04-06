@@ -19,7 +19,9 @@
       "coordination"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Office and Administrative Support Occupations",
+    "anthropicUsageIntensity": 42
   },
   {
     "nocCode": "13100",
@@ -43,7 +45,9 @@
       "content_creation"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Office and Administrative Support Occupations",
+    "anthropicUsageIntensity": 42
   },
   {
     "nocCode": "12200",
@@ -64,7 +68,9 @@
       "technical_analysis"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Business and Financial Operations Occupations",
+    "anthropicUsageIntensity": 65
   },
   {
     "nocCode": "11102",
@@ -86,7 +92,9 @@
       "data_processing"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Business and Financial Operations Occupations",
+    "anthropicUsageIntensity": 65
   },
   {
     "nocCode": "12202",
@@ -107,7 +115,9 @@
       "decision_making"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Sales and Related Occupations",
+    "anthropicUsageIntensity": 32
   },
   {
     "nocCode": "13102",
@@ -129,7 +139,9 @@
       "coordination"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Office and Administrative Support Occupations",
+    "anthropicUsageIntensity": 42
   },
   {
     "nocCode": "64410",
@@ -152,7 +164,9 @@
       "data_processing"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Office and Administrative Support Occupations",
+    "anthropicUsageIntensity": 42
   },
   {
     "nocCode": "64409",
@@ -174,7 +188,9 @@
       "data_processing"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Office and Administrative Support Occupations",
+    "anthropicUsageIntensity": 42
   },
   {
     "nocCode": "11110",
@@ -197,7 +213,9 @@
       "decision_making"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Business and Financial Operations Occupations",
+    "anthropicUsageIntensity": 65
   },
   {
     "nocCode": "21232",
@@ -219,7 +237,9 @@
       "content_creation"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Computer and Mathematical",
+    "anthropicUsageIntensity": 100
   },
   {
     "nocCode": "22220",
@@ -240,7 +260,9 @@
       "coordination"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Computer and Mathematical",
+    "anthropicUsageIntensity": 100
   },
   {
     "nocCode": "51120",
@@ -260,7 +282,9 @@
       "decision_making"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Arts, Design, Entertainment, Sports, and Media",
+    "anthropicUsageIntensity": 28
   },
   {
     "nocCode": "51110",
@@ -280,7 +304,9 @@
       "technical_analysis"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Arts, Design, Entertainment, Sports, and Media",
+    "anthropicUsageIntensity": 28
   },
   {
     "nocCode": "41101",
@@ -301,7 +327,9 @@
       "decision_making"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Legal Occupations",
+    "anthropicUsageIntensity": 72
   },
   {
     "nocCode": "21300",
@@ -323,7 +351,9 @@
       "coordination"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Architecture and Engineering Occupations",
+    "anthropicUsageIntensity": 52
   },
   {
     "nocCode": "11200",
@@ -346,7 +376,9 @@
       "content_creation"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Management Occupations",
+    "anthropicUsageIntensity": 50
   },
   {
     "nocCode": "10022",
@@ -369,7 +401,9 @@
       "data_processing"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Management Occupations",
+    "anthropicUsageIntensity": 50
   },
   {
     "nocCode": "14301",
@@ -392,7 +426,9 @@
       "decision_making"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Office and Administrative Support Occupations",
+    "anthropicUsageIntensity": 42
   },
   {
     "nocCode": "13312",
@@ -413,7 +449,9 @@
       "data_processing"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Management Occupations",
+    "anthropicUsageIntensity": 50
   },
   {
     "nocCode": "22302",
@@ -434,7 +472,9 @@
       "decision_making"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Architecture and Engineering Occupations",
+    "anthropicUsageIntensity": 52
   },
   {
     "nocCode": "62010",
@@ -454,7 +494,9 @@
       "physical_manual"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Sales and Related Occupations",
+    "anthropicUsageIntensity": 32
   },
   {
     "nocCode": "65200",
@@ -474,7 +516,9 @@
       "customer_service"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Food Preparation and Serving Related Occupations",
+    "anthropicUsageIntensity": 6
   },
   {
     "nocCode": "65310",
@@ -495,7 +539,9 @@
       "decision_making"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Protective Service Occupations",
+    "anthropicUsageIntensity": 14
   },
   {
     "nocCode": "75110",
@@ -515,7 +561,9 @@
       "coordination"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Transportation and Material Moving",
+    "anthropicUsageIntensity": 1
   },
   {
     "nocCode": "86102",
@@ -535,7 +583,9 @@
       "technical_analysis"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Farming, Fishing, and Forestry",
+    "anthropicUsageIntensity": 0
   },
   {
     "nocCode": "72400",
@@ -556,7 +606,9 @@
       "technical_analysis"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Installation, Maintenance, and Repair Occupations",
+    "anthropicUsageIntensity": 10
   },
   {
     "nocCode": "72020",
@@ -575,7 +627,9 @@
       "physical_manual"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Construction and Extraction Occupations",
+    "anthropicUsageIntensity": 5
   },
   {
     "nocCode": "72106",
@@ -596,7 +650,9 @@
       "technical_analysis"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Production Occupations",
+    "anthropicUsageIntensity": 8
   },
   {
     "nocCode": "73200",
@@ -617,7 +673,9 @@
       "physical_manual"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Construction and Extraction Occupations",
+    "anthropicUsageIntensity": 5
   },
   {
     "nocCode": "31102",
@@ -638,7 +696,9 @@
       "technical_analysis"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Healthcare Practitioners and Technical Occupations",
+    "anthropicUsageIntensity": 38
   },
   {
     "nocCode": "31301",
@@ -659,7 +719,9 @@
       "customer_service"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Healthcare Practitioners and Technical Occupations",
+    "anthropicUsageIntensity": 38
   },
   {
     "nocCode": "32101",
@@ -680,7 +742,9 @@
       "decision_making"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Healthcare Support Occupations",
+    "anthropicUsageIntensity": 18
   },
   {
     "nocCode": "32120",
@@ -700,7 +764,9 @@
       "data_processing"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Healthcare Practitioners and Technical Occupations",
+    "anthropicUsageIntensity": 38
   },
   {
     "nocCode": "41200",
@@ -722,7 +788,9 @@
       "coordination"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Community and Social Service Occupations",
+    "anthropicUsageIntensity": 28
   },
   {
     "nocCode": "41210",
@@ -743,7 +811,9 @@
       "decision_making"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Education, Training, and Library Occupations",
+    "anthropicUsageIntensity": 45
   },
   {
     "nocCode": "41220",
@@ -764,7 +834,9 @@
       "customer_service"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Education, Training, and Library Occupations",
+    "anthropicUsageIntensity": 45
   },
   {
     "nocCode": "42201",
@@ -784,7 +856,9 @@
       "technical_analysis"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Education, Training, and Library Occupations",
+    "anthropicUsageIntensity": 45
   },
   {
     "nocCode": "21211",
@@ -806,7 +880,9 @@
       "data_processing"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Life, Physical, and Social Science Occupations",
+    "anthropicUsageIntensity": 55
   },
   {
     "nocCode": "63200",
@@ -826,7 +902,9 @@
       "technical_analysis"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Production Occupations",
+    "anthropicUsageIntensity": 8
   },
   {
     "nocCode": "84120",
@@ -847,7 +925,9 @@
       "decision_making"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Farming, Fishing, and Forestry",
+    "anthropicUsageIntensity": 0
   },
   {
     "nocCode": "12104",
@@ -870,7 +950,9 @@
       "coordination"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Business and Financial Operations Occupations",
+    "anthropicUsageIntensity": 65
   },
   {
     "nocCode": "52120",
@@ -891,7 +973,9 @@
       "coordination"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Architecture and Engineering Occupations",
+    "anthropicUsageIntensity": 52
   },
   {
     "nocCode": "90010",
@@ -911,7 +995,9 @@
       "decision_making"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Production Occupations",
+    "anthropicUsageIntensity": 8
   },
   {
     "nocCode": "92100",
@@ -932,7 +1018,9 @@
       "technical_analysis"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Installation, Maintenance, and Repair Occupations",
+    "anthropicUsageIntensity": 10
   },
   {
     "nocCode": "64100",
@@ -952,7 +1040,9 @@
       "physical_manual"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Transportation and Material Moving",
+    "anthropicUsageIntensity": 1
   },
   {
     "nocCode": "62200",
@@ -972,7 +1062,9 @@
       "creative_design"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Food Preparation and Serving Related Occupations",
+    "anthropicUsageIntensity": 6
   },
   {
     "nocCode": "62020",
@@ -991,7 +1083,9 @@
       "physical_manual"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Food Preparation and Serving Related Occupations",
+    "anthropicUsageIntensity": 6
   },
   {
     "nocCode": "44200",
@@ -1012,7 +1106,9 @@
       "coordination"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Protective Service Occupations",
+    "anthropicUsageIntensity": 14
   },
   {
     "nocCode": "43100",
@@ -1033,6 +1129,8 @@
       "coordination"
     ],
     "dataYear": 2023,
-    "scoreConfidence": "published"
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Management Occupations",
+    "anthropicUsageIntensity": 50
   }
 ]

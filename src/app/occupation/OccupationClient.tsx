@@ -576,6 +576,39 @@ export function OccupationClient({ occupations, industries }: Props) {
                     : "Estimated"}
               </span>
             </div>
+
+            {/* Anthropic Economic Index supplementary context */}
+            {selected.anthropicUsageGroup !== undefined && selected.anthropicUsageIntensity !== undefined && (
+              <div className="mt-4 pt-4 border-t" style={{ borderColor: "var(--color-border)" }}>
+                <p className="text-[0.6rem] font-bold tracking-widest uppercase mb-2"
+                  style={{ color: "var(--color-text-tertiary)" }}>
+                  Anthropic Economic Index (2026)
+                </p>
+                <p className="text-xs mb-1.5" style={{ color: "var(--color-text-secondary)" }}>
+                  <span className="font-medium" style={{ color: "var(--color-text-primary)" }}>
+                    {selected.anthropicUsageGroup}
+                  </span>
+                  {" "}— {selected.anthropicUsageIntensity}/100 usage intensity
+                </p>
+                <div className="h-1.5 rounded-full overflow-hidden mb-2"
+                  style={{ backgroundColor: "var(--color-border)" }}>
+                  <div className="h-full rounded-full transition-all"
+                    style={{
+                      width: `${selected.anthropicUsageIntensity}%`,
+                      backgroundColor: "var(--color-text-tertiary)",
+                    }} />
+                </div>
+                <p className="text-[0.6rem] leading-relaxed" style={{ color: "var(--color-text-tertiary)" }}>
+                  Group-level signal — same value for all occupations in this SOC category.
+                  Measures actual Claude usage patterns (Feb 2026), not theoretical capability.{" "}
+                  <a href="https://huggingface.co/datasets/Anthropic/EconomicIndex"
+                    target="_blank" rel="noopener noreferrer"
+                    className="underline hover:opacity-80">
+                    Source
+                  </a>
+                </p>
+              </div>
+            )}
           </div>
         )}
       </div>
