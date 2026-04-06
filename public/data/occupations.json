@@ -1132,5 +1132,230 @@
     "scoreConfidence": "published",
     "anthropicUsageGroup": "Management Occupations",
     "anthropicUsageIntensity": 50
+  },
+  {
+    "nocCode": "44100",
+    "title": "Paralegals and Related Occupations",
+    "shortTitle": "Paralegals",
+    "naicsSectors": [
+      "54",
+      "91"
+    ],
+    "mbEmployment": 3200,
+    "freyOsborne": 94,
+    "aioeScore": 62,
+    "llmExposure": 72,
+    "compositeScore": 72,
+    "riskTier": "high",
+    "taskCategories": [
+      "content_creation",
+      "data_processing",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Legal Occupations",
+    "anthropicUsageIntensity": 72
+  },
+  {
+    "nocCode": "62101",
+    "title": "Real Estate Agents and Salespersons",
+    "shortTitle": "Real estate agents",
+    "naicsSectors": [
+      "53"
+    ],
+    "mbEmployment": 4800,
+    "freyOsborne": 86,
+    "aioeScore": 48,
+    "llmExposure": 44,
+    "compositeScore": 60,
+    "riskTier": "medium",
+    "taskCategories": [
+      "customer_service",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Sales and Related Occupations",
+    "anthropicUsageIntensity": 32
+  },
+  {
+    "nocCode": "63101",
+    "title": "Insurance Adjusters, Examiners and Investigators",
+    "shortTitle": "Insurance adjusters",
+    "naicsSectors": [
+      "52"
+    ],
+    "mbEmployment": 1800,
+    "freyOsborne": 98,
+    "aioeScore": 55,
+    "llmExposure": 65,
+    "compositeScore": 70,
+    "riskTier": "high",
+    "taskCategories": [
+      "data_processing",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Business and Financial Operations Occupations",
+    "anthropicUsageIntensity": 65
+  },
+  {
+    "nocCode": "72200",
+    "title": "Plumbers",
+    "shortTitle": "Plumbers",
+    "naicsSectors": [
+      "23",
+      "56"
+    ],
+    "mbEmployment": 4500,
+    "freyOsborne": 38,
+    "aioeScore": 12,
+    "llmExposure": 15,
+    "compositeScore": 22,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Construction and Extraction Occupations",
+    "anthropicUsageIntensity": 5
+  },
+  {
+    "nocCode": "13110",
+    "title": "Medical Secretaries and Medical Receptionists",
+    "shortTitle": "Medical secretaries",
+    "naicsSectors": [
+      "62"
+    ],
+    "mbEmployment": 3800,
+    "freyOsborne": 85,
+    "aioeScore": 60,
+    "llmExposure": 65,
+    "compositeScore": 65,
+    "riskTier": "medium",
+    "taskCategories": [
+      "coordination",
+      "data_processing"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Healthcare Support Occupations",
+    "anthropicUsageIntensity": 18
+  },
+  {
+    "nocCode": "52110",
+    "title": "Graphic Designers and Illustrators",
+    "shortTitle": "Graphic designers",
+    "naicsSectors": [
+      "54",
+      "51"
+    ],
+    "mbEmployment": 3500,
+    "freyOsborne": 87,
+    "aioeScore": 52,
+    "llmExposure": 55,
+    "compositeScore": 64,
+    "riskTier": "medium",
+    "taskCategories": [
+      "creative_design",
+      "content_creation"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Arts, Design, Entertainment, Sports, and Media",
+    "anthropicUsageIntensity": 28
+  },
+  {
+    "nocCode": "31302",
+    "title": "Nurse Practitioners and Advanced Practice Nurses",
+    "shortTitle": "Nurse practitioners",
+    "naicsSectors": [
+      "62"
+    ],
+    "mbEmployment": 2200,
+    "freyOsborne": 12,
+    "aioeScore": 30,
+    "llmExposure": 38,
+    "compositeScore": 26,
+    "riskTier": "low",
+    "taskCategories": [
+      "technical_analysis",
+      "decision_making"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "derived",
+    "anthropicUsageGroup": "Healthcare Practitioners and Technical Occupations",
+    "anthropicUsageIntensity": 38
+  },
+  {
+    "nocCode": "21221",
+    "title": "Mathematicians, Statisticians and Actuaries",
+    "shortTitle": "Statisticians & actuaries",
+    "naicsSectors": [
+      "52",
+      "54",
+      "91"
+    ],
+    "mbEmployment": 1400,
+    "freyOsborne": 14,
+    "aioeScore": 75,
+    "llmExposure": 62,
+    "compositeScore": 48,
+    "riskTier": "medium",
+    "taskCategories": [
+      "technical_analysis",
+      "data_processing"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Computer and Mathematical",
+    "anthropicUsageIntensity": 100
+  },
+  {
+    "nocCode": "74100",
+    "title": "Hairstylists and Barbers",
+    "shortTitle": "Hairstylists & barbers",
+    "naicsSectors": [
+      "81"
+    ],
+    "mbEmployment": 5200,
+    "freyOsborne": 33,
+    "aioeScore": 8,
+    "llmExposure": 6,
+    "compositeScore": 16,
+    "riskTier": "low",
+    "taskCategories": [
+      "customer_service",
+      "physical_manual"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Personal Care and Service Occupations",
+    "anthropicUsageIntensity": 8
+  },
+  {
+    "nocCode": "41402",
+    "title": "Social Policy Researchers, Consultants and Program Officers",
+    "shortTitle": "Social policy researchers",
+    "naicsSectors": [
+      "91"
+    ],
+    "mbEmployment": 2800,
+    "freyOsborne": 14,
+    "aioeScore": 42,
+    "llmExposure": 52,
+    "compositeScore": 37,
+    "riskTier": "medium",
+    "taskCategories": [
+      "content_creation",
+      "technical_analysis"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "estimated",
+    "anthropicUsageGroup": "Community and Social Service Occupations",
+    "anthropicUsageIntensity": 28
   }
 ]

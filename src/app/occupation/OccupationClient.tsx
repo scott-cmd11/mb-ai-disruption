@@ -406,7 +406,7 @@ export function OccupationClient({ occupations, industries }: Props) {
         {/* ── Detail panel ────────────────────────────────────────────── */}
         {selected && (
           <div
-            className="lg:w-[380px] lg:shrink-0 rounded-xl border p-6 self-start lg:sticky lg:top-6"
+            className="lg:w-[380px] lg:shrink-0 rounded-xl border p-6 self-start lg:sticky lg:top-6 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto"
             style={{
               backgroundColor: "var(--color-surface)",
               borderColor: "var(--color-border)",
