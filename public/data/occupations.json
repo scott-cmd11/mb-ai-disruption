@@ -1357,5 +1357,214 @@
     "scoreConfidence": "estimated",
     "anthropicUsageGroup": "Community and Social Service Occupations",
     "anthropicUsageIntensity": 28
+  },
+  {
+    "nocCode": "33102",
+    "title": "Nurse Aides, Orderlies and Patient Service Associates",
+    "shortTitle": "Personal support workers",
+    "naicsSectors": [
+      "62"
+    ],
+    "mbEmployment": 18000,
+    "freyOsborne": 39,
+    "aioeScore": 18,
+    "llmExposure": 22,
+    "compositeScore": 23,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual",
+      "customer_service"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Healthcare Support Occupations",
+    "anthropicUsageIntensity": 18
+  },
+  {
+    "nocCode": "13201",
+    "title": "Shippers and Receivers",
+    "shortTitle": "Shippers and receivers",
+    "naicsSectors": [
+      "48-49",
+      "41"
+    ],
+    "mbEmployment": 9500,
+    "freyOsborne": 73,
+    "aioeScore": 28,
+    "llmExposure": 32,
+    "compositeScore": 38,
+    "riskTier": "medium",
+    "taskCategories": [
+      "physical_manual",
+      "coordination",
+      "data_processing"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "derived",
+    "anthropicUsageGroup": "Transportation and Material Moving",
+    "anthropicUsageIntensity": 1
+  },
+  {
+    "nocCode": "75203",
+    "title": "Material Handlers",
+    "shortTitle": "Material handlers",
+    "naicsSectors": [
+      "48-49",
+      "41",
+      "31-33"
+    ],
+    "mbEmployment": 12000,
+    "freyOsborne": 85,
+    "aioeScore": 12,
+    "llmExposure": 5,
+    "compositeScore": 30,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Transportation and Material Moving",
+    "anthropicUsageIntensity": 1
+  },
+  {
+    "nocCode": "32111",
+    "title": "Dental Hygienists and Dental Therapists",
+    "shortTitle": "Dental hygienists",
+    "naicsSectors": [
+      "62"
+    ],
+    "mbEmployment": 3200,
+    "freyOsborne": 14,
+    "aioeScore": 25,
+    "llmExposure": 18,
+    "compositeScore": 16,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual",
+      "technical_analysis",
+      "customer_service"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Healthcare Practitioners and Technical Occupations",
+    "anthropicUsageIntensity": 38
+  },
+  {
+    "nocCode": "42202",
+    "title": "Early Childhood Educators and Assistants",
+    "shortTitle": "Early childhood educators",
+    "naicsSectors": [
+      "62",
+      "61"
+    ],
+    "mbEmployment": 9500,
+    "freyOsborne": 7,
+    "aioeScore": 10,
+    "llmExposure": 18,
+    "compositeScore": 10,
+    "riskTier": "low",
+    "taskCategories": [
+      "customer_service",
+      "physical_manual",
+      "coordination"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "published",
+    "anthropicUsageGroup": "Education, Training, and Library Occupations",
+    "anthropicUsageIntensity": 45
+  },
+  {
+    "nocCode": "41300",
+    "title": "Counsellors",
+    "shortTitle": "Counsellors",
+    "naicsSectors": [
+      "62",
+      "91",
+      "61"
+    ],
+    "mbEmployment": 4500,
+    "freyOsborne": 10,
+    "aioeScore": 32,
+    "llmExposure": 35,
+    "compositeScore": 21,
+    "riskTier": "low",
+    "taskCategories": [
+      "customer_service",
+      "decision_making",
+      "content_creation"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "derived",
+    "anthropicUsageGroup": "Community and Social Service Occupations",
+    "anthropicUsageIntensity": 28
+  },
+  {
+    "nocCode": "22301",
+    "title": "Aviation and Avionics Technicians",
+    "shortTitle": "Avionics technicians",
+    "naicsSectors": [
+      "31-33",
+      "48-49"
+    ],
+    "mbEmployment": 1800,
+    "freyOsborne": 20,
+    "aioeScore": 38,
+    "llmExposure": 22,
+    "compositeScore": 23,
+    "riskTier": "low",
+    "taskCategories": [
+      "physical_manual",
+      "technical_analysis"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "derived",
+    "anthropicUsageGroup": "Installation, Maintenance, and Repair Occupations",
+    "anthropicUsageIntensity": 10
+  },
+  {
+    "nocCode": "43204",
+    "title": "Border Services, Customs, and Immigration Officers",
+    "shortTitle": "Border services officers",
+    "naicsSectors": [
+      "91"
+    ],
+    "mbEmployment": 1200,
+    "freyOsborne": 28,
+    "aioeScore": 42,
+    "llmExposure": 38,
+    "compositeScore": 31,
+    "riskTier": "low",
+    "taskCategories": [
+      "decision_making",
+      "coordination",
+      "data_processing"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "estimated",
+    "anthropicUsageGroup": "Protective Service Occupations",
+    "anthropicUsageIntensity": 14
+  },
+  {
+    "nocCode": "32112",
+    "title": "Medical Radiation Technologists",
+    "shortTitle": "Medical radiation technologists",
+    "naicsSectors": [
+      "62"
+    ],
+    "mbEmployment": 1600,
+    "freyOsborne": 36,
+    "aioeScore": 55,
+    "llmExposure": 20,
+    "compositeScore": 32,
+    "riskTier": "low",
+    "taskCategories": [
+      "technical_analysis",
+      "physical_manual"
+    ],
+    "dataYear": 2023,
+    "scoreConfidence": "derived",
+    "anthropicUsageGroup": "Healthcare Practitioners and Technical Occupations",
+    "anthropicUsageIntensity": 38
   }
 ]
