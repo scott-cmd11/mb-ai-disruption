@@ -97,6 +97,24 @@ export default function RootLayout({
           </div>
         </header>
 
+        {/* ── Exploratory notice ─────────────────────────────────────────── */}
+        <div
+          role="note"
+          aria-label="Exploratory tool notice"
+          className="w-full px-4 py-2 text-center text-xs"
+          style={{
+            backgroundColor: "rgba(217, 119, 6, 0.1)",
+            borderBottom: "1px solid rgba(217, 119, 6, 0.2)",
+            color: "var(--color-text-secondary)",
+          }}
+        >
+          <span className="font-semibold" style={{ color: "var(--color-gold)" }}>Exploratory research tool.</span>{" "}
+          Scores are modelled estimates from published academic data — not predictions or professional advice.{" "}
+          <a href="/about" className="underline hover:opacity-80 transition-opacity" style={{ color: "var(--color-gold)" }}>
+            Methodology &amp; limitations →
+          </a>
+        </div>
+
         {/* ── Main ───────────────────────────────────────────────────────── */}
         <main id="main-content" tabIndex={-1}>
           {children}
@@ -188,15 +206,31 @@ export default function RootLayout({
               style={{ borderColor: "rgba(255, 255, 255, 0.08)" }}
             >
               <p className="text-xs" style={{ color: "rgba(248, 250, 252, 0.35)" }}>
-                Scores measure relative AI disruption exposure — not certainty of job loss.
+                © {new Date().getFullYear()} Scott Hazlitt — Independent exploratory project. Scores measure relative AI disruption exposure, not certainty of outcome.
               </p>
-              <Link
-                href="/about"
-                className="text-xs underline underline-offset-2 transition-opacity hover:opacity-80 focus-inverse"
-                style={{ color: "rgba(248, 250, 252, 0.45)" }}
-              >
-                Methodology &amp; limitations →
-              </Link>
+              <nav className="flex items-center gap-4" aria-label="Legal">
+                <Link
+                  href="/about"
+                  className="text-xs underline underline-offset-2 transition-opacity hover:opacity-80 focus-inverse"
+                  style={{ color: "rgba(248, 250, 252, 0.45)" }}
+                >
+                  Methodology →
+                </Link>
+                <Link
+                  href="/privacy"
+                  className="text-xs underline underline-offset-2 transition-opacity hover:opacity-80 focus-inverse"
+                  style={{ color: "rgba(248, 250, 252, 0.45)" }}
+                >
+                  Privacy
+                </Link>
+                <Link
+                  href="/terms"
+                  className="text-xs underline underline-offset-2 transition-opacity hover:opacity-80 focus-inverse"
+                  style={{ color: "rgba(248, 250, 252, 0.45)" }}
+                >
+                  Terms
+                </Link>
+              </nav>
             </div>
           </div>
         </footer>

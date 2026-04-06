@@ -84,6 +84,28 @@ export default function AboutPage() {
         they cannot tell you.
       </p>
 
+      {/* Exploratory notice */}
+      <div
+        className="mt-6 mb-8 p-4 rounded-lg text-sm leading-relaxed"
+        style={{
+          backgroundColor: "rgba(217, 119, 6, 0.08)",
+          border: "1px solid rgba(217, 119, 6, 0.25)",
+        }}
+      >
+        <p className="font-semibold mb-1" style={{ color: "var(--color-gold)" }}>
+          Exploratory research tool
+        </p>
+        <p style={{ color: "var(--color-text-secondary)" }}>
+          This site is an independent, exploratory project. Risk scores are modelled estimates derived
+          from peer-reviewed academic datasets — not predictions, and not professional employment, legal,
+          or business advice. See{" "}
+          <a href="/terms" className="underline" style={{ color: "var(--color-gold)" }}>
+            Terms of Use
+          </a>{" "}
+          for full disclaimers.
+        </p>
+      </div>
+
       {/* Overview */}
       <section className="mt-10" aria-labelledby="overview-heading">
         <h2
