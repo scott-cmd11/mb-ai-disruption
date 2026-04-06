@@ -74,7 +74,7 @@ const DATA_SOURCES = [
   {
     source: "MIT Project Iceberg (2024)",
     description:
-      "Maps AI capability to occupational tasks across 923 O*NET occupations and 32,000+ skills, producing a skill-level AI augmentation index. Distinguishes between AI substitution (tasks AI replaces) and AI augmentation (tasks AI enhances). Referenced as a methodological anchor for understanding AI's 'below the waterline' augmentation potential in knowledge-work occupations — a complement to the primarily substitution-focused Frey & Osborne and AIOE measures.",
+      "Maps 13,000+ deployed AI tools against 32,000+ skills across 923 O*NET occupations (151 million workers) to produce an Iceberg Index: the percentage of an occupation's wage value where AI has demonstrated capability. Key finding: visible tech-sector disruption is just 2.2% of the U.S. labour market's wage value, while hidden white-collar and administrative exposure is 11.7% — five times larger and geographically distributed across all states. Referenced as a methodological context source; not incorporated into composite scores because occupation-level Index values are not published as a downloadable dataset.",
     vintage: "2024",
     url: "https://iceberg.mit.edu/",
   },
@@ -372,10 +372,11 @@ export default function AboutPage() {
           </li>
           <li>
             <strong>MIT Iceberg occupation scores are not yet incorporated.</strong>{" "}
-            The Iceberg project&apos;s skill-level augmentation index covers 923 O*NET occupations
-            but is published as an interactive web application rather than a downloadable dataset.
-            It is referenced in the methodology as context for understanding augmentation
-            vs. substitution dynamics, but does not contribute to the composite score formula.
+            The Iceberg Index covers 923 O*NET occupations using 32,000+ skills mapped against
+            13,000+ deployed AI tools. Its key insight — that visible tech disruption (2.2% of
+            wage value) is dwarfed by hidden white-collar exposure (11.7%) — is referenced in
+            the methodology but individual occupation Index values are not published as a
+            downloadable dataset, so they cannot be added to the composite score formula.
           </li>
         </ul>
       </section>
@@ -451,6 +452,22 @@ export default function AboutPage() {
               not its current position. The cost convergence charts in the calculator
               results are explicitly modelled as a 24-month trajectory, not an instantaneous
               shift.
+            </p>
+          </div>
+          <div>
+            <strong className="text-[var(--color-text-primary)]">
+              The &ldquo;iceberg&rdquo; framing: visible vs. hidden exposure
+            </strong>
+            <p className="mt-1">
+              MIT Project Iceberg (2024) found that visible tech-sector AI disruption
+              represents just 2.2% of total U.S. labour market wage value — while hidden
+              white-collar and administrative exposure is 11.7%, five times larger, spread
+              across manufacturing, financial services, logistics, and healthcare administration
+              in every state. This tool&apos;s occupation and industry scores capture both
+              the visible layer (software, engineering, creative roles) and the larger hidden
+              layer (administrative, coordination, office support). The Iceberg research was
+              independently validated against the Anthropic Economic Index with 69% geographic
+              agreement and 85% accuracy in predicting occupational transitions.
             </p>
           </div>
           <div>
