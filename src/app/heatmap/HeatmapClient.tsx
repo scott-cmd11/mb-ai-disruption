@@ -108,7 +108,7 @@ export function HeatmapClient({
           borderColor: "var(--color-border)",
         }}
       >
-        <div className="min-w-[1100px]">
+        <div className="min-w-max">
           {/* Column headers */}
           <div className="flex">
             {/* Top-left corner spacer */}

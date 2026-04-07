@@ -217,6 +217,41 @@ export default function HeatmapPage() {
         </div>
       </section>
 
+      {/* ── Plain-language explainer ──────────────────────────────────────── */}
+      <section
+        aria-label="How to read this heatmap"
+        style={{ backgroundColor: "var(--color-paper-deep)", borderBottom: "1px solid var(--color-border)" }}
+      >
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div>
+              <p className="text-[0.6rem] font-bold tracking-[0.2em] uppercase mb-2" style={{ color: "var(--color-gold)" }}>
+                What you&apos;re looking at
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                Each cell shows the average AI disruption score for occupations in a given industry that perform a given type of task. Scores run 0–100. Higher means more exposed to AI disruption.
+              </p>
+            </div>
+            <div>
+              <p className="text-[0.6rem] font-bold tracking-[0.2em] uppercase mb-2" style={{ color: "var(--color-gold)" }}>
+                How scores are weighted
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                Scores are weighted by employment — occupations with more Manitoba workers pull the cell score more than smaller ones. A dash means no occupations in that combination were found in the data.
+              </p>
+            </div>
+            <div>
+              <p className="text-[0.6rem] font-bold tracking-[0.2em] uppercase mb-2" style={{ color: "var(--color-gold)" }}>
+                What to do with it
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                Click any cell to see which occupations are driving that score. Columns are sorted by overall sector risk, highest on the left. The coloured dot above each column shows that sector&apos;s overall risk level.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Heatmap grid ──────────────────────────────────────────────────── */}
       <section
         aria-label="Heatmap matrix"
