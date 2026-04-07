@@ -7,7 +7,6 @@ import {
   ReactFlow,
   Background,
   Controls,
-  MiniMap,
   MarkerType,
   ReactFlowProvider,
   type Node,
@@ -412,17 +411,7 @@ export function ExplorerClient({
                   borderRadius: 4,
                 }}
               />
-              <MiniMap
-                nodeColor={(node) => {
-                  const d = node.data as SectorNodeData | undefined;
-                  if (!d) return "#ccc";
-                  return TIER_HEX[d.industry.riskTier];
-                }}
-                style={{
-                  backgroundColor: "var(--color-paper)",
-                  border: "1px solid var(--color-border)",
-                }}
-              />
+
             </ReactFlow>
           </div>
 
