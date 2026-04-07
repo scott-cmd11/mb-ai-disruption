@@ -356,3 +356,12 @@ html::before {
   border: 1px solid #BBF7D0;
   white-space: nowrap;
 }
+
+/* ── Explorer: React Flow cursor override ───────────────────── */
+/* Default grab cursor is white and invisible on light backgrounds */
+.react-flow__pane {
+  cursor: move !important;
+}
+.react-flow__pane.dragging {
+  cursor: grabbing !important;
+}
