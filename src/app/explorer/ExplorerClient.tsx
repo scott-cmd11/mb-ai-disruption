@@ -397,6 +397,7 @@ export function ExplorerClient({
               nodesConnectable={false}
               elementsSelectable={true}
               panOnScroll={false}
+              panOnDrag={false}
             >
               <Background
                 color="var(--color-border)"
