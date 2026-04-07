@@ -111,9 +111,9 @@ function ScoreGauge({ score, tier }: { score: number; tier: "low" | "medium" | "
 function ComponentBars({ result }: { result: AssessmentResult }) {
   const { breakdown } = result;
   const components = [
-    { label: "Automation Probability", sublabel: "Frey & Osborne", value: breakdown.freyOsborneComponent },
-    { label: "AI Occupational Exposure", sublabel: "Felten-Raj-Seamans AIOE", value: breakdown.aioeComponent },
-    { label: "LLM Task Sensitivity", sublabel: "Eloundou et al.", value: breakdown.llmExposureComponent },
+    { label: "Automation Probability", sublabel: "Automation research", value: breakdown.freyOsborneComponent },
+    { label: "AI Occupation Exposure", sublabel: "AI exposure research", value: breakdown.aioeComponent },
+    { label: "Language AI Impact", sublabel: "Language model research", value: breakdown.llmExposureComponent },
     { label: "Industry Adoption Gap", sublabel: "Sector AI readiness", value: breakdown.industryAdoptionGapComponent },
   ];
   const maxVal = Math.max(...components.map((c) => c.value), 1);
@@ -454,7 +454,7 @@ function RLICallout() {
         Reality check · Remote Labor Index (2025)
       </p>
       <p className="text-sm font-semibold mb-4" style={{ color: "var(--color-text-primary)", fontFamily: "var(--font-body)" }}>
-        Where frontier AI agents actually are today
+        Where advanced AI systems actually are today
       </p>
 
       <div className="grid grid-cols-3 gap-3 mb-4 text-center">
@@ -480,8 +480,8 @@ function RLICallout() {
 
       <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)", fontFamily: "var(--font-body)" }}>
         The disruption scores above reflect theoretical AI capability — what AI{" "}
-        <em>could</em> automate. The Remote Labor Index benchmarks what frontier AI
-        agents <em>actually</em> complete on real paid projects today: just 0.83%
+        <em>could</em> automate. The Remote Labor Index benchmarks what advanced AI
+        systems <em>actually</em> complete on real paid projects today: just 0.83%
         (Gemini 2.5 Pro) to 4.17% (Claude Opus) — a tiny fraction of the theoretical
         ceiling. The cost-convergence curve below shows how the gap between capability
         and deployment is expected to close.
@@ -708,19 +708,19 @@ export function ResultsClient({
             <div className="flex flex-col gap-2">
               <div className="flex gap-3">
                 <span className="font-semibold w-28 flex-shrink-0" style={{ color: "var(--color-text-primary)" }}>30% — Automation risk</span>
-                <span>Frey &amp; Osborne (2013) Oxford probability-of-computerisation estimates for 702 US occupations, mapped to Canadian NOC codes.</span>
+                <span>Peer-reviewed automation probability estimates for 702 occupations, mapped to Canadian job codes. (Frey &amp; Osborne, Oxford, 2013)</span>
               </div>
               <div className="flex gap-3">
                 <span className="font-semibold w-28 flex-shrink-0" style={{ color: "var(--color-text-primary)" }}>30% — AI exposure</span>
-                <span>Felten, Raj &amp; Seamans (2021) AI Occupational Impact scores linking O*NET task descriptions to AI capability domains.</span>
+                <span>Occupation-level AI exposure scores linking job task descriptions to demonstrated AI capabilities. (Felten, Raj &amp; Seamans, 2021)</span>
               </div>
               <div className="flex gap-3">
-                <span className="font-semibold w-28 flex-shrink-0" style={{ color: "var(--color-text-primary)" }}>25% — LLM exposure</span>
-                <span>Eloundou et al. (2023) <em>GPTs are GPTs</em> — human-annotated <code className="text-[0.6rem] px-1 py-0.5 rounded bg-white">human_rating_beta</code> scores for 923 O*NET occupations. <span style={{ color: "var(--color-risk-low)" }}>✓ Published data</span> for all 49 occupations shown.</span>
+                <span className="font-semibold w-28 flex-shrink-0" style={{ color: "var(--color-text-primary)" }}>25% — Language AI impact</span>
+                <span>Human-reviewed scores measuring how much of each occupation&apos;s tasks could be handled by language AI — covering 923 occupations. <span style={{ color: "var(--color-risk-low)" }}>✓ Published data</span> for all occupations shown. (Eloundou et al., 2023)</span>
               </div>
               <div className="flex gap-3">
                 <span className="font-semibold w-28 flex-shrink-0" style={{ color: "var(--color-text-primary)" }}>15% — Adoption gap</span>
-                <span>Sector-level AI adoption rate vs. Manitoba baseline (~2%, StatsCan CSBC Table 33-10-0825-01, 2024). Sectors below the baseline score higher.</span>
+                <span>Sector-level AI adoption rate vs. Manitoba baseline (~2%, Statistics Canada business survey, 2024). Sectors below the baseline score higher.</span>
               </div>
             </div>
 

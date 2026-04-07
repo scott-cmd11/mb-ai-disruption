@@ -16,7 +16,7 @@ const DATA_SOURCES = [
     url: "https://www.oxfordmartin.ox.ac.uk/downloads/academic/The_Future_of_Employment.pdf",
   },
   {
-    source: "Felten, Raj & Seamans — AIOE Index",
+    source: "Felten, Raj & Seamans — AI Occupation Exposure Index",
     description:
       "AI Occupational Exposure index linking AI patent applications to O*NET occupational task descriptions. Captures AI-specific exposure, distinct from general automation.",
     vintage: "2021",
@@ -25,14 +25,14 @@ const DATA_SOURCES = [
   {
     source: "Eloundou et al. (2023) — GPTs are GPTs",
     description:
-      "Occupation-level LLM exposure dataset published by OpenAI researchers. Human-annotated beta scores (0–1) covering 923 O*NET-SOC occupations, mapped to Canadian NOC codes via the Brookfield Institute crosswalk. The human_rating_beta column — direct LLM substitution plus half-weight tool-augmentation exposure — is used as the llmExposure component.",
+      "Occupation-level language AI exposure dataset published by OpenAI researchers. Human-reviewed scores (0–1) covering 923 occupations, mapped to Canadian job codes. Measures direct language AI substitution plus half-weight tool-augmentation exposure. Used as the Language AI Impact component.",
     vintage: "2023",
     url: "https://github.com/openai/GPTs-are-GPTs",
   },
   {
     source: "Brookfield Institute NOC Crosswalk",
     description:
-      "Maps US SOC occupation codes to Canadian NOC 2021 codes. Required because Frey & Osborne and AIOE use SOC; Canadian employment data uses NOC.",
+      "Maps US SOC occupation codes to Canadian NOC 2021 codes. Required because Frey & Osborne and the AI exposure index use SOC; Canadian employment data uses NOC.",
     vintage: "2019–2021",
     url: "https://brookfieldinstitute.ca",
   },
@@ -46,7 +46,7 @@ const DATA_SOURCES = [
   {
     source: "Statistics Canada — Canadian Survey on Business Conditions (CSBC)",
     description:
-      "Provincial AI adoption rates by industry sector. Table 33-10-0825-01 provides Manitoba-specific AI adoption figures, showing Manitoba at approximately 2% — significantly below the national average of 12% as of Q2 2025. Used for the industryAdoptionGap component.",
+      "Provincial AI adoption rates by industry sector. Provides Manitoba-specific figures showing the province at approximately 2% — significantly below the national average of 12% as of Q2 2025. Used for the Sector Adoption Gap component.",
     vintage: "Q2 2024–Q2 2025",
     url: "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3310082501",
   },
@@ -67,7 +67,7 @@ const DATA_SOURCES = [
   {
     source: "Remote Labor Index — remotelabor.ai (2025)",
     description:
-      "Benchmarks actual autonomous AI agent performance on 240 real paid freelance projects across 23 Upwork skill categories, tested with 358 freelancers. Measures what frontier AI agents actually complete end-to-end today (0.83%–4.17%), providing real-world calibration for the theoretical exposure scores in this tool. Used as a contextual callout in calculator results to ground the gap between capability and deployment. Not incorporated into the composite score formula.",
+      "Benchmarks actual autonomous AI agent performance on 240 real paid freelance projects across 23 Upwork skill categories, tested with 358 freelancers. Measures what advanced AI systems actually complete end-to-end today (0.83%–4.17%), providing real-world calibration for the theoretical exposure scores in this tool. Used as a contextual callout in calculator results to ground the gap between capability and deployment. Not incorporated into the composite score formula.",
     vintage: "Feb–Mar 2025",
     url: "https://www.remotelabor.ai/",
   },
@@ -225,18 +225,18 @@ export default function AboutPage() {
         </h2>
 
         <div className="mt-4 rounded border border-[var(--color-border)] bg-[var(--color-surface-muted)] px-5 py-4 font-mono text-sm text-[var(--color-text-primary)] space-y-1 overflow-x-auto">
-          <p>compositeScore =</p>
-          <p className="pl-6">(freyOsborne × 0.30)</p>
-          <p className="pl-4">+ (aioe × 0.30)</p>
-          <p className="pl-4">+ (llmExposure × 0.25)</p>
-          <p className="pl-4">+ (industryAdoptionGap × 0.15)</p>
-          <p className="mt-3">adjustedScore =</p>
-          <p className="pl-6">compositeScore × sizeMultiplier × adoptionModifier</p>
+          <p>Overall Risk Score =</p>
+          <p className="pl-6">(Automation Probability × 0.30)</p>
+          <p className="pl-4">+ (AI Occupation Exposure × 0.30)</p>
+          <p className="pl-4">+ (Language AI Impact × 0.25)</p>
+          <p className="pl-4">+ (Sector Adoption Gap × 0.15)</p>
+          <p className="mt-3">Adjusted Score =</p>
+          <p className="pl-6">Overall Risk Score × Business Size Factor × AI Adoption Factor</p>
         </div>
 
         <div className="mt-4 space-y-4 text-sm text-[var(--color-text-secondary)] leading-relaxed">
           <div>
-            <strong className="text-[var(--color-text-primary)]">freyOsborne (weight: 30%)</strong>
+            <strong className="text-[var(--color-text-primary)]">Automation Probability (weight: 30%)</strong>
             <p className="mt-1">
               The Frey &amp; Osborne (2013) automation probability for the closest
               matching occupation, converted to a 0–100 scale. Reflects the probability
@@ -245,27 +245,26 @@ export default function AboutPage() {
             </p>
           </div>
           <div>
-            <strong className="text-[var(--color-text-primary)]">aioe (weight: 30%)</strong>
+            <strong className="text-[var(--color-text-primary)]">AI Occupation Exposure (weight: 30%)</strong>
             <p className="mt-1">
               The Felten-Raj-Seamans AI Occupational Exposure index, normalized to 0–100.
               Measures how much of an occupation&rsquo;s task content corresponds to
               capabilities demonstrated in recent AI patent applications. More
-              AI-specific than Frey &amp; Osborne.
+              AI-specific than the automation probability measure.
             </p>
           </div>
           <div>
-            <strong className="text-[var(--color-text-primary)]">llmExposure (weight: 25%)</strong>
+            <strong className="text-[var(--color-text-primary)]">Language AI Impact (weight: 25%)</strong>
             <p className="mt-1">
-              The human-annotated <code className="text-xs bg-[var(--color-surface-muted)] px-1 py-0.5 rounded">human_rating_beta</code> score
-              from the Eloundou et al. (2023) published dataset, normalised to 0–100.
-              Measures the fraction of an occupation&rsquo;s tasks exposed to direct LLM
-              substitution (E1) plus half-weight tool-augmented exposure (E2). Covers 923
-              O*NET-SOC occupations; mapped to Canadian NOC codes via the Brookfield
-              Institute crosswalk.
+              Human-reviewed scores from the Eloundou et al. (2023) published dataset,
+              normalized to 0–100. Measures the fraction of an occupation&rsquo;s tasks
+              that could be handled directly by language AI, plus half-weight credit for
+              tasks where AI tools provide assistance. Covers 923 occupations; mapped to
+              Canadian job codes via the Brookfield Institute crosswalk.
             </p>
           </div>
           <div>
-            <strong className="text-[var(--color-text-primary)]">industryAdoptionGap (weight: 15%)</strong>
+            <strong className="text-[var(--color-text-primary)]">Sector Adoption Gap (weight: 15%)</strong>
             <p className="mt-1">
               The gap between maximum possible AI adoption (100%) and the sector&rsquo;s
               current adoption rate. A high gap means the sector has not yet adopted AI
@@ -319,8 +318,8 @@ export default function AboutPage() {
             </strong>{" "}
             The 2013 paper was written before GPT, diffusion models, and modern generative
             AI existed. It likely underestimates disruption risk for knowledge-work
-            occupations. We partially compensate with the llmExposure component, but the
-            underlying dataset remains a product of its era.
+            occupations. We partially compensate with the Language AI Impact component, but
+            the underlying dataset remains a product of its era.
           </li>
           <li>
             <strong className="text-[var(--color-text-primary)]">
@@ -344,18 +343,18 @@ export default function AboutPage() {
               O*NET-to-NOC crosswalk covers 45 of 49 occupations directly.
             </strong>{" "}
             Four occupations (College Instructors, Biological Scientists, Equipment
-            Assemblers, Shelf Stockers) use averaged scores from the nearest O*NET
-            category groupings rather than a single exact match. Their{" "}
-            <code className="text-xs bg-[var(--color-surface-muted)] px-1 py-0.5 rounded">scoreConfidence</code>{" "}
-            is still marked &ldquo;published&rdquo; as the underlying scores are real data,
+            Assemblers, Shelf Stockers) use averaged scores from the nearest job
+            category groupings rather than a single exact match. Their confidence
+            rating is still marked &ldquo;published&rdquo; as the underlying scores are real data,
             but the crosswalk introduces slightly more noise for these occupations.
           </li>
           <li>
             <strong className="text-[var(--color-text-primary)]">
               SOC-to-NOC crosswalk introduces noise.
             </strong>{" "}
-            Frey &amp; Osborne and AIOE use US Standard Occupational Classification
-            codes. The Brookfield Institute crosswalk maps these to Canadian NOC codes,
+            Frey &amp; Osborne and the AI exposure index use US Standard Occupational
+            Classification codes. The Brookfield Institute crosswalk maps these to Canadian
+            NOC codes,
             but the mapping is not always one-to-one. Some NOC occupations combine
             multiple SOC categories; scores for these are averaged.
           </li>
@@ -402,11 +401,12 @@ export default function AboutPage() {
               Why four components?
             </strong>
             <p className="mt-1">
-              Each component captures a different dimension of AI-related risk. Frey &amp;
-              Osborne measures task routineness. AIOE measures demonstrated AI capability
-              overlap. LLM exposure captures the generative AI wave specifically. The
-              adoption gap captures timing — a sector with high exposure but low current
-              adoption is at acute near-term risk, not just theoretical risk.
+              Each component captures a different dimension of AI-related risk. The automation
+              probability measures task routineness. The AI occupation exposure index measures
+              demonstrated AI capability overlap. The language AI impact score captures the
+              generative AI wave specifically. The adoption gap captures timing — a sector with
+              high exposure but low current adoption is at acute near-term risk, not just
+              theoretical risk.
             </p>
           </div>
           <div>
@@ -414,11 +414,11 @@ export default function AboutPage() {
               Why these weights (30/30/25/15)?
             </strong>
             <p className="mt-1">
-              Frey &amp; Osborne and AIOE are given equal weight as the two most
-              established academic measures. LLM exposure is weighted slightly lower
-              because the scores are estimated rather than published. Adoption gap is
-              weighted lowest because it is a sector-level proxy rather than an
-              occupation-specific measure.
+              Automation probability and AI occupation exposure are given equal weight as the
+              two most established academic measures. Language AI impact is weighted slightly
+              lower because some scores are estimated rather than directly published. The
+              adoption gap is weighted lowest because it is a sector-level proxy rather than
+              an occupation-specific measure.
             </p>
           </div>
           <div>
@@ -453,7 +453,7 @@ export default function AboutPage() {
               All four composite score components measure theoretical AI capability exposure —
               what AI <em>could</em> automate, based on task and skill overlap. Real-world
               deployment lags significantly behind theoretical capability. The Remote Labor
-              Index (2025) found that frontier AI agents complete just 0.83%–4.17% of
+              Index (2025) found that advanced AI systems complete just 0.83%–4.17% of
               complex professional projects end-to-end without human intervention. The
               composite scores in this tool reflect the destination of the disruption curve,
               not its current position. The cost convergence charts in the calculator

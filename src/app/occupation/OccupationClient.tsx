@@ -449,7 +449,7 @@ export function OccupationClient({ occupations, industries }: Props) {
               {([
                 { label: "Automation Risk", value: selected.freyOsborne },
                 { label: "AI Exposure", value: selected.aioeScore },
-                { label: "LLM Impact", value: selected.llmExposure },
+                { label: "Language AI Impact", value: selected.llmExposure },
               ] as const).map(({ label, value }) => {
                 const tier = scoreTier(value);
                 return (
@@ -491,7 +491,7 @@ export function OccupationClient({ occupations, industries }: Props) {
                 className="text-xs font-medium mb-1"
                 style={{ color: "var(--color-text-tertiary)" }}
               >
-                Composite Score
+                Overall Risk Score
               </p>
               <p
                 className="font-display font-bold text-3xl"
@@ -684,7 +684,7 @@ export function OccupationClient({ occupations, industries }: Props) {
                     }} />
                 </div>
                 <p className="text-[0.6rem] leading-relaxed" style={{ color: "var(--color-text-tertiary)" }}>
-                  Group-level signal — same value for all occupations in this SOC category.
+                  Group-level signal — same value for all occupations in this job category.
                   Measures actual Claude usage patterns (Feb 2026), not theoretical capability.{" "}
                   <a href="https://huggingface.co/datasets/Anthropic/EconomicIndex"
                     target="_blank" rel="noopener noreferrer"

@@ -45,7 +45,7 @@ const SCENARIOS: Array<{
     label: "2024 Baseline",
     eyebrow: "Current data",
     description: "Current composite scores derived from Statistics Canada 2023 data and peer-reviewed automation research.",
-    detail: "This is the reference point. Scores reflect academic methodology: 30% Frey & Osborne, 30% AIOE Index, 25% LLM exposure, 15% adoption gap.",
+    detail: "This is the reference point. Scores reflect peer-reviewed methodology: 30% automation probability, 30% AI occupation exposure, 25% language AI impact, 15% sector adoption gap.",
   },
   {
     id: "rapid-ai",

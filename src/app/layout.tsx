@@ -212,8 +212,8 @@ export default function RootLayout({
                 </p>
                 <ul className="space-y-2 text-sm" style={{ color: "rgba(248, 250, 252, 0.5)" }} role="list">
                   <li>Statistics Canada Census 2021</li>
-                  <li>Frey &amp; Osborne (2013)</li>
-                  <li>Felten-Raj-Seamans AIOE</li>
+                  <li>Automation research (Frey &amp; Osborne, 2013)</li>
+                  <li>AI occupation exposure index (Felten et al.)</li>
                   <li>Manitoba Bureau of Statistics</li>
                 </ul>
               </div>

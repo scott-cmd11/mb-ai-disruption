@@ -255,18 +255,18 @@ export default function HomePage() {
             {[
               {
                 num: "20",
-                unit: "NAICS sectors",
+                unit: "industry sectors",
                 desc: "All Manitoba industries rated on a composite AI exposure index combining four evidence-based measures.",
               },
               {
                 num: "50+",
-                unit: "NOC occupations",
-                desc: "Manitoba occupations individually scored on automation probability, AI exposure, and LLM task susceptibility.",
+                unit: "occupations tracked",
+                desc: "Manitoba occupations individually scored on automation probability, AI exposure, and language AI susceptibility.",
               },
               {
                 num: "4",
                 unit: "score components",
-                desc: "Frey & Osborne · AIOE Index · LLM Exposure · Industry Adoption Gap — weighted and adjusted for your business.",
+                desc: "Automation research · AI exposure index · Language AI impact · Sector adoption gap — weighted and adjusted for your business.",
               },
             ].map(({ num, unit, desc }) => (
               <div key={unit} className="px-8 py-10 flex flex-col gap-2">
@@ -325,15 +325,15 @@ export default function HomePage() {
               >
                 Scores combine four evidence-based measures:{" "}
                 <strong style={{ color: "var(--color-text-primary)" }}>
-                  Frey &amp; Osborne
-                </strong>{" "}
-                automation probability,{" "}
-                <strong style={{ color: "var(--color-text-primary)" }}>
-                  Felten-Raj-Seamans AIOE
+                  automation probability
                 </strong>
-                {" "}index,{" "}
+                ,{" "}
                 <strong style={{ color: "var(--color-text-primary)" }}>
-                  LLM task exposure
+                  AI occupation exposure
+                </strong>
+                ,{" "}
+                <strong style={{ color: "var(--color-text-primary)" }}>
+                  language AI impact
                 </strong>
                 , and your sector&rsquo;s{" "}
                 <strong style={{ color: "var(--color-text-primary)" }}>

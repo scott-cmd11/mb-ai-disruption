@@ -192,7 +192,7 @@ export default function ScenariosPage() {
               {
                 label: "2024 Baseline",
                 formula: "Score = sectorRiskScore",
-                note: "Direct from the composite methodology (Frey & Osborne + AIOE + LLM + adoption gap).",
+                note: "Direct from the composite methodology (automation probability + AI exposure + language AI impact + sector adoption gap).",
                 color: "var(--color-navy)",
               },
               {
