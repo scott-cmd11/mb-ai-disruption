@@ -144,6 +144,20 @@ export function ThreatSimulatorClient({ scenarios }: Props) {
           Explore scenarios →
         </Link>
       </div>
+
+      {/* Cross-link to research page */}
+      <div className="mt-8 pt-6 border-t text-center" style={{ borderColor: "var(--color-border)" }}>
+        <p className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>
+          Want to understand why these numbers are possible?{" "}
+          <Link
+            href="/threat-model"
+            className="underline underline-offset-2 hover:opacity-70 transition-opacity"
+            style={{ color: "var(--color-navy-deep)" }}
+          >
+            Read the research behind this →
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }
