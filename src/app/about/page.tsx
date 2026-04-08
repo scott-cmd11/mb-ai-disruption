@@ -135,26 +135,26 @@ export default function AboutPage() {
         About &amp; Methodology
       </h1>
       <p className="mt-3 text-[var(--color-text-secondary)] leading-relaxed">
-        This page explains how the Manitoba AI Disruption Explorer calculates composite
-        risk exposure scores, where the data comes from, what the scores mean, and what
-        they cannot tell you.
+        What this tool is, where the numbers come from, and what they can and cannot tell you.
       </p>
 
-      {/* Exploratory notice */}
+      {/* What is this / not a government tool */}
       <div
-        className="mt-6 mb-8 p-4 rounded-lg text-sm leading-relaxed"
+        className="mt-6 mb-2 p-4 rounded-lg text-sm leading-relaxed"
         style={{
           backgroundColor: "rgba(217, 119, 6, 0.08)",
           border: "1px solid rgba(217, 119, 6, 0.25)",
         }}
       >
         <p className="font-semibold mb-1" style={{ color: "var(--color-gold)" }}>
-          Exploratory research tool
+          Independent project — not a government service
         </p>
         <p style={{ color: "var(--color-text-secondary)" }}>
-          This site is an independent, exploratory project. Risk scores are modelled estimates derived
-          from peer-reviewed academic datasets — not predictions, and not professional employment, legal,
-          or business advice. See{" "}
+          This is a free, independent research tool built by a Manitoba researcher. It is not
+          affiliated with the Government of Manitoba, any provincial department, or any employer
+          or industry association. Risk scores are modelled estimates derived from peer-reviewed
+          academic datasets — not predictions, and not professional employment, legal, or business advice.
+          See{" "}
           <a href="/terms" className="underline" style={{ color: "var(--color-gold)" }}>
             Terms of Use
           </a>{" "}
@@ -168,25 +168,24 @@ export default function AboutPage() {
           id="overview-heading"
           className="text-lg font-semibold text-[var(--color-text-primary)] border-b border-[var(--color-border)] pb-2"
         >
-          Overview
+          What this tool does
         </h2>
         <div className="mt-4 space-y-3 text-sm text-[var(--color-text-secondary)] leading-relaxed">
           <p>
-            The Manitoba AI Disruption Explorer is an independent research tool built to
-            help Manitoba business owners, workers, and policymakers understand the
-            relative AI disruption exposure of industries and occupations in the province.
+            The Manitoba AI Disruption Explorer shows how likely each Manitoba industry and
+            occupation is to be affected by AI — based on published academic research, not
+            opinions. It combines four datasets into a single score (0–100) for each sector
+            and job type, then adjusts for your business size and current AI use.
           </p>
           <p>
-            The tool synthesizes four peer-reviewed or publicly available datasets into a
-            single composite score for each occupation and sector. Scores are
-            pre-computed at build time and stored as static data — no AI or LLM is
-            involved in generating scores at runtime.
+            The scores are pre-calculated and stored as static data. No AI is involved in
+            generating them at the time you visit the site — the numbers come entirely from
+            the published datasets listed below, processed offline.
           </p>
           <p>
-            Manitoba was chosen because it has a distinctive economic profile — large
-            insurance and financial services sector headquartered in Winnipeg, significant
-            aerospace manufacturing, a large public sector, and an agricultural economy —
-            that creates an interesting cross-section of AI disruption risk profiles.
+            Manitoba was chosen because its economy is a useful cross-section: large insurance
+            and financial services in Winnipeg, significant aerospace manufacturing, a large
+            public sector, and agriculture — each with a very different AI exposure profile.
           </p>
         </div>
       </section>

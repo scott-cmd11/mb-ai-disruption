@@ -864,7 +864,7 @@ export default function ThreatModelPage() {
                 legal practice.
               </p>
               <p>
-                The Manitoba Chambers of Commerce and the Province of Manitoba have jointly invested $2M
+                The Manitoba Chambers of Commerce and the Manitoba government have jointly invested $2M
                 in the Manitoba AI Pathways program to help local SMEs adopt AI — an acknowledgment that
                 the transition is already underway and requires active support.
               </p>

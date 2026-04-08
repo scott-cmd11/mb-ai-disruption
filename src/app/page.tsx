@@ -301,53 +301,53 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      {/* METHODOLOGY CALLOUT                                                */}
+      {/* WHAT IS THIS — plain-language explainer                            */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
       <section
-        aria-label="Methodology overview"
+        aria-label="About this tool"
         className="border-b border-slate-100"
         style={{ backgroundColor: "var(--color-paper-deep)" }}
       >
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div
-              className="flex items-start gap-4 max-w-2xl"
-            >
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+            <div className="flex items-start gap-4 max-w-3xl">
               {/* Left amber accent bar */}
               <div
                 className="shrink-0 w-1 self-stretch rounded-full"
                 style={{ backgroundColor: "var(--color-gold)" }}
                 aria-hidden="true"
               />
-              <p
-                className="text-sm leading-relaxed"
-                style={{ color: "var(--color-text-secondary)" }}
-              >
-                Scores combine four evidence-based measures:{" "}
-                <strong style={{ color: "var(--color-text-primary)" }}>
-                  automation probability
-                </strong>
-                ,{" "}
-                <strong style={{ color: "var(--color-text-primary)" }}>
-                  AI occupation exposure
-                </strong>
-                ,{" "}
-                <strong style={{ color: "var(--color-text-primary)" }}>
-                  language AI impact
-                </strong>
-                , and your sector&rsquo;s{" "}
-                <strong style={{ color: "var(--color-text-primary)" }}>
-                  AI adoption gap
-                </strong>
-                . Adjusted for business size and current AI adoption level.
-              </p>
+              <div className="space-y-2">
+                <p
+                  className="text-sm font-semibold"
+                  style={{ color: "var(--color-text-primary)" }}
+                >
+                  What is this?
+                </p>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "var(--color-text-secondary)" }}
+                >
+                  A free, independent research tool that shows how likely each Manitoba industry
+                  and occupation is to be disrupted by AI — based on published academic datasets,
+                  not opinions. Answer 6 questions about your business to get a personalised score.
+                </p>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "var(--color-text-tertiary)" }}
+                >
+                  <strong style={{ color: "var(--color-text-secondary)" }}>This is not a government service.</strong>{" "}
+                  It is an independent project by a Manitoba researcher. Scores are modelled
+                  estimates — not predictions, and not professional advice.
+                </p>
+              </div>
             </div>
             <Link
               href="/about"
               className="shrink-0 text-sm font-semibold transition-opacity hover:opacity-70"
               style={{ color: "var(--color-navy)" }}
             >
-              Read the methodology →
+              Full methodology →
             </Link>
           </div>
         </div>

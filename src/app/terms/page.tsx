@@ -129,7 +129,7 @@ export default function TermsPage() {
         <section>
           <h2 className="text-base font-semibold mb-3" style={{ color: "var(--color-text-primary)" }}>Governing law</h2>
           <p>
-            These Terms of Use are governed by and construed in accordance with the laws of the Province of Manitoba
+            These Terms of Use are governed by and construed in accordance with the laws of Manitoba
             and the applicable federal laws of Canada, without regard to conflict of law principles. Any disputes arising
             under these terms shall be subject to the exclusive jurisdiction of the courts of Manitoba.
           </p>
