@@ -53,6 +53,106 @@ interface Props {
   industries: Industry[];
 }
 
+// ── ComplementarityQuadrant ───────────────────────────────────────────────────
+
+function ComplementarityQuadrant({
+  occupations,
+  selectedNocCode,
+  onSelect,
+}: {
+  occupations: Occupation[];
+  selectedNocCode: string | null;
+  onSelect: (nocCode: string) => void;
+}) {
+  const plotted = occupations.filter((o) => o.aiComplementarity);
+
+  return (
+    <div className="mb-8">
+      <div
+        className="relative rounded-sm border overflow-hidden"
+        style={{
+          borderColor: "var(--color-border)",
+          height: 300,
+        }}
+      >
+        {/* Quadrant labels */}
+        <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 pointer-events-none z-0">
+          <div className="flex items-start justify-start p-3" style={{ backgroundColor: "rgba(42, 101, 64, 0.03)" }}>
+            <span className="text-[0.55rem] uppercase tracking-wide font-bold" style={{ color: "var(--color-text-tertiary)" }}>
+              Lower exposure, AI assists
+            </span>
+          </div>
+          <div className="flex items-start justify-end p-3" style={{ backgroundColor: "rgba(42, 101, 64, 0.06)" }}>
+            <span className="text-[0.55rem] uppercase tracking-wide font-bold text-right" style={{ color: "var(--color-risk-low)" }}>
+              High exposure, AI assists<br />
+              <span style={{ color: "var(--color-text-tertiary)", fontWeight: 400 }}>27% of Canadian workers</span>
+            </span>
+          </div>
+          <div className="flex items-end justify-start p-3" style={{ backgroundColor: "rgba(217, 119, 6, 0.02)" }}>
+            <span className="text-[0.55rem] uppercase tracking-wide font-bold" style={{ color: "var(--color-text-tertiary)" }}>
+              Lower exposure, less impact
+            </span>
+          </div>
+          <div className="flex items-end justify-end p-3" style={{ backgroundColor: "rgba(220, 38, 38, 0.04)" }}>
+            <span className="text-[0.55rem] uppercase tracking-wide font-bold text-right" style={{ color: "var(--color-risk-high)" }}>
+              High exposure, AI competes<br />
+              <span style={{ color: "var(--color-text-tertiary)", fontWeight: 400 }}>29% of Canadian workers</span>
+            </span>
+          </div>
+        </div>
+
+        {/* Axis lines */}
+        <div className="absolute left-1/2 top-0 bottom-0 w-px" style={{ backgroundColor: "var(--color-border)" }} />
+        <div className="absolute top-1/2 left-0 right-0 h-px" style={{ backgroundColor: "var(--color-border)" }} />
+
+        {/* Dots */}
+        {plotted.map((occ) => {
+          const x = occ.compositeScore;
+          const yBase = occ.aiComplementarity === "high" ? 25 : 75;
+          const jitter = ((parseInt(occ.nocCode, 10) % 40) - 20) * 0.5;
+          const y = Math.max(5, Math.min(95, yBase + jitter));
+          const isSelected = occ.nocCode === selectedNocCode;
+          const tierColor =
+            occ.riskTier === "high" ? "var(--color-risk-high)"
+            : occ.riskTier === "medium" ? "var(--color-risk-medium)"
+            : "var(--color-risk-low)";
+
+          return (
+            <button
+              key={occ.nocCode}
+              onClick={() => onSelect(occ.nocCode)}
+              title={`${occ.shortTitle} (${occ.compositeScore})`}
+              className="absolute rounded-full transition-all duration-200 z-10"
+              style={{
+                left: `${x}%`,
+                top: `${y}%`,
+                transform: "translate(-50%, -50%)",
+                width: isSelected ? 14 : 8,
+                height: isSelected ? 14 : 8,
+                backgroundColor: tierColor,
+                border: isSelected ? "2px solid var(--color-navy)" : "1px solid rgba(255,255,255,0.6)",
+                boxShadow: isSelected ? "0 0 0 3px rgba(11, 25, 41, 0.2)" : "none",
+              }}
+            />
+          );
+        })}
+      </div>
+
+      {/* Axis labels */}
+      <div className="flex justify-between mt-1 text-[0.55rem]" style={{ color: "var(--color-text-tertiary)" }}>
+        <span>&larr; Lower exposure</span>
+        <span>Higher exposure &rarr;</span>
+      </div>
+
+      {/* Source */}
+      <p className="text-[0.5rem] mt-2" style={{ color: "var(--color-text-tertiary)" }}>
+        Framework: FSC exposure-complementarity model (building on IMF methodology by Pizzinelli et al.).{" "}
+        <em>Right Brain, Left Brain, AI Brain</em> (The Dais, 2025)
+      </p>
+    </div>
+  );
+}
+
 // ── Component ────────────────────────────────────────────────────────────────
 
 export function OccupationClient({ occupations, industries }: Props) {
@@ -62,6 +162,7 @@ export function OccupationClient({ occupations, industries }: Props) {
   const [sortMode, setSortMode] = useState<"risk" | "employment" | "alpha">("risk");
   const [risingDemandOnly, setRisingDemandOnly] = useState(false);
   const [selectedNocCode, setSelectedNocCode] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<"cards" | "quadrant">("cards");
 
   // Build sector options from industries
   const sectorOptions = useMemo(
@@ -277,6 +378,32 @@ export function OccupationClient({ occupations, industries }: Props) {
             <option value="alpha">A-Z</option>
           </select>
         </div>
+
+          {/* View toggle — hidden on mobile */}
+          <div className="hidden sm:flex items-center gap-2">
+            <button
+              onClick={() => setViewMode("cards")}
+              className="px-3 py-1.5 text-xs font-medium rounded-sm border transition-colors"
+              style={{
+                backgroundColor: viewMode === "cards" ? "var(--color-navy)" : "var(--color-paper-deep)",
+                color: viewMode === "cards" ? "var(--color-text-inverse)" : "var(--color-text-secondary)",
+                borderColor: viewMode === "cards" ? "var(--color-navy)" : "var(--color-border)",
+              }}
+            >
+              Cards
+            </button>
+            <button
+              onClick={() => setViewMode("quadrant")}
+              className="px-3 py-1.5 text-xs font-medium rounded-sm border transition-colors"
+              style={{
+                backgroundColor: viewMode === "quadrant" ? "var(--color-navy)" : "var(--color-paper-deep)",
+                color: viewMode === "quadrant" ? "var(--color-text-inverse)" : "var(--color-text-secondary)",
+                borderColor: viewMode === "quadrant" ? "var(--color-navy)" : "var(--color-border)",
+              }}
+            >
+              Quadrant
+            </button>
+          </div>
       </div>
 
       {/* Result count */}
@@ -286,9 +413,15 @@ export function OccupationClient({ occupations, industries }: Props) {
 
       {/* ── Main layout: grid + detail panel ─────────────────────────── */}
       <div className="flex flex-col lg:flex-row gap-6">
-        {/* Card grid */}
+        {/* Card grid / Quadrant toggle */}
         <div className="flex-1 min-w-0">
-          {filtered.length === 0 ? (
+          {viewMode === "quadrant" ? (
+            <ComplementarityQuadrant
+              occupations={filtered}
+              selectedNocCode={selectedNocCode}
+              onSelect={setSelectedNocCode}
+            />
+          ) : filtered.length === 0 ? (
             <p
               className="text-center py-16 text-sm"
               style={{ color: "var(--color-text-tertiary)" }}
