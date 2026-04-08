@@ -564,9 +564,6 @@ export function CalculatorClient({
     <div className="mx-auto max-w-2xl px-4">
       {/* Page heading */}
       <div className="mb-8 text-center">
-        <p className="text-[0.6rem] tracking-[0.25em] uppercase font-bold mb-2" style={{ color: "var(--color-gold)" }}>
-          Province of Manitoba
-        </p>
         <h1 className="font-display text-3xl font-light italic" style={{ color: "var(--color-text-primary)" }}>
           AI Disruption Assessment
         </h1>
