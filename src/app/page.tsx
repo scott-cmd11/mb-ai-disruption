@@ -380,64 +380,124 @@ export default function HomePage() {
           </h2>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                href: "/calculator",
-                title: "Get your risk score",
-                desc: "Answer 6 questions about your business. Get a personalised AI disruption assessment in 2 minutes.",
-                cta: "Start assessment →",
-                featured: true,
-              },
-              {
-                href: "/threat-model",
-                title: "How AI startups compete",
-                desc: "5 research-backed mechanisms — real company evidence and Manitoba context. The deep read.",
-                cta: "Read the analysis →",
-                featured: false,
-              },
-              {
-                href: "/threat-simulator",
-                title: "Compare AI vs. traditional",
-                desc: "Side-by-side cost comparison: what a lean AI-native team costs vs. a traditional operation.",
-                cta: "Open simulator →",
-                featured: false,
-              },
-              {
-                href: "/scenarios",
-                title: "What-if scenarios",
-                desc: "How does your industry\u2019s risk change if AI spreads quickly \u2014 or if you haven\u2019t started yet?",
-                cta: "Explore scenarios →",
-                featured: false,
-              },
-              {
-                href: "/explorer",
-                title: "All 20 Manitoba industries",
-                desc: "Every Manitoba sector ranked by AI disruption exposure, with score breakdowns.",
-                cta: "Explore industries →",
-                featured: false,
-              },
-              {
-                href: "/occupation",
-                title: "50+ occupations scored",
-                desc: "Individual occupation risk scores, task vulnerability, and related roles across Manitoba.",
-                cta: "Browse occupations →",
-                featured: false,
-              },
-              {
-                href: "/heatmap",
-                title: "Task vulnerability map",
-                desc: "Which tasks in which sectors are most exposed? A colour-coded matrix view.",
-                cta: "View heatmap →",
-                featured: false,
-              },
-              {
-                href: "/policy",
-                title: "Research & sources",
-                desc: "Academic sources, Canadian government data, and the full methodology behind these scores.",
-                cta: "Read the research →",
-                featured: false,
-              },
-            ].map(({ href, title, desc, cta, featured }) => (
+            {(
+              [
+                {
+                  href: "/calculator",
+                  title: "Get your risk score",
+                  desc: "Answer 6 questions about your business. Get a personalised AI disruption assessment in 2 minutes.",
+                  cta: "Start assessment →",
+                  featured: true,
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <circle cx="12" cy="12" r="3" />
+                      <line x1="12" y1="2" x2="12" y2="5" />
+                      <line x1="12" y1="19" x2="12" y2="22" />
+                      <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
+                      <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
+                    </svg>
+                  ),
+                },
+                {
+                  href: "/threat-model",
+                  title: "How AI startups compete",
+                  desc: "5 research-backed mechanisms — real company evidence and Manitoba context. The deep read.",
+                  cta: "Read the analysis →",
+                  featured: false,
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
+                  ),
+                },
+                {
+                  href: "/threat-simulator",
+                  title: "Compare AI vs. traditional",
+                  desc: "Side-by-side cost comparison: what a lean AI-native team costs vs. a traditional operation.",
+                  cta: "Open simulator →",
+                  featured: false,
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="3" width="9" height="18" rx="1" />
+                      <rect x="13" y="3" width="9" height="18" rx="1" />
+                    </svg>
+                  ),
+                },
+                {
+                  href: "/scenarios",
+                  title: "What-if scenarios",
+                  desc: "How does your industry\u2019s risk change if AI spreads quickly \u2014 or if you haven\u2019t started yet?",
+                  cta: "Explore scenarios →",
+                  featured: false,
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="6" y1="3" x2="6" y2="15" />
+                      <circle cx="18" cy="6" r="3" />
+                      <circle cx="6" cy="18" r="3" />
+                      <path d="M18 9a9 9 0 0 1-9 9" />
+                    </svg>
+                  ),
+                },
+                {
+                  href: "/explorer",
+                  title: "All 20 Manitoba industries",
+                  desc: "Every Manitoba sector ranked by AI disruption exposure, with score breakdowns.",
+                  cta: "Explore industries →",
+                  featured: false,
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="18" y1="20" x2="18" y2="10" />
+                      <line x1="12" y1="20" x2="12" y2="4" />
+                      <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                  ),
+                },
+                {
+                  href: "/occupation",
+                  title: "50+ occupations scored",
+                  desc: "Individual occupation risk scores, task vulnerability, and related roles across Manitoba.",
+                  cta: "Browse occupations →",
+                  featured: false,
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                  ),
+                },
+                {
+                  href: "/heatmap",
+                  title: "Task vulnerability map",
+                  desc: "Which tasks in which sectors are most exposed? A colour-coded matrix view.",
+                  cta: "View heatmap →",
+                  featured: false,
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="3" width="7" height="7" rx="1" />
+                      <rect x="14" y="3" width="7" height="7" rx="1" />
+                      <rect x="14" y="14" width="7" height="7" rx="1" />
+                      <rect x="3" y="14" width="7" height="7" rx="1" />
+                    </svg>
+                  ),
+                },
+                {
+                  href: "/policy",
+                  title: "Research & sources",
+                  desc: "Academic sources, Canadian government data, and the full methodology behind these scores.",
+                  cta: "Read the research →",
+                  featured: false,
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                  ),
+                },
+              ] as const
+            ).map(({ href, title, desc, cta, featured, icon }) => (
               <Link
                 key={href}
                 href={href}
@@ -449,6 +509,13 @@ export default function HomePage() {
                   borderLeftColor: featured ? "var(--color-gold)" : undefined,
                 }}
               >
+                <div
+                  className="w-7 h-7 mb-3"
+                  style={{ color: featured ? "var(--color-gold)" : "var(--color-navy)" }}
+                  aria-hidden="true"
+                >
+                  {icon}
+                </div>
                 <p
                   className="font-display font-bold text-sm mb-1.5"
                   style={{ color: "var(--color-text-primary)" }}
