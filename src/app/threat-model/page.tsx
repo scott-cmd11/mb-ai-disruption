@@ -132,7 +132,7 @@ export default function ThreatModelPage() {
               280× cheaper
             </p>
             <p className="text-sm mt-1" style={{ color: "var(--color-text-secondary)" }}>
-              LLM inference costs fell 280 times in 2.5 years (2022–2025). A task that once required
+              AI computing costs fell 280 times in 2.5 years (2022–2025). A task that once required
               significant compute time now costs fractions of a cent.
             </p>
             <p className="text-xs mt-2" style={{ color: "var(--color-text-tertiary)" }}>
