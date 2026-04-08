@@ -187,7 +187,7 @@ Three cards:
 - "What to watch for" boxes: Subtle surface treatment, no colour — neutral signal
 - Source attributions: Small tertiary text, same pattern as existing source citations across the site
 
-**Typography:** No new font styles. Uses existing `font-display` (Fraunces) for headings, `font-body` (Instrument Sans) for body.
+**Typography:** No new font styles. Uses existing `font-display` (Fraunces) for headings, `font-instrument` (Instrument Sans) for body text — matching the Tailwind utility classes configured in `layout.tsx`.
 
 ---
 
@@ -208,6 +208,7 @@ The Klarna two-act story is used deliberately to demonstrate editorial honesty �
 |------|---------|--------|
 | `src/app/threat-model/page.tsx` | **Create** | Full static Server Component — all content inline |
 | `src/app/threat-simulator/ThreatSimulatorClient.tsx` | **Minor edit** | Add "Read the research behind this →" link to `/threat-model` at bottom of page |
+| `src/lib/nav.ts` | **Edit** | Change existing `{ href: "/threat-simulator", label: "Threat Model" }` entry to `{ href: "/threat-model", label: "Threat Model" }`. Add a second entry `{ href: "/threat-simulator", label: "Threat Simulator" }` immediately after so both pages are accessible from the nav. |
 
 No other files change. No new data files. No new types. No new shared components.
 
@@ -219,7 +220,7 @@ No other files change. No new data files. No new types. No new shared components
 - All existing data files (`threat-scenarios.json`, `sector-playbooks.json`)
 - All existing types in `src/types/index.ts`
 - Scoring formula, composite scores, province average
-- Nav links (already includes Threat Model pointing to `/threat-model`)
+- Nav label text for existing entries (except the `/threat-simulator` label changes from "Threat Model" to "Threat Simulator" per Section 6)
 
 ---
 
@@ -236,3 +237,4 @@ No other files change. No new data files. No new types. No new shared components
 9. All source attributions present and correctly formatted
 10. No jargon visible to end user — plain language throughout
 11. Mobile layout renders cleanly (single column, no horizontal overflow)
+12. Nav bar shows both "Threat Model" (→ `/threat-model`) and "Threat Simulator" (→ `/threat-simulator`) as separate entries
