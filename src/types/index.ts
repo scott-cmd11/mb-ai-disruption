@@ -80,6 +80,8 @@ export interface Occupation {
   anthropicUsageGroup?: string;
   /** Normalized usage intensity 0–100 from Anthropic Economic Index, group-level (same value for all occupations in this SOC group) */
   anthropicUsageIntensity?: number;
+  /** AI complementarity: "high" = AI assists the worker, "low" = AI competes with the worker. From FSC framework building on IMF methodology (S3). */
+  aiComplementarity?: "high" | "low";
 }
 
 // ─── Scoring formula configuration ───────────────────────────────────────────
