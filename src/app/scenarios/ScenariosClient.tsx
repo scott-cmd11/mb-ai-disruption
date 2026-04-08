@@ -305,19 +305,21 @@ export function ScenariosClient({
               >
                 Sector
               </th>
-              <th
-                scope="col"
-                className="py-3 pr-4 text-left text-[0.6rem] font-bold tracking-widest uppercase hidden sm:table-cell"
-                style={{ color: "var(--color-text-tertiary)" }}
-              >
-                Baseline score
-              </th>
+              {activeId !== "baseline" && (
+                <th
+                  scope="col"
+                  className="py-3 pr-4 text-left text-[0.6rem] font-bold tracking-widest uppercase hidden sm:table-cell"
+                  style={{ color: "var(--color-text-tertiary)" }}
+                >
+                  Baseline score
+                </th>
+              )}
               <th
                 scope="col"
                 className="py-3 pr-4 text-left text-[0.6rem] font-bold tracking-widest uppercase"
                 style={{ color: "var(--color-gold)" }}
               >
-                {activeScenario.label} score
+                {activeId === "baseline" ? "Score" : `${activeScenario.label} score`}
               </th>
               <th
                 scope="col"
@@ -367,27 +369,29 @@ export function ScenariosClient({
                     {industry.shortName}
                   </th>
 
-                  {/* Baseline bar */}
-                  <td className="py-3.5 pr-4 hidden sm:table-cell">
-                    <div className="flex items-center gap-2">
-                      <div
-                        className="flex-1 rounded-full overflow-hidden"
-                        style={{ backgroundColor: "#E2E8F0", height: "6px" }}
-                        aria-hidden="true"
-                      >
+                  {/* Baseline bar — only shown when comparing against a non-baseline scenario */}
+                  {activeId !== "baseline" && (
+                    <td className="py-3.5 pr-4 hidden sm:table-cell">
+                      <div className="flex items-center gap-2">
                         <div
-                          className={`h-full rounded-full opacity-40 risk-bar-${baseline.tier}`}
-                          style={{ width: `${baseline.score}%` }}
-                        />
+                          className="flex-1 rounded-full overflow-hidden"
+                          style={{ backgroundColor: "#E2E8F0", height: "6px" }}
+                          aria-hidden="true"
+                        >
+                          <div
+                            className={`h-full rounded-full opacity-40 risk-bar-${baseline.tier}`}
+                            style={{ width: `${baseline.score}%` }}
+                          />
+                        </div>
+                        <span
+                          className="w-7 text-right text-xs font-mono tabular-nums"
+                          style={{ color: "var(--color-text-tertiary)" }}
+                        >
+                          {baseline.score}
+                        </span>
                       </div>
-                      <span
-                        className="w-7 text-right text-xs font-mono tabular-nums"
-                        style={{ color: "var(--color-text-tertiary)" }}
-                      >
-                        {baseline.score}
-                      </span>
-                    </div>
-                  </td>
+                    </td>
+                  )}
 
                   {/* Scenario bar + delta */}
                   <td className="py-3.5 pr-4">
