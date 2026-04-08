@@ -291,17 +291,6 @@ function Step1Industry({
             <span className="text-sm" style={{ color: "var(--color-text-primary)", fontFamily: "var(--font-body)" }}>
               {ind.shortName}
             </span>
-            <span
-              className={`text-xs font-medium ${
-                ind.riskTier === "high"
-                  ? "risk-badge-high"
-                  : ind.riskTier === "medium"
-                  ? "risk-badge-medium"
-                  : "risk-badge-low"
-              }`}
-            >
-              {ind.riskTier.charAt(0).toUpperCase() + ind.riskTier.slice(1)}
-            </span>
           </label>
         ))}
       </div>

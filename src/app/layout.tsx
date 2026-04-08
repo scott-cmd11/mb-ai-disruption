@@ -127,11 +127,13 @@ export default function RootLayout({
             color: "var(--color-text-secondary)",
           }}
         >
-          <span className="font-semibold" style={{ color: "var(--color-gold)" }}>Exploratory research tool.</span>{" "}
-          Scores are modelled estimates from published academic data — not predictions or professional advice.{" "}
+          <span className="font-semibold" style={{ color: "var(--color-gold)" }}>Work in progress.</span>{" "}
+          Exploratory tool — scores are modelled estimates from published academic data, not predictions or professional advice.{" "}
           <a href="/about" className="underline hover:opacity-80 transition-opacity" style={{ color: "var(--color-gold)" }}>
             Methodology &amp; limitations →
           </a>
+          <span className="mx-2 opacity-30" aria-hidden="true">·</span>
+          <span style={{ color: "var(--color-text-tertiary)" }}>Last updated: April 2026</span>
         </div>
 
         {/* ── Main ───────────────────────────────────────────────────────── */}
