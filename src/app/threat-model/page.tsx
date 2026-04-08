@@ -672,7 +672,210 @@ export default function ThreatModelPage() {
         </div>
       </section>
 
-      {/* Manitoba section + CTA go here */}
+      {/* ── What This Means for Manitoba ────────────────────────────────── */}
+      <section
+        aria-labelledby="manitoba-heading"
+        style={{ backgroundColor: "var(--color-navy-deep)" }}
+        className="relative overflow-hidden"
+      >
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 survey-grid opacity-30" />
+        <div className="relative mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
+
+          <p
+            className="text-[0.6rem] font-bold tracking-[0.35em] uppercase mb-3"
+            style={{ color: "var(--color-gold)" }}
+          >
+            Manitoba context
+          </p>
+          <h2
+            id="manitoba-heading"
+            className="font-display font-bold mb-8"
+            style={{
+              color: "var(--color-text-inverse)",
+              fontSize: "1.5rem",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            What this means for Manitoba businesses
+          </h2>
+
+          {/* Stat grid */}
+          <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4 mb-10">
+            {[
+              { value: "12%", label: "of Canadian firms now use AI", sub: "doubled year-over-year", source: "Stats Canada 2024–25" },
+              { value: "31.7%", label: "AI adoption in professional services", sub: "#2 sector in Canada", source: "Stats Canada" },
+              { value: "57.4%", label: "of Canadian jobs are highly AI-exposed", sub: "", source: "Future Skills Centre, Sept 2025" },
+              { value: "1 hr/day", label: "average time AI saves Canadian SMEs", sub: "$1.60 return per $1 invested", source: "CFIB 2025" },
+            ].map(({ value, label, sub, source }) => (
+              <div
+                key={value}
+                className="rounded-xl p-4"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                }}
+              >
+                <dt>
+                  <span
+                    className="block font-display font-bold text-2xl leading-none"
+                    style={{ color: "var(--color-gold)", letterSpacing: "-0.03em" }}
+                  >
+                    {value}
+                  </span>
+                  <span className="block text-xs mt-1.5 leading-snug" style={{ color: "rgba(248,250,252,0.7)" }}>
+                    {label}
+                  </span>
+                  {sub && (
+                    <span className="block text-xs mt-0.5" style={{ color: "rgba(248,250,252,0.4)" }}>
+                      {sub}
+                    </span>
+                  )}
+                </dt>
+                <dd className="mt-2 text-[0.6rem]" style={{ color: "rgba(248,250,252,0.3)" }}>
+                  {source}
+                </dd>
+              </div>
+            ))}
+          </dl>
+
+          {/* Canadian signal */}
+          <div
+            className="rounded-xl p-6 mb-6"
+            style={{
+              backgroundColor: "rgba(255,255,255,0.05)",
+              border: "1px solid rgba(255,255,255,0.08)",
+            }}
+          >
+            <p
+              className="text-xs font-bold tracking-widest uppercase mb-3"
+              style={{ color: "rgba(248,250,252,0.4)" }}
+            >
+              The Canadian signal
+            </p>
+            <div className="space-y-3 text-sm leading-relaxed" style={{ color: "rgba(248,250,252,0.7)" }}>
+              <p>
+                <strong style={{ color: "rgba(248,250,252,0.9)" }}>Spellbook</strong> — an Ottawa-based
+                legal AI company — serves 4,000+ legal teams at a $350M valuation and has partnered with
+                the Canadian Bar Association. The bar association is institutionalising AI legal tools.
+                This is not a fringe trend, and it&apos;s not American. It&apos;s already inside Canadian
+                legal practice.
+              </p>
+              <p>
+                The Manitoba Chambers of Commerce and the Province of Manitoba have jointly invested $2M
+                in the Manitoba AI Pathways program to help local SMEs adopt AI — an acknowledgment that
+                the transition is already underway and requires active support.
+              </p>
+              <p>
+                The Canadian Chamber of Commerce warned in 2025–26 that &ldquo;Canada risks falling behind
+                on AI adoption as businesses wait out trade uncertainty.&rdquo; Hesitation has a cost.
+              </p>
+            </div>
+          </div>
+
+          {/* Honest framing */}
+          <div
+            className="rounded-xl p-6"
+            style={{
+              backgroundColor: "rgba(217, 119, 6, 0.1)",
+              border: "1px solid rgba(217, 119, 6, 0.25)",
+            }}
+          >
+            <p
+              className="text-xs font-bold tracking-widest uppercase mb-3"
+              style={{ color: "var(--color-gold)" }}
+            >
+              The honest picture
+            </p>
+            <div className="space-y-3 text-sm leading-relaxed" style={{ color: "rgba(248,250,252,0.75)" }}>
+              <p>
+                Statistics Canada data shows only 6% of AI-adopting Canadian firms have reduced headcount
+                so far. The disruption is not arriving as mass layoffs — it&apos;s arriving as margin
+                compression and pricing pressure first.
+              </p>
+              <p>
+                Klarna&apos;s per-transaction service cost fell 40% before they rehired a single person.
+                The Clio data shows legal billing models shifting — flat-fee billing is up 34% since 2016.
+                The disruption shows up in your pricing power before it shows up in your headcount.
+              </p>
+              <p style={{ color: "rgba(248,250,252,0.9)" }}>
+                <strong>The warning is not &ldquo;you will lose your job.&rdquo;</strong>{" "}
+                It&apos;s: a competitor using AI can undercut your price and still make money — and that
+                window is opening now.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA Strip ──────────────────────────────────────────────────── */}
+      <section
+        aria-label="Next steps"
+        className="border-t"
+        style={{
+          backgroundColor: "var(--color-paper-deep)",
+          borderColor: "var(--color-border)",
+        }}
+      >
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+          <p
+            className="text-xs font-bold tracking-widest uppercase mb-6 text-center"
+            style={{ color: "var(--color-text-tertiary)" }}
+          >
+            What to do next
+          </p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {[
+              {
+                href: "/threat-simulator",
+                label: "See the cost numbers",
+                desc: "Side-by-side: what a lean AI-native team can do vs. a traditional operation in your sector.",
+                cta: "Open threat simulator →",
+              },
+              {
+                href: "/calculator",
+                label: "Get your risk score",
+                desc: "6 questions, 2 minutes. A personalised AI disruption assessment for your industry and business size.",
+                cta: "Start assessment →",
+              },
+              {
+                href: "/policy",
+                label: "Read the full research",
+                desc: "Academic sources, Canadian government data, and the policy context behind these findings.",
+                cta: "View research →",
+              },
+            ].map(({ href, label, desc, cta }) => (
+              <Link
+                key={href}
+                href={href}
+                className="group block rounded-xl border p-5 transition-colors hover:border-[var(--color-gold)]"
+                style={{
+                  backgroundColor: "var(--color-surface)",
+                  borderColor: "var(--color-border)",
+                }}
+              >
+                <p
+                  className="font-semibold text-sm mb-1.5"
+                  style={{ color: "var(--color-text-primary)" }}
+                >
+                  {label}
+                </p>
+                <p
+                  className="text-xs leading-relaxed mb-3"
+                  style={{ color: "var(--color-text-secondary)" }}
+                >
+                  {desc}
+                </p>
+                <p
+                  className="text-xs font-semibold"
+                  style={{ color: "var(--color-gold)" }}
+                >
+                  {cta}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
