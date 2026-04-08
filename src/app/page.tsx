@@ -354,6 +354,126 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════ */}
+      {/* WHAT YOU CAN EXPLORE — hub card grid                               */}
+      {/* ═══════════════════════════════════════════════════════════════════ */}
+      <section
+        aria-labelledby="explore-heading"
+        style={{ backgroundColor: "var(--color-paper)" }}
+      >
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <p
+            className="text-[0.6rem] font-bold tracking-[0.25em] uppercase mb-1"
+            style={{ color: "var(--color-gold)" }}
+          >
+            Tools &amp; research
+          </p>
+          <h2
+            id="explore-heading"
+            className="font-display font-bold mb-8"
+            style={{
+              color: "var(--color-text-primary)",
+              fontSize: "clamp(1.4rem, 3vw, 1.875rem)",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            What you can do here
+          </h2>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                href: "/calculator",
+                title: "Get your risk score",
+                desc: "Answer 6 questions about your business. Get a personalised AI disruption assessment in 2 minutes.",
+                cta: "Start assessment →",
+                featured: true,
+              },
+              {
+                href: "/threat-model",
+                title: "How AI startups compete",
+                desc: "5 research-backed mechanisms — real company evidence and Manitoba context. The deep read.",
+                cta: "Read the analysis →",
+                featured: false,
+              },
+              {
+                href: "/threat-simulator",
+                title: "Compare AI vs. traditional",
+                desc: "Side-by-side cost comparison: what a lean AI-native team costs vs. a traditional operation.",
+                cta: "Open simulator →",
+                featured: false,
+              },
+              {
+                href: "/scenarios",
+                title: "What-if scenarios",
+                desc: "How does your industry\u2019s risk change if AI spreads quickly \u2014 or if you haven\u2019t started yet?",
+                cta: "Explore scenarios →",
+                featured: false,
+              },
+              {
+                href: "/explorer",
+                title: "All 20 Manitoba industries",
+                desc: "Every Manitoba sector ranked by AI disruption exposure, with score breakdowns.",
+                cta: "Explore industries →",
+                featured: false,
+              },
+              {
+                href: "/occupation",
+                title: "50+ occupations scored",
+                desc: "Individual occupation risk scores, task vulnerability, and related roles across Manitoba.",
+                cta: "Browse occupations →",
+                featured: false,
+              },
+              {
+                href: "/heatmap",
+                title: "Task vulnerability map",
+                desc: "Which tasks in which sectors are most exposed? A colour-coded matrix view.",
+                cta: "View heatmap →",
+                featured: false,
+              },
+              {
+                href: "/policy",
+                title: "Research & sources",
+                desc: "Academic sources, Canadian government data, and the full methodology behind these scores.",
+                cta: "Read the research →",
+                featured: false,
+              },
+            ].map(({ href, title, desc, cta, featured }) => (
+              <Link
+                key={href}
+                href={href}
+                className="group block rounded-xl border p-5 transition-colors hover:border-[var(--color-gold)]"
+                style={{
+                  backgroundColor: "var(--color-surface)",
+                  borderColor: featured ? "var(--color-gold)" : "var(--color-border)",
+                  borderLeftWidth: featured ? "3px" : undefined,
+                  borderLeftColor: featured ? "var(--color-gold)" : undefined,
+                }}
+              >
+                <p
+                  className="font-display font-bold text-sm mb-1.5"
+                  style={{ color: "var(--color-text-primary)" }}
+                >
+                  {title}
+                </p>
+                <p
+                  className="text-xs leading-relaxed mb-3"
+                  style={{ color: "var(--color-text-secondary)" }}
+                >
+                  {desc}
+                </p>
+                <p
+                  className="text-xs font-semibold"
+                  style={{ color: "var(--color-gold)" }}
+                >
+                  {cta}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* INDUSTRY RISK SNAPSHOT — semantic table                            */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
       <section
