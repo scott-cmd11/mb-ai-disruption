@@ -7,7 +7,8 @@ export const NAV_LINKS = [
   { href: "/occupation",       label: "Occupations" },
   { href: "/scenarios",        label: "Scenarios" },
   { href: "/heatmap",          label: "Heatmap" },
-  { href: "/threat-simulator", label: "Threat Model" },
+  { href: "/threat-model",     label: "Threat Model" },
+  { href: "/threat-simulator", label: "Threat Simulator" },
   { href: "/policy",           label: "Research" },
   { href: "/about",            label: "About" },
 ] as const;
