@@ -504,6 +504,27 @@ export function OccupationClient({ occupations, industries }: Props) {
               </p>
             </div>
 
+            {/* 3b. AI complementarity badge */}
+            {selected.aiComplementarity && (
+              <div className="mb-5 text-center">
+                <span
+                  className="inline-block text-[0.65rem] font-bold tracking-[0.1em] uppercase px-3 py-1 rounded-sm border"
+                  style={{
+                    color: selected.aiComplementarity === "high" ? "var(--color-risk-low)" : "var(--color-gold)",
+                    borderColor: selected.aiComplementarity === "high" ? "var(--color-risk-low)" : "var(--color-gold)",
+                    backgroundColor: selected.aiComplementarity === "high" ? "var(--color-risk-low-bg)" : "rgba(217, 119, 6, 0.08)",
+                  }}
+                >
+                  {selected.aiComplementarity === "high" ? "AI-augmenting" : "AI-competing"}
+                </span>
+                <p className="text-[0.6rem] mt-1.5 leading-relaxed" style={{ color: "var(--color-text-tertiary)" }}>
+                  {selected.aiComplementarity === "high"
+                    ? "AI is more likely to assist workers in this role than replace them (FSC, 2025)"
+                    : "AI can perform many core tasks in this role with limited human involvement (FSC, 2025)"}
+                </p>
+              </div>
+            )}
+
             {/* 4. Task categories */}
             <div className="mb-5">
               <p
