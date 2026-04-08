@@ -81,28 +81,6 @@ function TierBadge({ tier }: { tier: RiskTier }) {
   return <span className={cls}>{TIER_LABEL[tier]}</span>;
 }
 
-function TierChangePill({
-  baseline,
-  scenario,
-}: {
-  baseline: RiskTier;
-  scenario: RiskTier;
-}) {
-  if (baseline === scenario) return null;
-  const worsened = TIER_ORDER[scenario] > TIER_ORDER[baseline];
-  return (
-    <span
-      className="inline-flex items-center gap-0.5 text-[0.6rem] font-bold tracking-wide px-1.5 py-0.5 rounded-full"
-      style={{
-        backgroundColor: worsened ? "#FEF2F2" : "#F0FDF4",
-        color: worsened ? "#DC2626" : "#15803D",
-      }}
-      aria-label={worsened ? `Tier worsened from ${baseline} to ${scenario}` : `Tier improved from ${baseline} to ${scenario}`}
-    >
-      {worsened ? "▲" : "▼"} {TIER_LABEL[scenario]}
-    </span>
-  );
-}
 
 // ── Main component ─────────────────────────────────────────────────────────────
 
@@ -282,11 +260,11 @@ export function ScenariosClient({
       >
         <table
           className="w-full border-collapse"
-          aria-label={`Manitoba sector risk scores under ${activeScenario.label} scenario`}
+          aria-label={`Manitoba sector risk scores — ${activeScenario.label}`}
         >
           <caption className="sr-only">
-            All 20 Manitoba sectors ranked by AI disruption exposure score under the{" "}
-            {activeScenario.label} scenario. Baseline scores shown for comparison.
+            All 20 Manitoba sectors ranked by estimated AI disruption risk under the{" "}
+            {activeScenario.label} scenario.
           </caption>
           <thead>
             <tr style={{ backgroundColor: "var(--color-paper-deep)" }}>
@@ -303,7 +281,14 @@ export function ScenariosClient({
                 className="py-3 px-4 text-left text-[0.6rem] font-bold tracking-widest uppercase"
                 style={{ color: "var(--color-text-tertiary)" }}
               >
-                Sector
+                Industry
+              </th>
+              <th
+                scope="col"
+                className="py-3 pr-4 text-left text-[0.6rem] font-bold tracking-widest uppercase"
+                style={{ color: "var(--color-gold)" }}
+              >
+                Risk score
               </th>
               {activeId !== "baseline" && (
                 <th
@@ -311,22 +296,15 @@ export function ScenariosClient({
                   className="py-3 pr-4 text-left text-[0.6rem] font-bold tracking-widest uppercase hidden sm:table-cell"
                   style={{ color: "var(--color-text-tertiary)" }}
                 >
-                  Baseline score
+                  vs. today
                 </th>
               )}
-              <th
-                scope="col"
-                className="py-3 pr-4 text-left text-[0.6rem] font-bold tracking-widest uppercase"
-                style={{ color: "var(--color-gold)" }}
-              >
-                {activeId === "baseline" ? "Score" : `${activeScenario.label} score`}
-              </th>
               <th
                 scope="col"
                 className="py-3 pr-5 w-28 text-right text-[0.6rem] font-bold tracking-widest uppercase"
                 style={{ color: "var(--color-text-tertiary)" }}
               >
-                Tier
+                Risk level
               </th>
             </tr>
           </thead>
@@ -335,17 +313,16 @@ export function ScenariosClient({
               const baseline = industry.scores["baseline"];
               const active   = industry.scores[activeId];
               const delta    = active.score - baseline.score;
+              const tierChanged = active.tier !== baseline.tier;
 
               return (
                 <tr
                   key={industry.naicsCode}
                   className="border-b border-slate-100 last:border-0 hover:bg-amber-50/40 transition-colors"
                   style={{
-                    // Highlight rows where tier changed
-                    backgroundColor:
-                      active.tier !== baseline.tier
-                        ? "rgba(254, 243, 199, 0.25)"
-                        : undefined,
+                    backgroundColor: tierChanged
+                      ? "rgba(254, 243, 199, 0.25)"
+                      : undefined,
                   }}
                 >
                   {/* Rank */}
@@ -356,7 +333,7 @@ export function ScenariosClient({
                     {i + 1}
                   </td>
 
-                  {/* Sector name */}
+                  {/* Industry name */}
                   <th
                     scope="row"
                     className="py-3.5 px-4 text-sm font-semibold text-left"
@@ -369,36 +346,12 @@ export function ScenariosClient({
                     {industry.shortName}
                   </th>
 
-                  {/* Baseline bar — only shown when comparing against a non-baseline scenario */}
-                  {activeId !== "baseline" && (
-                    <td className="py-3.5 pr-4 hidden sm:table-cell">
-                      <div className="flex items-center gap-2">
-                        <div
-                          className="flex-1 rounded-full overflow-hidden"
-                          style={{ backgroundColor: "#E2E8F0", height: "6px" }}
-                          aria-hidden="true"
-                        >
-                          <div
-                            className={`h-full rounded-full opacity-40 risk-bar-${baseline.tier}`}
-                            style={{ width: `${baseline.score}%` }}
-                          />
-                        </div>
-                        <span
-                          className="w-7 text-right text-xs font-mono tabular-nums"
-                          style={{ color: "var(--color-text-tertiary)" }}
-                        >
-                          {baseline.score}
-                        </span>
-                      </div>
-                    </td>
-                  )}
-
-                  {/* Scenario bar + delta */}
+                  {/* Risk score bar */}
                   <td className="py-3.5 pr-4">
                     <div className="flex items-center gap-2">
                       <div
                         className="flex-1 rounded-full overflow-hidden"
-                        style={{ backgroundColor: "#E2E8F0", height: "8px" }}
+                        style={{ backgroundColor: "#E2E8F0", height: "8px", minWidth: "80px" }}
                         aria-hidden="true"
                       >
                         <div
@@ -407,37 +360,47 @@ export function ScenariosClient({
                         />
                       </div>
                       <span
-                        className="w-7 text-right text-sm font-mono tabular-nums font-bold"
+                        className="w-7 text-right text-sm font-mono tabular-nums font-bold shrink-0"
                         style={{ color: "var(--color-text-primary)" }}
-                        aria-label={`Score: ${active.score}`}
+                        aria-label={`Risk score: ${active.score} out of 100`}
                       >
                         {active.score}
                       </span>
-                      {/* Delta */}
-                      {activeId !== "baseline" && delta !== 0 && (
-                        <span
-                          className="w-10 text-xs font-mono tabular-nums text-right shrink-0"
-                          style={{
-                            color: delta > 0 ? "#DC2626" : "#15803D",
-                            fontWeight: 600,
-                          }}
-                          aria-label={`${delta > 0 ? "increased by" : "decreased by"} ${Math.abs(delta)}`}
-                        >
-                          {delta > 0 ? "+" : ""}{delta}
-                        </span>
-                      )}
                     </div>
                   </td>
 
-                  {/* Tier + change indicator */}
+                  {/* Change from today */}
+                  {activeId !== "baseline" && (
+                    <td className="py-3.5 pr-4 hidden sm:table-cell">
+                      <div className="flex flex-col gap-0.5">
+                        {delta !== 0 ? (
+                          <span
+                            className="text-xs font-semibold tabular-nums"
+                            style={{ color: delta > 0 ? "#DC2626" : "#15803D" }}
+                            aria-label={delta > 0 ? `${delta} points higher than today` : `${Math.abs(delta)} points lower than today`}
+                          >
+                            {delta > 0 ? `↑ ${delta} pts higher` : `↓ ${Math.abs(delta)} pts lower`}
+                          </span>
+                        ) : (
+                          <span className="text-xs" style={{ color: "var(--color-text-tertiary)" }}>no change</span>
+                        )}
+                        {tierChanged && (
+                          <span
+                            className="text-[0.6rem] font-bold tracking-wide"
+                            style={{ color: TIER_ORDER[active.tier] > TIER_ORDER[baseline.tier] ? "#DC2626" : "#15803D" }}
+                          >
+                            {TIER_ORDER[active.tier] > TIER_ORDER[baseline.tier]
+                              ? `moves to ${TIER_LABEL[active.tier]} risk`
+                              : `drops to ${TIER_LABEL[active.tier]} risk`}
+                          </span>
+                        )}
+                      </div>
+                    </td>
+                  )}
+
+                  {/* Risk level badge */}
                   <td className="py-3.5 pr-5 text-right">
-                    <div className="flex items-center justify-end gap-1.5">
-                      <TierChangePill
-                        baseline={baseline.tier}
-                        scenario={active.tier}
-                      />
-                      <TierBadge tier={active.tier} />
-                    </div>
+                    <TierBadge tier={active.tier} />
                   </td>
                 </tr>
               );
