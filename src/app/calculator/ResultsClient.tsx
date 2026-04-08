@@ -503,6 +503,111 @@ function RLICallout() {
   );
 }
 
+function CanadianContextCallout() {
+  return (
+    <div
+      className="rounded-sm border p-5 mb-6"
+      style={{ borderColor: "var(--color-border)", backgroundColor: "var(--color-paper-deep)" }}
+    >
+      <p
+        className="text-[0.6rem] tracking-[0.2em] uppercase font-bold mb-2"
+        style={{ color: "var(--color-text-tertiary)" }}
+      >
+        Canadian context
+      </p>
+      <p className="text-sm font-semibold mb-4" style={{ color: "var(--color-text-primary)", fontFamily: "var(--font-body)" }}>
+        How Canada&apos;s workforce compares
+      </p>
+
+      <div className="grid grid-cols-3 gap-3 mb-4 text-center">
+        <div>
+          <p className="font-display text-2xl font-bold" style={{ color: "var(--color-navy)" }}>57.4%</p>
+          <p className="text-[0.65rem] leading-tight mt-0.5" style={{ color: "var(--color-text-tertiary)" }}>
+            of Canadian jobs classified as highly exposed to AI
+          </p>
+        </div>
+        <div>
+          <p className="font-display text-2xl font-bold" style={{ color: "var(--color-navy)" }}>53%</p>
+          <p className="text-[0.65rem] leading-tight mt-0.5" style={{ color: "var(--color-text-tertiary)" }}>
+            of all tasks across Canadian occupations performable by current AI
+          </p>
+        </div>
+        <div>
+          <p className="font-display text-2xl font-bold" style={{ color: "var(--color-navy)" }}>~2%<span className="text-base font-normal" style={{ color: "var(--color-text-tertiary)" }}> vs 6.8%</span></p>
+          <p className="text-[0.65rem] leading-tight mt-0.5" style={{ color: "var(--color-text-tertiary)" }}>
+            Manitoba AI adoption rate vs national average
+          </p>
+        </div>
+      </div>
+
+      <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)", fontFamily: "var(--font-body)" }}>
+        Your score reflects Manitoba&apos;s unique position: high theoretical exposure
+        combined with very low current adoption, meaning disruption is ahead of you,
+        not behind you.
+      </p>
+      <p className="text-[0.6rem] mt-2" style={{ color: "var(--color-text-tertiary)" }}>
+        Sources:{" "}
+        <a href="https://fsc-ccf.ca/wp-content/uploads/2025/09/canadas-workforce-in-transition_sept2025.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-80">Future Skills Centre (2025)</a>,{" "}
+        <a href="https://fsc-ccf.ca/wp-content/uploads/2026/03/understanding-the-Influence-of-ai-on-employment_jan2026.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-80">Conference Board of Canada (2026)</a>,{" "}
+        Statistics Canada CSBC
+      </p>
+    </div>
+  );
+}
+
+function JCurveTimeline() {
+  return (
+    <div
+      className="rounded-sm border p-6 sm:p-8 mb-6"
+      style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
+    >
+      <SectionHeading label="Employment outlook" heading="The disruption timeline" />
+
+      {/* Timeline visual */}
+      <div className="relative flex items-center justify-between mb-6 px-4">
+        {/* Left marker: 2030 */}
+        <div className="text-center z-10">
+          <p className="font-display text-lg font-bold" style={{ color: "var(--color-risk-high)" }}>2030</p>
+          <p className="font-mono text-sm font-bold" style={{ color: "var(--color-risk-high)" }}>-535,000</p>
+          <p className="text-[0.6rem] max-w-[120px] mt-1" style={{ color: "var(--color-text-tertiary)" }}>
+            Short-term dip as businesses adopt AI
+          </p>
+        </div>
+
+        {/* Connecting line */}
+        <div className="flex-1 mx-4 h-1 rounded-full" style={{ background: "linear-gradient(90deg, var(--color-risk-high), var(--color-risk-low))" }} />
+
+        {/* Right marker: 2045 */}
+        <div className="text-center z-10">
+          <p className="font-display text-lg font-bold" style={{ color: "var(--color-risk-low)" }}>2045</p>
+          <p className="font-mono text-sm font-bold" style={{ color: "var(--color-risk-low)" }}>+555,000</p>
+          <p className="text-[0.6rem] max-w-[120px] mt-1" style={{ color: "var(--color-text-tertiary)" }}>
+            Long-term gain from productivity growth
+          </p>
+        </div>
+      </div>
+
+      <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)", fontFamily: "var(--font-body)" }}>
+        The Conference Board of Canada projects a short-term employment dip as
+        businesses reduce workforce in favour of AI, followed by long-term job creation
+        from productivity gains. The cost-convergence curve below models this same
+        pattern for your sector.
+      </p>
+      <p className="text-[0.6rem] mt-2" style={{ color: "var(--color-text-tertiary)" }}>
+        Source:{" "}
+        <a
+          href="https://fsc-ccf.ca/wp-content/uploads/2026/03/understanding-the-Influence-of-ai-on-employment_jan2026.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:opacity-80"
+        >
+          Conference Board of Canada, Understanding the Influence of AI on Employment (2026)
+        </a>. Full-adoption scenario using the MOST macroeconomic model.
+      </p>
+    </div>
+  );
+}
+
 // ── Competitive Threat Preview ───────────────────────────────────────────────
 
 function ThreatPreview({ scenario }: { scenario: ThreatScenario }) {
@@ -771,6 +876,12 @@ export function ResultsClient({
 
       {/* RLI Reality-Check Callout */}
       {playbook && industry && <RLICallout />}
+
+      {/* Canadian Context Callout */}
+      {playbook && industry && <CanadianContextCallout />}
+
+      {/* J-Curve Timeline */}
+      {playbook && industry && <JCurveTimeline />}
 
       {/* Cost Curve Convergence */}
       {playbook && industry && (
