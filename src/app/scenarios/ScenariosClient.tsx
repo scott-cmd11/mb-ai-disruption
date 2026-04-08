@@ -42,31 +42,31 @@ const SCENARIOS: Array<{
 }> = [
   {
     id: "baseline",
-    label: "2024 Baseline",
-    eyebrow: "Current data",
-    description: "Current composite scores derived from Statistics Canada 2023 data and peer-reviewed automation research.",
-    detail: "This is the reference point. Scores reflect peer-reviewed methodology: 30% automation probability, 30% AI occupation exposure, 25% language AI impact, 15% sector adoption gap.",
+    label: "Where things stand",
+    eyebrow: "Today's picture",
+    description: "Current estimated AI disruption risk for each Manitoba industry, based on published research.",
+    detail: "This is the starting point. Scores reflect how automatable the jobs are in each industry, how much AI is already being used, and how quickly businesses in that sector are adopting new tools.",
   },
   {
     id: "rapid-ai",
-    label: "Rapid AI (2027)",
-    eyebrow: "Accelerated timeline",
-    description: "LLM and automation tools become mainstream in 2–3 years rather than 5+. Sectors with low current adoption face higher near-term pressure.",
-    detail: "Sectors with AI adoption below 20% receive +10 points; below 40% receive +5 points. Reflects the risk of being caught unprepared as AI normalizes quickly.",
+    label: "AI spreads quickly",
+    eyebrow: "If AI moves fast",
+    description: "What if AI tools become the norm within 2–3 years? Industries that haven't started yet would have less time to adapt.",
+    detail: "Industries with little AI use today would face more pressure in this scenario — because fast-moving change would leave less runway to catch up. The further behind, the bigger the impact.",
   },
   {
     id: "ahead",
-    label: "Already Using AI",
-    eyebrow: "Leading position",
-    description: "Businesses actively deploying AI tools today. First-mover advantage and internal familiarity reduce effective disruption exposure by 30%.",
-    detail: "Applies the 0.70 adoption modifier from the calculator methodology. Businesses using AI are driving change rather than reacting to it.",
+    label: "Already using AI",
+    eyebrow: "Your business is ahead",
+    description: "If your business is already using AI tools, you're in a stronger position. Early adopters face less disruption because they're leading the change rather than reacting to it.",
+    detail: "Risk scores drop by about 30% for businesses actively using AI. Getting started early pays off — familiarity with these tools reduces the shock when change arrives.",
   },
   {
     id: "behind",
-    label: "Not Considering AI",
-    eyebrow: "Lagging position",
-    description: "Small businesses not currently exploring AI tools. Adaptation lag and resource constraints amplify exposure — especially in high-risk sectors.",
-    detail: "Applies the 1.10 micro-business size multiplier. Reflects higher effective risk for businesses without capacity to manage AI transitions proactively.",
+    label: "Not started yet",
+    eyebrow: "Your business hasn't started",
+    description: "Businesses that haven't begun thinking about AI may face more pressure — especially those in industries that are already at higher risk.",
+    detail: "Risk scores rise by about 10% for businesses not yet exploring AI tools. This reflects the added challenge of having to catch up quickly once change is already underway.",
   },
 ];
 
@@ -193,7 +193,7 @@ export function ScenariosClient({
                 >
                   {scenarioHighCount}
                 </span>{" "}
-                high-exposure sectors
+                higher-risk industries
               </p>
             </button>
           );
@@ -240,12 +240,12 @@ export function ScenariosClient({
             aria-label="Scenario summary statistics"
           >
             {[
-              { value: stats.high, label: "High exposure", color: "#DC2626" },
-              { value: stats.medium, label: "Medium exposure", color: "#B45309" },
-              { value: stats.low, label: "Low exposure", color: "#15803D" },
+              { value: stats.high, label: "Higher risk", color: "#DC2626" },
+              { value: stats.medium, label: "Moderate risk", color: "#B45309" },
+              { value: stats.low, label: "Lower risk", color: "#15803D" },
               {
                 value: activeId === "baseline" ? "—" : stats.changed,
-                label: "Tier changes",
+                label: "Risk level shifts",
                 color: "var(--color-navy)",
               },
             ].map(({ value, label, color }) => (

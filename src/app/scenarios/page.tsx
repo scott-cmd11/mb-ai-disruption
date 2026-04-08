@@ -108,7 +108,7 @@ export default function ScenariosPage() {
               className="text-[0.6rem] font-bold tracking-[0.35em] uppercase mb-4"
               style={{ color: "var(--color-gold)" }}
             >
-              What-if analysis · 4 scenarios · {industries.length} sectors
+              4 what-if scenarios · {industries.length} Manitoba industries
             </p>
             <h1
               id="scenarios-heading"
@@ -119,15 +119,15 @@ export default function ScenariosPage() {
                 letterSpacing: "-0.025em",
               }}
             >
-              How do AI risk scores shift under different timelines?
+              How does AI risk change depending on what you do next?
             </h1>
             <p
               className="mt-4 text-base leading-relaxed max-w-xl"
               style={{ color: "rgba(248, 250, 252, 0.6)" }}
             >
-              Compare Manitoba sector exposure across four scenarios — from the
-              2024 baseline to a rapid-adoption future. See which sectors change
-              tiers and by how much.
+              Pick a scenario to see how risk levels shift across Manitoba&apos;s
+              industries — whether AI arrives fast, slow, or your business gets
+              ahead of it now.
             </p>
 
             {/* Baseline stat */}
@@ -148,9 +148,9 @@ export default function ScenariosPage() {
                 className="text-sm"
                 style={{ color: "rgba(248,250,252,0.7)" }}
               >
-                of {industries.length} sectors at{" "}
-                <strong style={{ color: "#F87171" }}>high exposure</strong>{" "}
-                today — see how each scenario changes that
+                of {industries.length} industries are at{" "}
+                <strong style={{ color: "#F87171" }}>higher risk</strong>{" "}
+                today — explore how each scenario changes that number
               </span>
             </div>
           </div>
@@ -185,35 +185,31 @@ export default function ScenariosPage() {
               letterSpacing: "-0.02em",
             }}
           >
-            How scenarios are calculated
+            What each scenario assumes
           </h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                label: "2024 Baseline",
-                formula: "Score = sectorRiskScore",
-                note: "Direct from the composite methodology (automation probability + AI exposure + language AI impact + sector adoption gap).",
+                label: "Where things stand",
+                note: "The starting point. Scores are based on how automatable the jobs are in each industry, how much AI is already being used, and how quickly businesses in that sector are adopting new tools.",
                 color: "var(--color-navy)",
               },
               {
-                label: "Rapid AI (2027)",
-                formula: "Score = baseline + boost",
-                note: "Boost: +10 if adoption < 20%, +5 if < 40%, +2 otherwise. Reflects low-adopter vulnerability.",
+                label: "AI spreads quickly",
+                note: "Industries with little AI use today get a higher risk score — because fast change would leave less time to prepare. The further behind a sector is, the bigger the increase.",
                 color: "#DC2626",
               },
               {
-                label: "Already Using AI",
-                formula: "Score = baseline × 0.70",
-                note: "Applies the calculator's 0.70 adoption modifier. 30% reduction for first-movers.",
+                label: "Already using AI",
+                note: "Risk scores drop by about 30% for businesses actively using AI. Getting started early pays off — you're building skills and adapting before disruption forces your hand.",
                 color: "#15803D",
               },
               {
-                label: "Not Considering AI",
-                formula: "Score = baseline × 1.10",
-                note: "Applies the 1.10 micro-business multiplier. Higher risk for adaptation-constrained organizations.",
+                label: "Not started yet",
+                note: "Risk scores rise by about 10% for businesses not yet exploring AI tools. This reflects the extra pressure of having to catch up quickly once change is already underway.",
                 color: "#B45309",
               },
-            ].map(({ label, formula, note, color }) => (
+            ].map(({ label, note, color }) => (
               <div
                 key={label}
                 className="rounded-xl border p-5 flex flex-col gap-3"
@@ -233,16 +229,6 @@ export default function ScenariosPage() {
                 >
                   {label}
                 </p>
-                <code
-                  className="text-xs px-2 py-1 rounded"
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    backgroundColor: "var(--color-surface-muted)",
-                    color: "var(--color-text-secondary)",
-                  }}
-                >
-                  {formula}
-                </code>
                 <p
                   className="text-xs leading-relaxed"
                   style={{ color: "var(--color-text-secondary)" }}
