@@ -91,34 +91,52 @@ export default function ThreatModelPage() {
         aria-labelledby="mechanism-01"
         style={{ backgroundColor: "var(--color-paper)" }}
       >
-        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
+        <details className="group">
+          <summary className="block mx-auto max-w-4xl px-4 pt-10 pb-6 sm:px-6 lg:px-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
 
-          {/* Header */}
-          <div className="flex items-center gap-4 mb-4">
-            <span
-              className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-sm text-white"
-              style={{ backgroundColor: "#DC2626" }}
-              aria-hidden="true"
-            >
-              01
-            </span>
-            <h2
-              id="mechanism-01"
-              className="font-display font-bold"
-              style={{ color: "var(--color-text-primary)", fontSize: "1.4rem", letterSpacing: "-0.02em" }}
-            >
-              Price floor collapse
-            </h2>
-          </div>
+            {/* Clickable header row */}
+            <div className="flex items-center gap-4">
+              <span
+                className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-sm text-white"
+                style={{ backgroundColor: "#DC2626" }}
+                aria-hidden="true"
+              >
+                01
+              </span>
+              <h2
+                id="mechanism-01"
+                className="font-display font-bold"
+                style={{ color: "var(--color-text-primary)", fontSize: "1.4rem", letterSpacing: "-0.02em" }}
+              >
+                Price floor collapse
+              </h2>
+              {/* Chevron — rotates when open */}
+              <svg
+                className="ml-auto w-5 h-5 shrink-0 transition-transform duration-200 group-open:rotate-180"
+                style={{ color: "var(--color-text-tertiary)" }}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
 
-          {/* Definition */}
-          <p
-            className="text-lg font-medium mb-6"
-            style={{ color: "var(--color-text-secondary)", borderLeft: "3px solid #DC2626", paddingLeft: "1.5rem" }}
-          >
-            AI drops the cost of routine cognitive work to near zero. Tasks that required a $50/hour
-            professional now cost fractions of a cent to automate.
-          </p>
+            {/* Definition — visible in collapsed state */}
+            <p
+              className="mt-4 text-lg font-medium"
+              style={{ color: "var(--color-text-secondary)", borderLeft: "3px solid #DC2626", paddingLeft: "1.5rem" }}
+            >
+              AI drops the cost of routine cognitive work to near zero. Tasks that required a $50/hour
+              professional now cost fractions of a cent to automate.
+            </p>
+
+          </summary>
+
+          {/* Expandable content */}
+          <div className="mx-auto max-w-4xl px-4 pb-14 sm:px-6 lg:px-8">
 
           {/* Stat callout */}
           <div
@@ -204,7 +222,8 @@ export default function ThreatModelPage() {
             </p>
           </div>
 
-        </div>
+          </div>
+        </details>
       </section>
 
       {/* ── Mechanism 02: Speed Arbitrage ──────────────────────────────── */}
@@ -212,32 +231,52 @@ export default function ThreatModelPage() {
         aria-labelledby="mechanism-02"
         style={{ backgroundColor: "var(--color-paper-deep)" }}
       >
-        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
+        <details className="group">
+          <summary className="block mx-auto max-w-4xl px-4 pt-10 pb-6 sm:px-6 lg:px-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
 
-          <div className="flex items-center gap-4 mb-4">
-            <span
-              className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-sm text-white"
-              style={{ backgroundColor: "#D97706" }}
-              aria-hidden="true"
-            >
-              02
-            </span>
-            <h2
-              id="mechanism-02"
-              className="font-display font-bold"
-              style={{ color: "var(--color-text-primary)", fontSize: "1.4rem", letterSpacing: "-0.02em" }}
-            >
-              Speed arbitrage
-            </h2>
-          </div>
+            {/* Clickable header row */}
+            <div className="flex items-center gap-4">
+              <span
+                className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-sm text-white"
+                style={{ backgroundColor: "#D97706" }}
+                aria-hidden="true"
+              >
+                02
+              </span>
+              <h2
+                id="mechanism-02"
+                className="font-display font-bold"
+                style={{ color: "var(--color-text-primary)", fontSize: "1.4rem", letterSpacing: "-0.02em" }}
+              >
+                Speed arbitrage
+              </h2>
+              {/* Chevron — rotates when open */}
+              <svg
+                className="ml-auto w-5 h-5 shrink-0 transition-transform duration-200 group-open:rotate-180"
+                style={{ color: "var(--color-text-tertiary)" }}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
 
-          <p
-            className="text-lg font-medium mb-6"
-            style={{ color: "var(--color-text-secondary)", borderLeft: "3px solid #D97706", paddingLeft: "1.5rem" }}
-          >
-            AI compresses delivery time from days or hours to minutes.
-            The first firm to deliver gets the work.
-          </p>
+            {/* Definition — visible in collapsed state */}
+            <p
+              className="mt-4 text-lg font-medium"
+              style={{ color: "var(--color-text-secondary)", borderLeft: "3px solid #D97706", paddingLeft: "1.5rem" }}
+            >
+              AI compresses delivery time from days or hours to minutes.
+              The first firm to deliver gets the work.
+            </p>
+
+          </summary>
+
+          {/* Expandable content */}
+          <div className="mx-auto max-w-4xl px-4 pb-14 sm:px-6 lg:px-8">
 
           <div
             className="rounded-lg p-5 mb-6"
@@ -313,7 +352,8 @@ export default function ThreatModelPage() {
               When speed becomes the conversation, the competitive baseline has already shifted.
             </p>
           </div>
-        </div>
+          </div>
+        </details>
       </section>
 
       {/* ── Mechanism 03: Scale Without Headcount ──────────────────────── */}
@@ -321,32 +361,52 @@ export default function ThreatModelPage() {
         aria-labelledby="mechanism-03"
         style={{ backgroundColor: "var(--color-paper)" }}
       >
-        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
+        <details className="group">
+          <summary className="block mx-auto max-w-4xl px-4 pt-10 pb-6 sm:px-6 lg:px-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
 
-          <div className="flex items-center gap-4 mb-4">
-            <span
-              className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-sm text-white"
-              style={{ backgroundColor: "#7C3AED" }}
-              aria-hidden="true"
-            >
-              03
-            </span>
-            <h2
-              id="mechanism-03"
-              className="font-display font-bold"
-              style={{ color: "var(--color-text-primary)", fontSize: "1.4rem", letterSpacing: "-0.02em" }}
-            >
-              Scale without headcount
-            </h2>
-          </div>
+            {/* Clickable header row */}
+            <div className="flex items-center gap-4">
+              <span
+                className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-sm text-white"
+                style={{ backgroundColor: "#7C3AED" }}
+                aria-hidden="true"
+              >
+                03
+              </span>
+              <h2
+                id="mechanism-03"
+                className="font-display font-bold"
+                style={{ color: "var(--color-text-primary)", fontSize: "1.4rem", letterSpacing: "-0.02em" }}
+              >
+                Scale without headcount
+              </h2>
+              {/* Chevron — rotates when open */}
+              <svg
+                className="ml-auto w-5 h-5 shrink-0 transition-transform duration-200 group-open:rotate-180"
+                style={{ color: "var(--color-text-tertiary)" }}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
 
-          <p
-            className="text-lg font-medium mb-6"
-            style={{ color: "var(--color-text-secondary)", borderLeft: "3px solid #7C3AED", paddingLeft: "1.5rem" }}
-          >
-            AI-native firms grow their output without growing their team.
-            Traditional firms that must hire to scale are structurally disadvantaged.
-          </p>
+            {/* Definition — visible in collapsed state */}
+            <p
+              className="mt-4 text-lg font-medium"
+              style={{ color: "var(--color-text-secondary)", borderLeft: "3px solid #7C3AED", paddingLeft: "1.5rem" }}
+            >
+              AI-native firms grow their output without growing their team.
+              Traditional firms that must hire to scale are structurally disadvantaged.
+            </p>
+
+          </summary>
+
+          {/* Expandable content */}
+          <div className="mx-auto max-w-4xl px-4 pb-14 sm:px-6 lg:px-8">
 
           <div
             className="rounded-lg p-5 mb-6"
@@ -422,7 +482,8 @@ export default function ThreatModelPage() {
               a reliable proxy for capacity.
             </p>
           </div>
-        </div>
+          </div>
+        </details>
       </section>
 
       {/* ── Mechanism 04: Junior Work at AI Quality ────────────────────── */}
@@ -430,32 +491,52 @@ export default function ThreatModelPage() {
         aria-labelledby="mechanism-04"
         style={{ backgroundColor: "var(--color-paper-deep)" }}
       >
-        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
+        <details className="group">
+          <summary className="block mx-auto max-w-4xl px-4 pt-10 pb-6 sm:px-6 lg:px-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
 
-          <div className="flex items-center gap-4 mb-4">
-            <span
-              className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-sm text-white"
-              style={{ backgroundColor: "#0891B2" }}
-              aria-hidden="true"
-            >
-              04
-            </span>
-            <h2
-              id="mechanism-04"
-              className="font-display font-bold"
-              style={{ color: "var(--color-text-primary)", fontSize: "1.4rem", letterSpacing: "-0.02em" }}
-            >
-              Junior work at AI quality
-            </h2>
-          </div>
+            {/* Clickable header row */}
+            <div className="flex items-center gap-4">
+              <span
+                className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-sm text-white"
+                style={{ backgroundColor: "#0891B2" }}
+                aria-hidden="true"
+              >
+                04
+              </span>
+              <h2
+                id="mechanism-04"
+                className="font-display font-bold"
+                style={{ color: "var(--color-text-primary)", fontSize: "1.4rem", letterSpacing: "-0.02em" }}
+              >
+                Junior work at AI quality
+              </h2>
+              {/* Chevron — rotates when open */}
+              <svg
+                className="ml-auto w-5 h-5 shrink-0 transition-transform duration-200 group-open:rotate-180"
+                style={{ color: "var(--color-text-tertiary)" }}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
 
-          <p
-            className="text-lg font-medium mb-6"
-            style={{ color: "var(--color-text-secondary)", borderLeft: "3px solid #0891B2", paddingLeft: "1.5rem" }}
-          >
-            AI now handles the structured, routine work that junior staff were hired to do —
-            at comparable quality, instantly, without training time or turnover costs.
-          </p>
+            {/* Definition — visible in collapsed state */}
+            <p
+              className="mt-4 text-lg font-medium"
+              style={{ color: "var(--color-text-secondary)", borderLeft: "3px solid #0891B2", paddingLeft: "1.5rem" }}
+            >
+              AI now handles the structured, routine work that junior staff were hired to do —
+              at comparable quality, instantly, without training time or turnover costs.
+            </p>
+
+          </summary>
+
+          {/* Expandable content */}
+          <div className="mx-auto max-w-4xl px-4 pb-14 sm:px-6 lg:px-8">
 
           <div
             className="rounded-lg p-5 mb-6"
@@ -539,7 +620,8 @@ export default function ThreatModelPage() {
               up the expertise stack. Firms that only sell first-draft work are the most exposed.
             </p>
           </div>
-        </div>
+          </div>
+        </details>
       </section>
 
       {/* ── Mechanism 05: Always-On ─────────────────────────────────────── */}
@@ -547,32 +629,52 @@ export default function ThreatModelPage() {
         aria-labelledby="mechanism-05"
         style={{ backgroundColor: "var(--color-paper)" }}
       >
-        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
+        <details className="group">
+          <summary className="block mx-auto max-w-4xl px-4 pt-10 pb-6 sm:px-6 lg:px-8 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
 
-          <div className="flex items-center gap-4 mb-4">
-            <span
-              className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-sm text-white"
-              style={{ backgroundColor: "#059669" }}
-              aria-hidden="true"
-            >
-              05
-            </span>
-            <h2
-              id="mechanism-05"
-              className="font-display font-bold"
-              style={{ color: "var(--color-text-primary)", fontSize: "1.4rem", letterSpacing: "-0.02em" }}
-            >
-              Always-on, no overhead
-            </h2>
-          </div>
+            {/* Clickable header row */}
+            <div className="flex items-center gap-4">
+              <span
+                className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-sm text-white"
+                style={{ backgroundColor: "#059669" }}
+                aria-hidden="true"
+              >
+                05
+              </span>
+              <h2
+                id="mechanism-05"
+                className="font-display font-bold"
+                style={{ color: "var(--color-text-primary)", fontSize: "1.4rem", letterSpacing: "-0.02em" }}
+              >
+                Always-on, no overhead
+              </h2>
+              {/* Chevron — rotates when open */}
+              <svg
+                className="ml-auto w-5 h-5 shrink-0 transition-transform duration-200 group-open:rotate-180"
+                style={{ color: "var(--color-text-tertiary)" }}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
 
-          <p
-            className="text-lg font-medium mb-6"
-            style={{ color: "var(--color-text-secondary)", borderLeft: "3px solid #059669", paddingLeft: "1.5rem" }}
-          >
-            An AI-native competitor is available 24 hours a day, in any language, with no sick days,
-            overtime pay, or turnover — at exactly the same cost as business hours.
-          </p>
+            {/* Definition — visible in collapsed state */}
+            <p
+              className="mt-4 text-lg font-medium"
+              style={{ color: "var(--color-text-secondary)", borderLeft: "3px solid #059669", paddingLeft: "1.5rem" }}
+            >
+              An AI-native competitor is available 24 hours a day, in any language, with no sick days,
+              overtime pay, or turnover — at exactly the same cost as business hours.
+            </p>
+
+          </summary>
+
+          {/* Expandable content */}
+          <div className="mx-auto max-w-4xl px-4 pb-14 sm:px-6 lg:px-8">
 
           <div
             className="rounded-lg p-5 mb-6"
@@ -669,7 +771,8 @@ export default function ThreatModelPage() {
               of competition.
             </p>
           </div>
-        </div>
+          </div>
+        </details>
       </section>
 
       {/* ── What This Means for Manitoba ────────────────────────────────── */}
