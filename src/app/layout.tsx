@@ -239,7 +239,18 @@ export default function RootLayout({
               style={{ borderColor: "rgba(255, 255, 255, 0.08)" }}
             >
               <p className="text-xs" style={{ color: "rgba(248, 250, 252, 0.35)" }}>
-                © {new Date().getFullYear()} Scott Hazlitt — Independent exploratory project. Scores measure relative AI disruption exposure, not certainty of outcome.
+                © {new Date().getFullYear()} Scott Hazlitt — Independent exploratory project. Scores measure relative AI disruption exposure, not certainty of outcome.{" "}
+                Built with{" "}
+                <a
+                  href="https://claude.ai/code"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:opacity-70 transition-opacity"
+                  style={{ color: "rgba(248, 250, 252, 0.45)" }}
+                >
+                  Claude Code
+                </a>
+                .
               </p>
               <nav className="flex items-center gap-4" aria-label="Legal">
                 <Link
