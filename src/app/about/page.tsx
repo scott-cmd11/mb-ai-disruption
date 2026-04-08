@@ -150,10 +150,11 @@ export default function AboutPage() {
           Independent project — not a government service
         </p>
         <p style={{ color: "var(--color-text-secondary)" }}>
-          This is a free, independent research tool built by a Manitoba researcher. It is not
-          affiliated with the Government of Manitoba, any provincial department, or any employer
-          or industry association. Risk scores are modelled estimates derived from peer-reviewed
-          academic datasets — not predictions, and not professional employment, legal, or business advice.
+          This is a free tool built by Scott Hazlitt as a personal project. It is not affiliated
+          with the Government of Manitoba, any provincial department, or any employer or industry
+          association. No personal data is collected. Risk scores are modelled estimates derived
+          from peer-reviewed academic datasets — not predictions, and not professional employment,
+          legal, or business advice.
           See{" "}
           <a href="/terms" className="underline" style={{ color: "var(--color-gold)" }}>
             Terms of Use

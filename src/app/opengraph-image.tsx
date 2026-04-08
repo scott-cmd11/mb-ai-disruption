@@ -105,7 +105,7 @@ export default function OgImage() {
               borderRadius: 4,
             }}
           >
-            Exploratory research tool
+            Free tool · no data collected
           </span>
         </div>
       </div>

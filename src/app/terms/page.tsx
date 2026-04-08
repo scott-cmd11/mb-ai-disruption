@@ -28,11 +28,11 @@ export default function TermsPage() {
 
         {/* Important notice box */}
         <div className="p-4 rounded-lg" style={{ background: "rgba(217, 119, 6, 0.08)", border: "1px solid rgba(217, 119, 6, 0.3)" }}>
-          <p className="font-semibold mb-1" style={{ color: "var(--color-gold)" }}>Exploratory research tool</p>
+          <p className="font-semibold mb-1" style={{ color: "var(--color-gold)" }}>Independent personal project</p>
           <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-            This Site is an <strong>independent, exploratory research project</strong>. It is not affiliated with the Government
-            of Manitoba, any federal department, Statistics Canada, or any employer or industry association. Scores are
-            modelled estimates — not predictions, guarantees, or professional advice of any kind.
+            This Site is a free tool built by Scott Hazlitt as a personal project. It is not affiliated with the Government
+            of Manitoba, any federal department, Statistics Canada, or any employer or industry association. No personal
+            data is collected. Scores are modelled estimates — not predictions, guarantees, or professional advice of any kind.
           </p>
         </div>
 

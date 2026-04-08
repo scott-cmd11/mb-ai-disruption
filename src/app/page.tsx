@@ -328,17 +328,17 @@ export default function HomePage() {
                   className="text-sm leading-relaxed"
                   style={{ color: "var(--color-text-secondary)" }}
                 >
-                  A free, independent research tool that shows how likely each Manitoba industry
-                  and occupation is to be disrupted by AI — based on published academic datasets,
-                  not opinions. Answer 6 questions about your business to get a personalised score.
+                  A free tool that shows how likely each Manitoba industry and occupation is to be
+                  disrupted by AI — based on published academic datasets, not opinions. Answer 6
+                  questions about your business to get a personalised score. No data is collected.
                 </p>
                 <p
                   className="text-sm leading-relaxed"
                   style={{ color: "var(--color-text-tertiary)" }}
                 >
                   <strong style={{ color: "var(--color-text-secondary)" }}>This is not a government service.</strong>{" "}
-                  It is an independent project by a Manitoba researcher. Scores are modelled
-                  estimates — not predictions, and not professional advice.
+                  Built by Scott Hazlitt as a personal project. Scores are modelled estimates —
+                  not predictions, and not professional advice.
                 </p>
               </div>
             </div>
