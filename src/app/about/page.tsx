@@ -85,6 +85,34 @@ const DATA_SOURCES = [
     vintage: "2024",
     url: "https://iceberg.mit.edu/",
   },
+  {
+    source: "Future Skills Centre — Canada's Workforce in Transition",
+    description:
+      "Classifies 57.4% of Canadian jobs as highly AI-exposed, split between AI-competing roles (where AI automates core tasks) and AI-augmenting roles (where AI enhances human capabilities). Analyzes 19 million job postings to track shifting demand. AI-augmenting roles grew 2.9% in 2024, outpacing AI-competing roles at 1.6%.",
+    vintage: "Sept 2025",
+    url: "https://fsc-ccf.ca/wp-content/uploads/2025/09/canadas-workforce-in-transition_sept2025.pdf",
+  },
+  {
+    source: "Conference Board of Canada — Understanding the Influence of AI on Employment",
+    description:
+      "Canadian task-level AI exposure index covering 501 NOC occupations and 304 NAICS industries. Uses a 3-phase framework: exposure, productivity gains, and automation likelihood. Projects a short-term employment dip of 535,000 jobs by 2030, followed by a long-term gain of 555,000 jobs by 2045 as productivity benefits materialize.",
+    vintage: "Jan 2026",
+    url: "https://fsc-ccf.ca/wp-content/uploads/2026/03/understanding-the-Influence-of-ai-on-employment_jan2026.pdf",
+  },
+  {
+    source: "The Dais / FSC — Right Brain, Left Brain, AI Brain",
+    description:
+      "Exposure-complementarity framework classifying 506 Canadian NOC occupations into four quadrants based on AI exposure and whether AI assists or replaces workers. 56% of Canadian workers are in occupations with higher AI exposure. Used as the basis for the AI-augmenting and AI-competing labels shown in occupation detail panels.",
+    vintage: "Jan 2025",
+    url: "https://fsc-ccf.ca/wp-content/uploads/2025/01/Right-Brain-Left-Brain-AI-Brain-Report_The-Dais_FSC.pdf",
+  },
+  {
+    source: "Policy Exchange — Government in the Age of Superintelligence",
+    description:
+      "UK policy think-tank report examining workforce transformation, skills revaluation, and government preparedness for AI disruption. Projects large-scale labour market dislocation across white-collar sectors, recommends national retraining capacity of 250,000 workers annually, and argues that roles dismissed as 'low-skilled' are actually 'low-paid' and will command increasing premiums as cognitive work is automated.",
+    vintage: "2025",
+    url: "https://policyexchange.org.uk/wp-content/uploads/Government-in-the-Age-of-Super-Intelligence-1.pdf",
+  },
 ] as const;
 
 export default function AboutPage() {
@@ -383,6 +411,15 @@ export default function AboutPage() {
             wage value) is dwarfed by hidden white-collar exposure (11.7%) — is referenced in
             the methodology but individual occupation Index values are not published as a
             downloadable dataset, so they cannot be added to the composite score formula.
+          </li>
+          <li>
+            <strong className="text-[var(--color-text-primary)]">
+              AI-augmenting/AI-competing classification is a binary simplification.
+            </strong>{" "}
+            Derived from the FSC complementarity framework (building on IMF methodology
+            by Pizzinelli et al.) applied to Canadian NOC codes. Some occupations near
+            the threshold could reasonably be classified either way. The classification
+            reflects the current generation of AI tools and may shift as capabilities evolve.
           </li>
         </ul>
       </section>
