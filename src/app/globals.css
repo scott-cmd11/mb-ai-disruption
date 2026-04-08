@@ -139,13 +139,14 @@ html::before {
   display: inline-flex;
   align-items: center;
   min-height: 44px;            /* WCAG 2.5.5 touch target */
-  color: rgba(248, 250, 252, 0.65);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  color: rgba(248, 250, 252, 0.6);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
   text-decoration: none;
   transition: color 0.15s ease;
-  padding: 0 0.125rem;
+  padding: 0 0.25rem;
 }
 
 .nav-link::after {
