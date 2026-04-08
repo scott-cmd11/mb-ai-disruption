@@ -3,6 +3,7 @@ import { Fraunces, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { NavMenu } from "@/components/NavMenu";
+import { ShareButtons } from "@/components/ShareButtons";
 import { NAV_LINKS } from "@/lib/nav";
 
 // ── Fonts ─────────────────────────────────────────────────────────────────────
@@ -179,6 +180,17 @@ export default function RootLayout({
                   Data-driven AI disruption risk assessment for Manitoba industries,
                   occupations, and businesses. Built on peer-reviewed academic research.
                 </p>
+
+                {/* Share buttons */}
+                <div className="mt-4">
+                  <p
+                    className="text-[0.6rem] font-bold tracking-[0.2em] uppercase mb-2"
+                    style={{ color: "rgba(248, 250, 252, 0.4)" }}
+                  >
+                    Share this tool
+                  </p>
+                  <ShareButtons />
+                </div>
               </div>
 
               {/* Quick links */}
