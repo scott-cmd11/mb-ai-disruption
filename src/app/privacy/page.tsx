@@ -31,9 +31,9 @@ export default function PrivacyPage() {
           <p>
             This Privacy Policy describes how Scott Hazlitt (&ldquo;I&rdquo;, &ldquo;me&rdquo;, or &ldquo;the operator&rdquo;)
             handles information in connection with the <strong>Manitoba AI Disruption Explorer</strong> website at{" "}
-            <a href="https://mb-ai-disruption.vercel.app" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.aicanadapulse.ca" target="_blank" rel="noopener noreferrer"
               className="underline" style={{ color: "var(--color-gold)" }}>
-              mb-ai-disruption.vercel.app
+              aicanadapulse.ca
             </a>{" "}
             (the &ldquo;Site&rdquo;). This policy is intended to comply with the{" "}
             <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA) and applicable Canadian privacy law.

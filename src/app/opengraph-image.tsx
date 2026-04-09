@@ -88,7 +88,7 @@ export default function OgImage() {
               letterSpacing: "0.02em",
             }}
           >
-            mb-ai-disruption.vercel.app
+            aicanadapulse.ca
           </span>
           <span
             style={{

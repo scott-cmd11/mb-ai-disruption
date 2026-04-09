@@ -40,9 +40,9 @@ export default function TermsPage() {
           <h2 className="text-base font-semibold mb-3" style={{ color: "var(--color-text-primary)" }}>Acceptance of terms</h2>
           <p>
             By accessing or using the <strong>Manitoba AI Disruption Explorer</strong> at{" "}
-            <a href="https://mb-ai-disruption.vercel.app" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.aicanadapulse.ca" target="_blank" rel="noopener noreferrer"
               className="underline" style={{ color: "var(--color-gold)" }}>
-              mb-ai-disruption.vercel.app
+              aicanadapulse.ca
             </a>{" "}
             (the &ldquo;Site&rdquo;), you agree to these Terms of Use. If you do not agree, please do not use the Site.
           </p>

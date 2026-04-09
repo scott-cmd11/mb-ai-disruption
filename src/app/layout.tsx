@@ -28,7 +28,7 @@ const instrumentSans = Instrument_Sans({
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
 
-const BASE_URL = "https://mb-ai-disruption.vercel.app";
+const BASE_URL = "https://www.aicanadapulse.ca";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
