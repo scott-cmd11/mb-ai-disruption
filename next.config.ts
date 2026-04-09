@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "ai-canada-pulse.vercel.app" }],
+        destination: "https://www.aicanadapulse.ca/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
