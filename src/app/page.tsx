@@ -20,25 +20,20 @@ const TIER_BADGE_CLASS: Record<RiskTier, string> = {
 function IndustryRow({
   industry,
   rank,
-  index,
 }: {
   industry: Industry;
   rank: number;
-  index: number;
 }) {
   const barClass = `risk-bar-${industry.riskTier}`;
   const badgeClass = TIER_BADGE_CLASS[industry.riskTier];
-  // Stagger each row's animation by 30ms
-  const animDelay = `${0.05 + index * 0.03}s`;
 
   return (
     <tr
-      className="anim-row group border-b border-slate-100 last:border-0 hover:bg-amber-50/60 transition-colors"
-      style={{ animationDelay: animDelay }}
+      className="group border-b border-slate-100 last:border-0 hover:bg-amber-50/60 transition-colors"
     >
       {/* Rank */}
       <td
-        className="py-3.5 pl-5 w-10 text-right text-xs font-mono tabular-nums select-none"
+        className="py-3.5 pl-4 sm:pl-5 w-8 sm:w-10 text-right text-xs font-mono tabular-nums select-none"
         style={{ color: "var(--color-text-tertiary)" }}
         aria-label={`Rank ${rank}`}
       >
@@ -48,7 +43,7 @@ function IndustryRow({
       {/* Sector name — th with scope="row" for screen reader column context */}
       <th
         scope="row"
-        className="py-3.5 px-4 text-sm font-semibold text-left w-52"
+        className="py-3.5 px-3 sm:px-4 text-sm font-semibold text-left w-36 sm:w-52"
         style={{
           color: "var(--color-text-primary)",
           fontFamily: "var(--font-body)",
@@ -110,13 +105,7 @@ export default function HomePage() {
         style={{ backgroundColor: "var(--color-navy-deep)" }}
         className="relative overflow-hidden"
       >
-        {/* Amber glow — decorative, aria-hidden */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-32 -right-32 h-[500px] w-[500px] rounded-full opacity-[0.07]"
-          style={{ background: "radial-gradient(circle, #D97706 0%, transparent 70%)" }}
-        />
-        {/* Grid pattern */}
+        {/* Grid pattern — blueprint texture, on-brand for a data tool */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 survey-grid opacity-100"
@@ -129,10 +118,10 @@ export default function HomePage() {
             <div className="lg:col-span-3">
               {/* Eyebrow */}
               <p
-                className="anim-hero-0 text-[0.6rem] font-bold tracking-[0.35em] uppercase mb-5"
+                className="anim-hero-0 text-xs font-bold tracking-[0.2em] uppercase mb-5"
                 style={{ color: "var(--color-gold)" }}
               >
-                Manitoba Labour Intelligence · 2026
+                For Manitoba business owners · Updated April 2026
               </p>
 
               {/* Heading */}
@@ -152,10 +141,19 @@ export default function HomePage() {
                 to AI disruption?
               </h1>
 
+              {/* Sub-deck */}
+              <p
+                className="anim-hero-2 mt-6 text-lg leading-snug max-w-xl"
+                style={{ color: "rgba(248, 250, 252, 0.85)" }}
+              >
+                Score your sector, benchmark your workforce, and plan your next 12 months
+                — in 2 minutes, free.
+              </p>
+
               {/* Description */}
               <p
-                className="anim-hero-2 mt-6 text-base leading-relaxed max-w-lg"
-                style={{ color: "rgba(248, 250, 252, 0.65)" }}
+                className="anim-hero-2 mt-3 text-sm leading-relaxed max-w-lg"
+                style={{ color: "rgba(248, 250, 252, 0.55)" }}
               >
                 A data-driven risk assessment for Manitoba industries and occupations,
                 built on academic automation research and Statistics Canada labour
@@ -186,7 +184,7 @@ export default function HomePage() {
               >
                 {/* Big number */}
                 <p
-                  className="font-display font-bold leading-none anim-pulse-amber"
+                  className="font-display font-bold leading-none"
                   style={{
                     fontSize: "clamp(4rem, 12vw, 6.5rem)",
                     color: "var(--color-gold)",
@@ -400,27 +398,28 @@ export default function HomePage() {
                   ),
                 },
                 {
+                  href: "/explorer",
+                  title: "All 20 Manitoba industries",
+                  desc: "Every Manitoba sector ranked by AI disruption exposure, with score breakdowns and occupation drill-downs.",
+                  cta: "Explore industries →",
+                  featured: false,
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="18" y1="20" x2="18" y2="10" />
+                      <line x1="12" y1="20" x2="12" y2="4" />
+                      <line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                  ),
+                },
+                {
                   href: "/threat-model",
                   title: "How AI startups compete",
-                  desc: "5 research-backed mechanisms — real company evidence and Manitoba context. The deep read.",
+                  desc: "5 research-backed mechanisms — real company evidence, Manitoba context, and a cost-comparison simulator.",
                   cta: "Read the analysis →",
                   featured: false,
                   icon: (
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
                       <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
-                    </svg>
-                  ),
-                },
-                {
-                  href: "/threat-simulator",
-                  title: "Compare AI vs. traditional",
-                  desc: "Side-by-side cost comparison: what a lean AI-native team costs vs. a traditional operation.",
-                  cta: "Open simulator →",
-                  featured: false,
-                  icon: (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="2" y="3" width="9" height="18" rx="1" />
-                      <rect x="13" y="3" width="9" height="18" rx="1" />
                     </svg>
                   ),
                 },
@@ -436,63 +435,6 @@ export default function HomePage() {
                       <circle cx="18" cy="6" r="3" />
                       <circle cx="6" cy="18" r="3" />
                       <path d="M18 9a9 9 0 0 1-9 9" />
-                    </svg>
-                  ),
-                },
-                {
-                  href: "/explorer",
-                  title: "All 20 Manitoba industries",
-                  desc: "Every Manitoba sector ranked by AI disruption exposure, with score breakdowns.",
-                  cta: "Explore industries →",
-                  featured: false,
-                  icon: (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="18" y1="20" x2="18" y2="10" />
-                      <line x1="12" y1="20" x2="12" y2="4" />
-                      <line x1="6" y1="20" x2="6" y2="14" />
-                    </svg>
-                  ),
-                },
-                {
-                  href: "/occupation",
-                  title: "50+ occupations scored",
-                  desc: "Individual occupation risk scores, task vulnerability, and related roles across Manitoba.",
-                  cta: "Browse occupations →",
-                  featured: false,
-                  icon: (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                      <circle cx="9" cy="7" r="4" />
-                      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                    </svg>
-                  ),
-                },
-                {
-                  href: "/heatmap",
-                  title: "Task vulnerability map",
-                  desc: "Which tasks in which sectors are most exposed? A colour-coded matrix view.",
-                  cta: "View heatmap →",
-                  featured: false,
-                  icon: (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="3" width="7" height="7" rx="1" />
-                      <rect x="14" y="3" width="7" height="7" rx="1" />
-                      <rect x="14" y="14" width="7" height="7" rx="1" />
-                      <rect x="3" y="14" width="7" height="7" rx="1" />
-                    </svg>
-                  ),
-                },
-                {
-                  href: "/policy",
-                  title: "Research & sources",
-                  desc: "Academic sources, Canadian government data, and the full methodology behind these scores.",
-                  cta: "Read the research →",
-                  featured: false,
-                  icon: (
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
                     </svg>
                   ),
                 },
@@ -606,12 +548,16 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Industry table — semantic <table> for screen reader column context */}
+          {/* Industry table — semantic <table> for screen reader column context.
+              Horizontal scroll fallback on narrow viewports keeps the bar + score readable. */}
           <div
-            className="rounded-xl border overflow-hidden shadow-sm"
+            className="rounded-xl border shadow-sm overflow-x-auto"
             style={{ borderColor: "var(--color-border)" }}
           >
-            <table className="w-full border-collapse" aria-label="Manitoba industry AI disruption risk scores">
+            <table
+              className="w-full border-collapse min-w-[520px]"
+              aria-label="Manitoba industry AI disruption risk scores"
+            >
               {/* Hidden caption for screen reader context */}
               <caption className="sr-only">
                 Manitoba industries ranked by composite AI disruption exposure score (0–100).
@@ -658,7 +604,6 @@ export default function HomePage() {
                     key={industry.naicsCode}
                     industry={industry}
                     rank={i + 1}
-                    index={i}
                   />
                 ))}
               </tbody>
@@ -720,10 +665,10 @@ export default function HomePage() {
             />
 
             <p
-              className="relative text-[0.6rem] font-bold tracking-[0.3em] uppercase mb-3"
+              className="relative text-xs font-bold tracking-[0.2em] uppercase mb-3"
               style={{ color: "var(--color-gold)" }}
             >
-              6-step assessment · free · no registration
+              How we scored it
             </p>
             <h2
               className="relative font-display font-bold"
@@ -733,18 +678,22 @@ export default function HomePage() {
                 letterSpacing: "-0.025em",
               }}
             >
-              Understand your specific exposure
+              Built on peer-reviewed research
             </h2>
             <p
-              className="relative mt-3 text-base max-w-md mx-auto"
-              style={{ color: "rgba(248, 250, 252, 0.6)" }}
+              className="relative mt-3 text-base max-w-lg mx-auto"
+              style={{ color: "rgba(248, 250, 252, 0.65)" }}
             >
-              Answer 6 questions about your industry, business size, and current AI adoption.
-              Get a personalized risk score with a shareable link.
+              Composite scores combine Frey &amp; Osborne (2013), the AI Occupation Exposure
+              index (Felten et al.), language-model exposure research, and Statistics Canada
+              labour data. See the math.
             </p>
-            <div className="relative mt-8">
-              <Link href="/calculator" className="btn-primary">
-                Start Free Assessment
+            <div className="relative mt-8 flex flex-wrap gap-3 justify-center">
+              <Link href="/about" className="btn-primary">
+                Read the methodology
+              </Link>
+              <Link href="/policy" className="btn-secondary">
+                Research &amp; sources
               </Link>
             </div>
           </div>

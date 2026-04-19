@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RelatedLinks } from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Research Context",
@@ -48,6 +49,7 @@ const BIBLIOGRAPHY = [
 
 export default function PolicyPage() {
   return (
+    <>
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="mb-8">
@@ -66,16 +68,17 @@ export default function PolicyPage() {
       </nav>
 
       <h1 className="text-2xl font-bold tracking-tight text-[var(--color-text-primary)]">
-        What the research says
+        What Canadian AI disruption research says
       </h1>
       <p className="mt-3 text-[var(--color-text-secondary)] leading-relaxed">
-        A synthesis of Canadian and international research on AI workforce
-        disruption, applied to Manitoba&rsquo;s economy.
+        A plain-English synthesis of the headline findings from FSC, the Conference
+        Board of Canada, The Dais, Policy Exchange, and OpenAI — filtered for what
+        actually changes the Manitoba picture.
       </p>
 
       {/* Exploratory notice */}
       <div
-        className="mt-6 mb-8 p-4 rounded-lg text-sm leading-relaxed"
+        className="mt-6 mb-6 p-4 rounded-lg text-sm leading-relaxed"
         style={{
           backgroundColor: "rgba(217, 119, 6, 0.08)",
           border: "1px solid rgba(217, 119, 6, 0.25)",
@@ -89,6 +92,43 @@ export default function PolicyPage() {
           research. It is not policy advice.
         </p>
       </div>
+
+      {/* On this page — jump links */}
+      <nav
+        aria-label="On this page"
+        className="mb-8 p-4 rounded-lg"
+        style={{
+          backgroundColor: "var(--color-surface-muted)",
+          border: "1px solid var(--color-border)",
+        }}
+      >
+        <p
+          className="text-[0.6rem] font-bold tracking-[0.2em] uppercase mb-2"
+          style={{ color: "var(--color-text-tertiary)" }}
+        >
+          On this page
+        </p>
+        <ul className="flex flex-wrap gap-x-4 gap-y-1.5 text-sm" role="list">
+          {[
+            { href: "#canadian-picture-heading", label: "The Canadian picture" },
+            { href: "#competing-heading", label: "Competing vs working with AI" },
+            { href: "#timeline-heading", label: "Disruption timeline" },
+            { href: "#jobs-heading", label: "Jobs that change and grow" },
+            { href: "#policy-heading", label: "What policymakers hear" },
+            { href: "#sources-heading", label: "Sources" },
+          ].map(({ href, label }) => (
+            <li key={href}>
+              <a
+                href={href}
+                className="underline underline-offset-2 transition-opacity hover:opacity-70"
+                style={{ color: "var(--color-accent)" }}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       {/* Section 1: The Canadian picture */}
       <section className="mt-10" aria-labelledby="canadian-picture-heading">
@@ -513,5 +553,29 @@ export default function PolicyPage() {
         </Link>
       </div>
     </div>
+
+    <RelatedLinks
+      links={[
+        {
+          href: "/explorer",
+          label: "Industry explorer",
+          description:
+            "See how the research translates into risk scores for all 20 Manitoba sectors.",
+        },
+        {
+          href: "/scenarios",
+          label: "Scenarios",
+          description:
+            "Compare four futures — baseline, rapid adoption, leaders, and laggards.",
+        },
+        {
+          href: "/about",
+          label: "Methodology",
+          description:
+            "The data sources, formula, and modifiers behind the composite scores.",
+        },
+      ]}
+    />
+    </>
   );
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getIndustries } from "@/lib/data";
 import type { RiskTier } from "@/types";
 import { ScenariosClient, type ScenarioId, type ScenarioIndustry } from "./ScenariosClient";
+import { RelatedLinks } from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Scenarios",
@@ -256,6 +257,29 @@ export default function ScenariosPage() {
           </div>
         </div>
       </section>
+
+      <RelatedLinks
+        links={[
+          {
+            href: "/explorer",
+            label: "Industry explorer",
+            description:
+              "Start from the baseline — today's risk ranking for all 20 Manitoba sectors.",
+          },
+          {
+            href: "/threat-model",
+            label: "Threat model",
+            description:
+              "Understand the five ways AI-native competitors outpace established businesses.",
+          },
+          {
+            href: "/policy",
+            label: "Research context",
+            description:
+              "The Canadian research behind these scenarios — FSC, Conference Board, and more.",
+          },
+        ]}
+      />
     </>
   );
 }

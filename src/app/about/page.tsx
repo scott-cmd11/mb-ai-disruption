@@ -132,10 +132,11 @@ export default function AboutPage() {
       </nav>
 
       <h1 className="text-2xl font-bold tracking-tight text-[var(--color-text-primary)]">
-        About &amp; Methodology
+        How we calculate AI disruption scores
       </h1>
       <p className="mt-3 text-[var(--color-text-secondary)] leading-relaxed">
-        What this tool is, where the numbers come from, and what they can and cannot tell you.
+        The data sources, the formula, the modifiers, and the limitations — everything
+        the numbers can and cannot tell you.
       </p>
 
       {/* What is this / not a government tool */}
@@ -162,6 +163,43 @@ export default function AboutPage() {
           for full disclaimers.
         </p>
       </div>
+
+      {/* On this page — jump links */}
+      <nav
+        aria-label="On this page"
+        className="mt-8 p-4 rounded-lg"
+        style={{
+          backgroundColor: "var(--color-surface-muted)",
+          border: "1px solid var(--color-border)",
+        }}
+      >
+        <p
+          className="text-[0.6rem] font-bold tracking-[0.2em] uppercase mb-2"
+          style={{ color: "var(--color-text-tertiary)" }}
+        >
+          On this page
+        </p>
+        <ul className="flex flex-wrap gap-x-4 gap-y-1.5 text-sm" role="list">
+          {[
+            { href: "#overview-heading", label: "What this tool does" },
+            { href: "#sources-heading", label: "Data sources" },
+            { href: "#formula-heading", label: "Score formula" },
+            { href: "#limitations-heading", label: "Limitations" },
+            { href: "#decisions-heading", label: "Methodology decisions" },
+            { href: "#contact-heading", label: "Flag a data issue" },
+          ].map(({ href, label }) => (
+            <li key={href}>
+              <a
+                href={href}
+                className="underline underline-offset-2 transition-opacity hover:opacity-70"
+                style={{ color: "var(--color-accent)" }}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       {/* Overview */}
       <section className="mt-10" aria-labelledby="overview-heading">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getOccupations, getIndustries } from "@/lib/data";
 import { OccupationClient } from "./OccupationClient";
+import { RelatedLinks } from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Occupation Risk Explorer",
@@ -110,6 +111,29 @@ export default function OccupationPage() {
           <OccupationClient occupations={occupations} industries={industries} />
         </div>
       </section>
+
+      <RelatedLinks
+        links={[
+          {
+            href: "/explorer",
+            label: "Industry explorer",
+            description:
+              "See how each occupation rolls up into its parent Manitoba sector.",
+          },
+          {
+            href: "/heatmap",
+            label: "Task heatmap",
+            description:
+              "Cross-cut by task type — data, content, decisions, physical work, and more.",
+          },
+          {
+            href: "/calculator",
+            label: "Personal score",
+            description:
+              "Adjust for your business size and AI adoption to get your own risk tier.",
+          },
+        ]}
+      />
     </>
   );
 }

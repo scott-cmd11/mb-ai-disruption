@@ -22,7 +22,26 @@ export default function TermsPage() {
       <h1 className="text-2xl font-bold tracking-tight mb-1" style={{ color: "var(--color-text-primary)" }}>
         Terms of Use
       </h1>
-      <p className="text-sm mb-10" style={{ color: "var(--color-text-tertiary)" }}>Last updated: April 2026</p>
+      <p className="text-sm mb-6" style={{ color: "var(--color-text-tertiary)" }}>Last updated: April 2026</p>
+
+      {/* TL;DR callout — the 90% answer most visitors came for */}
+      <div
+        className="mb-10 p-4 rounded-lg text-sm leading-relaxed"
+        style={{
+          backgroundColor: "rgba(217, 119, 6, 0.08)",
+          border: "1px solid rgba(217, 119, 6, 0.25)",
+        }}
+      >
+        <p className="font-semibold mb-1" style={{ color: "var(--color-gold)" }}>
+          TL;DR
+        </p>
+        <p style={{ color: "var(--color-text-secondary)" }}>
+          Free research tool. Scores are modelled estimates — not predictions, guarantees,
+          or professional advice. Independent project, not affiliated with any government
+          or employer. Don&apos;t make employment, business, or policy decisions based on
+          this tool alone.
+        </p>
+      </div>
 
       <div className="space-y-10 text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
 
@@ -40,9 +59,9 @@ export default function TermsPage() {
           <h2 className="text-base font-semibold mb-3" style={{ color: "var(--color-text-primary)" }}>Acceptance of terms</h2>
           <p>
             By accessing or using the <strong>Manitoba AI Disruption Explorer</strong> at{" "}
-            <a href="https://www.aicanadapulse.ca" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.aidisruption.ca" target="_blank" rel="noopener noreferrer"
               className="underline" style={{ color: "var(--color-gold)" }}>
-              aicanadapulse.ca
+              aidisruption.ca
             </a>{" "}
             (the &ldquo;Site&rdquo;), you agree to these Terms of Use. If you do not agree, please do not use the Site.
           </p>

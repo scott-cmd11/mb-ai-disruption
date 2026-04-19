@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
-const BASE_URL = "https://www.aicanadapulse.ca";
+const BASE_URL = "https://www.aidisruption.ca";
 const SITE_TITLE =
   "Manitoba AI Disruption Explorer — how exposed is your business to AI disruption?";
 

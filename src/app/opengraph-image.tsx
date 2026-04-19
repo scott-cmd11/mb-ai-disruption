@@ -88,7 +88,7 @@ export default function OgImage() {
               letterSpacing: "0.02em",
             }}
           >
-            aicanadapulse.ca
+            aidisruption.ca
           </span>
           <span
             style={{

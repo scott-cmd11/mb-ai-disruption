@@ -68,6 +68,28 @@ body {
   line-height: 1.625;
 }
 
+/* Modern type rendering — balance headings, pretty-wrap body copy.
+   Progressive enhancement: browsers without support fall back to normal. */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* Respect OS motion preference — disable non-essential animation + transitions.
+   Keeps the site usable for users with vestibular disorders. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ── Focus ring — 3px amber, visible everywhere ───────────── */
 :focus-visible {
   outline: 3px solid var(--color-gold);
@@ -222,21 +244,6 @@ html::before {
 .anim-hero-3 { animation: fade-slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both; }
 .anim-hero-4 { animation: fade-slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both; }
 
-/* Table row stagger — applied via inline style animation-delay */
-.anim-row {
-  animation: fade-slide-up 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* Stat number pulse */
-@keyframes pulse-amber {
-  0%, 100% { text-shadow: 0 0 0 rgba(217, 119, 6, 0); }
-  50% { text-shadow: 0 0 32px rgba(217, 119, 6, 0.35); }
-}
-
-.anim-pulse-amber {
-  animation: pulse-amber 3s ease-in-out 1s infinite;
-}
-
 /* ── Cost Curve crossover dot animation ──────────────────────── */
 @keyframes pulse-ring {
   0%   { r: 11px; opacity: 0.4; }
@@ -316,47 +323,50 @@ html::before {
 /* RISK PILL BADGES                                            */
 /* ═══════════════════════════════════════════════════════════ */
 
-.badge-high {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.125rem 0.625rem;
-  background-color: #FEF2F2;
-  color: #DC2626;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  border-radius: 999px;
-  border: 1px solid #FECACA;
-  white-space: nowrap;
-}
-
-.badge-medium {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.125rem 0.625rem;
-  background-color: #FFFBEB;
-  color: #B45309;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  border-radius: 999px;
-  border: 1px solid #FDE68A;
-  white-space: nowrap;
-}
-
+.badge-high,
+.badge-medium,
 .badge-low {
   display: inline-flex;
   align-items: center;
+  gap: 0.3rem;
   padding: 0.125rem 0.625rem;
-  background-color: #F0FDF4;
-  color: #15803D;
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   border-radius: 999px;
-  border: 1px solid #BBF7D0;
+  border: 1px solid;
   white-space: nowrap;
 }
+
+/* Shape glyph before text — provides non-color redundancy for risk tier.
+   aria-hidden via CSS content so screen readers read the tier text only. */
+.badge-high::before,
+.badge-medium::before,
+.badge-low::before {
+  font-size: 0.65em;
+  line-height: 1;
+}
+
+.badge-high {
+  background-color: #FEF2F2;
+  color: #DC2626;
+  border-color: #FECACA;
+}
+.badge-high::before { content: "\25B2"; } /* ▲ */
+
+.badge-medium {
+  background-color: #FFFBEB;
+  color: #B45309;
+  border-color: #FDE68A;
+}
+.badge-medium::before { content: "\25C6"; } /* ◆ */
+
+.badge-low {
+  background-color: #F0FDF4;
+  color: #15803D;
+  border-color: #BBF7D0;
+}
+.badge-low::before { content: "\25BC"; } /* ▼ */
 
 /* ── Explorer: React Flow cursor override ───────────────────── */
 /* Default grab cursor is white and invisible on light backgrounds */

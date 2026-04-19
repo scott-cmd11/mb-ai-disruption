@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
@@ -28,7 +28,7 @@ const instrumentSans = Instrument_Sans({
 
 // ── Metadata ──────────────────────────────────────────────────────────────────
 
-const BASE_URL = "https://www.aicanadapulse.ca";
+const BASE_URL = "https://www.aidisruption.ca";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -59,6 +59,68 @@ export const metadata: Metadata = {
 
 // ── Layout ────────────────────────────────────────────────────────────────────
 
+// ── Viewport ──────────────────────────────────────────────────────────────────
+// Browser chrome adopts navy-deep to match the sticky header. When dark-mode
+// lands, the light/dark values can diverge (paper vs. navy).
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0B1929" },
+    { media: "(prefers-color-scheme: dark)", color: "#0B1929" },
+  ],
+  colorScheme: "light",
+  width: "device-width",
+  initialScale: 1,
+};
+
+// ── Dataset schema — JSON-LD for Google Dataset Search discovery ──────────────
+
+const datasetJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  name: "Manitoba AI Disruption Exposure Index",
+  description:
+    "Composite AI disruption exposure scores for 20 Manitoba industry sectors and 50+ occupations, derived from Frey & Osborne (2013), the AI Occupation Exposure index (Felten et al.), language-model exposure research, and Statistics Canada labour data.",
+  url: BASE_URL,
+  creator: {
+    "@type": "Person",
+    name: "Scott Hazlitt",
+  },
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  keywords: [
+    "AI disruption",
+    "automation risk",
+    "labour market",
+    "Manitoba",
+    "NAICS",
+    "NOC",
+    "Canadian economy",
+  ],
+  spatialCoverage: {
+    "@type": "Place",
+    name: "Manitoba, Canada",
+  },
+  temporalCoverage: "2023/2026",
+  isAccessibleForFree: true,
+  distribution: [
+    {
+      "@type": "DataDownload",
+      encodingFormat: "application/json",
+      contentUrl: `${BASE_URL}/data/industries.json`,
+    },
+    {
+      "@type": "DataDownload",
+      encodingFormat: "application/json",
+      contentUrl: `${BASE_URL}/data/occupations.json`,
+    },
+  ],
+};
+
+// Defensively escape "<" to prevent any theoretical </script> injection via
+// JSON string content. Content is hardcoded and trusted, but this is the
+// industry-standard pattern for inline JSON-LD.
+const datasetJsonLdSafe = JSON.stringify(datasetJsonLd).replace(/</g, "\\u003c");
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -67,6 +129,13 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${instrumentSans.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger -- JSON-LD hardcoded + escaped above
+          dangerouslySetInnerHTML={{ __html: datasetJsonLdSafe }}
+        />
+      </head>
       <body>
         {/* ── Skip link — first focusable element ──────────────────────── */}
         <a href="#main-content" className="skip-to-main">
@@ -116,26 +185,6 @@ export default function RootLayout({
             </div>
           </div>
         </header>
-
-        {/* ── Exploratory notice ─────────────────────────────────────────── */}
-        <div
-          role="note"
-          aria-label="Exploratory tool notice"
-          className="w-full px-4 py-2 text-center text-xs"
-          style={{
-            backgroundColor: "rgba(217, 119, 6, 0.1)",
-            borderBottom: "1px solid rgba(217, 119, 6, 0.2)",
-            color: "var(--color-text-secondary)",
-          }}
-        >
-          <span className="font-semibold" style={{ color: "var(--color-gold)" }}>Work in progress.</span>{" "}
-          Exploratory tool — scores are modelled estimates from published academic data, not predictions or professional advice.{" "}
-          <a href="/about" className="underline hover:opacity-80 transition-opacity" style={{ color: "var(--color-gold)" }}>
-            Methodology &amp; limitations →
-          </a>
-          <span className="mx-2 opacity-30" aria-hidden="true">·</span>
-          <span style={{ color: "var(--color-text-tertiary)" }}>Last updated: April 2026</span>
-        </div>
 
         {/* ── Main ───────────────────────────────────────────────────────── */}
         <main id="main-content" tabIndex={-1}>
@@ -240,6 +289,9 @@ export default function RootLayout({
             >
               <p className="text-xs" style={{ color: "rgba(248, 250, 252, 0.35)" }}>
                 © {new Date().getFullYear()} Scott Hazlitt — Independent exploratory project. Scores measure relative AI disruption exposure, not certainty of outcome.{" "}
+                <span aria-hidden="true" className="mx-1 opacity-60">·</span>
+                <span style={{ color: "rgba(248, 250, 252, 0.45)" }}>Updated April 2026</span>
+                <span aria-hidden="true" className="mx-1 opacity-60">·</span>
                 Built with{" "}
                 <a
                   href="https://claude.ai/code"

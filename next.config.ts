@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         has: [{ type: "host", value: "ai-canada-pulse.vercel.app" }],
-        destination: "https://www.aicanadapulse.ca/:path*",
+        destination: "https://www.aidisruption.ca/:path*",
         permanent: true,
       },
     ];

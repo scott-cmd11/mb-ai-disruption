@@ -22,7 +22,25 @@ export default function PrivacyPage() {
       <h1 className="text-2xl font-bold tracking-tight mb-1" style={{ color: "var(--color-text-primary)" }}>
         Privacy Policy
       </h1>
-      <p className="text-sm mb-10" style={{ color: "var(--color-text-tertiary)" }}>Last updated: April 2026</p>
+      <p className="text-sm mb-6" style={{ color: "var(--color-text-tertiary)" }}>Last updated: April 2026</p>
+
+      {/* TL;DR callout — the 90% answer most visitors came for */}
+      <div
+        className="mb-10 p-4 rounded-lg text-sm leading-relaxed"
+        style={{
+          backgroundColor: "rgba(217, 119, 6, 0.08)",
+          border: "1px solid rgba(217, 119, 6, 0.25)",
+        }}
+      >
+        <p className="font-semibold mb-1" style={{ color: "var(--color-gold)" }}>
+          TL;DR
+        </p>
+        <p style={{ color: "var(--color-text-secondary)" }}>
+          No personal data is collected. No cookies. No tracking. The calculator runs
+          entirely in your browser. Standard server logs are handled by Vercel and
+          Google Fonts under their own privacy policies.
+        </p>
+      </div>
 
       <div className="space-y-10 text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
 
@@ -31,9 +49,9 @@ export default function PrivacyPage() {
           <p>
             This Privacy Policy describes how Scott Hazlitt (&ldquo;I&rdquo;, &ldquo;me&rdquo;, or &ldquo;the operator&rdquo;)
             handles information in connection with the <strong>Manitoba AI Disruption Explorer</strong> website at{" "}
-            <a href="https://www.aicanadapulse.ca" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.aidisruption.ca" target="_blank" rel="noopener noreferrer"
               className="underline" style={{ color: "var(--color-gold)" }}>
-              aicanadapulse.ca
+              aidisruption.ca
             </a>{" "}
             (the &ldquo;Site&rdquo;). This policy is intended to comply with the{" "}
             <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA) and applicable Canadian privacy law.

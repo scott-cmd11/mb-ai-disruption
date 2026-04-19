@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getOccupations, getIndustries } from "@/lib/data";
 import type { TaskCategory, RiskTier, HeatmapCell } from "@/types";
 import { HeatmapClient } from "./HeatmapClient";
+import { RelatedLinks } from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Task Vulnerability Heatmap",
@@ -265,6 +266,29 @@ export default function HeatmapPage() {
           />
         </div>
       </section>
+
+      <RelatedLinks
+        links={[
+          {
+            href: "/explorer",
+            label: "Industry explorer",
+            description:
+              "Browse all 20 Manitoba sectors ranked by overall AI disruption exposure.",
+          },
+          {
+            href: "/occupation",
+            label: "Occupation explorer",
+            description:
+              "Drill into individual jobs driving each sector's score — 50+ occupations.",
+          },
+          {
+            href: "/calculator",
+            label: "Personal score",
+            description:
+              "Get an adjusted score tuned to your business size and current AI use.",
+          },
+        ]}
+      />
     </>
   );
 }
