@@ -58,8 +58,8 @@ export function NavMenu() {
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           className="flex items-center justify-center w-11 h-11 rounded-lg transition-colors"
           style={{
-            color: "var(--color-text-inverse)",
-            backgroundColor: open ? "rgba(255,255,255,0.1)" : "transparent",
+            color: "var(--color-text-primary)",
+            backgroundColor: open ? "rgba(185,71,42,0.12)" : "transparent",
           }}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
@@ -78,7 +78,7 @@ export function NavMenu() {
             role="navigation"
             aria-label="Mobile navigation"
             className="absolute left-0 right-0 top-full z-50 border-t"
-            style={{ backgroundColor: "var(--color-navy-deep)", borderColor: "rgba(255,255,255,0.08)" }}
+            style={{ backgroundColor: "var(--color-paper)", borderColor: "var(--color-text-primary)" }}
           >
             <ul className="flex flex-col py-2 px-4" role="list">
               {NAV_ENTRIES.map(({ href, label, primary }) => (
@@ -91,7 +91,7 @@ export function NavMenu() {
                         ? "var(--color-gold)"
                         : primary
                           ? "var(--color-gold)"
-                          : "rgba(248,250,252,0.7)",
+                          : "var(--color-text-primary)",
                     }}
                   >
                     {label}

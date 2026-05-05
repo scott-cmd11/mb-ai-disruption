@@ -7,31 +7,31 @@
   --font-mono:    ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
 
   /* ── Surfaces ───────────────────────────────────────────── */
-  --color-paper:         #FFFFFF;
-  --color-paper-deep:    #F8FAFC;
-  --color-surface:       #FFFFFF;
-  --color-surface-muted: #F1F5F9;
+  --color-paper:         #F5F0E6;
+  --color-paper-deep:    #E9E0D0;
+  --color-surface:       #FFFCF4;
+  --color-surface-muted: #EFE6D6;
 
   /* ── Brand navy ─────────────────────────────────────────── */
-  --color-navy:          #1A3557;   /* 9.1:1 on white ✓ */
-  --color-navy-deep:     #0B1929;   /* deepest header/footer */
-  --color-navy-mid:      #2A5080;
+  --color-navy:          #17202A;
+  --color-navy-deep:     #101417;
+  --color-navy-mid:      #2E3A40;
 
   /* ── Amber accent ────────────────────────────────────────── */
   /* amber-600 (#D97706) is 5.04:1 on navy-deep — passes WCAG AA */
-  --color-gold:          #D97706;
-  --color-gold-light:    #FCD34D;   /* amber-300 */
-  --color-gold-pale:     #FEF3C7;   /* amber-100 */
+  --color-gold:          #B9472A;
+  --color-gold-light:    #E2A94F;
+  --color-gold-pale:     #F5DFC2;
 
   /* ── Text (all pass WCAG AA on white) ───────────────────── */
-  --color-text-primary:   #0F172A;  /* slate-900   — 19.7:1 ✓ */
-  --color-text-secondary: #475569;  /* slate-600   —  5.9:1 ✓ */
-  --color-text-tertiary:  #64748B;  /* slate-500   —  4.6:1 ✓ (was #8C7A66 = 3.6:1 ❌) */
-  --color-text-inverse:   #F8FAFC;  /* slate-50 */
+  --color-text-primary:   #171717;
+  --color-text-secondary: #4A4842;
+  --color-text-tertiary:  #767064;
+  --color-text-inverse:   #FFF8EA;
 
   /* ── Borders ─────────────────────────────────────────────── */
-  --color-border:        #E2E8F0;   /* slate-200 */
-  --color-border-strong: #CBD5E1;   /* slate-300 */
+  --color-border:        #D7CBB9;
+  --color-border-strong: #171717;
 
   /* ── Risk tiers (WCAG AA on white) ──────────────────────── */
   --color-risk-high:          #DC2626;  /* red-600    — 5.9:1 ✓ */
@@ -55,7 +55,7 @@
 /* ═══════════════════════════════════════════════════════════ */
 
 html {
-  background-color: var(--color-navy-deep);
+  background-color: var(--color-paper);
 }
 
 body {
@@ -66,6 +66,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 1rem;
   line-height: 1.625;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(23, 23, 23, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(23, 23, 23, 0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
 }
 
 /* Modern type rendering — balance headings, pretty-wrap body copy.
@@ -140,7 +152,7 @@ html::before {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.02;
+  opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size: 256px 256px;
 }
@@ -161,9 +173,9 @@ html::before {
   display: inline-flex;
   align-items: center;
   min-height: 44px;            /* WCAG 2.5.5 touch target */
-  color: rgba(248, 250, 252, 0.6);
+  color: rgba(23, 23, 23, 0.68);
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
   text-decoration: none;
@@ -177,7 +189,7 @@ html::before {
   bottom: 6px;
   left: 0;
   right: 0;
-  height: 1.5px;
+  height: 2px;
   background-color: var(--color-gold);
   transform: scaleX(0);
   transform-origin: left center;
@@ -185,10 +197,18 @@ html::before {
 }
 
 .nav-link:hover {
-  color: #F8FAFC;
+  color: var(--color-text-primary);
 }
 
 .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link-active {
+  color: var(--color-text-primary);
+}
+
+.nav-link-active::after {
   transform: scaleX(1);
 }
 
@@ -196,7 +216,7 @@ html::before {
   outline: 3px solid var(--color-gold-light);
   outline-offset: 3px;
   border-radius: 2px;
-  color: #F8FAFC;
+  color: var(--color-text-primary);
 }
 
 /* ═══════════════════════════════════════════════════════════ */
@@ -261,9 +281,9 @@ html::before {
 
 .survey-grid {
   background-image:
-    linear-gradient(rgba(217, 119, 6, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(217, 119, 6, 0.06) 1px, transparent 1px);
-  background-size: 32px 32px;
+    linear-gradient(rgba(23, 23, 23, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 23, 23, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 /* ═══════════════════════════════════════════════════════════ */
@@ -276,20 +296,20 @@ html::before {
   justify-content: center;
   min-height: 44px;
   padding: 0 1.5rem;
-  background-color: var(--color-gold);
-  color: var(--color-navy-deep);
+  background-color: var(--color-text-primary);
+  color: var(--color-text-inverse);
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.875rem;
   letter-spacing: 0.02em;
-  border-radius: 6px;
+  border-radius: 2px;
   text-decoration: none;
   transition: background-color 0.15s ease, transform 0.1s ease;
   border: 2px solid transparent;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-gold-light);
+  background-color: var(--color-gold);
 }
 
 .btn-primary:active {
@@ -303,20 +323,20 @@ html::before {
   min-height: 44px;
   padding: 0 1.5rem;
   background-color: transparent;
-  color: var(--color-text-inverse);
+  color: var(--color-text-primary);
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.875rem;
   letter-spacing: 0.02em;
-  border-radius: 6px;
-  border: 2px solid rgba(248, 250, 252, 0.35);
+  border-radius: 2px;
+  border: 2px solid var(--color-text-primary);
   text-decoration: none;
   transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .btn-secondary:hover {
-  border-color: rgba(248, 250, 252, 0.7);
-  background-color: rgba(248, 250, 252, 0.05);
+  border-color: var(--color-gold);
+  background-color: var(--color-gold-pale);
 }
 
 /* ═══════════════════════════════════════════════════════════ */
@@ -375,4 +395,38 @@ html::before {
 }
 .react-flow__pane.dragging {
   cursor: grabbing !important;
+}
+
+/* Homepage exposure ledger */
+.exposure-ledger {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-text-primary);
+  background:
+    linear-gradient(135deg, rgba(255, 248, 234, 0.08), rgba(255, 248, 234, 0) 48%),
+    #101417;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  box-shadow: 14px 14px 0 rgba(23, 23, 23, 0.12);
+}
+
+.exposure-ledger::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 248, 234, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(255, 248, 234, 0.07) 1px, transparent 1px);
+  background-size: 38px 38px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.exposure-ledger > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ledger-row {
+  border-bottom: 1px solid rgba(255, 248, 234, 0.16);
+  padding-bottom: 0.85rem;
 }

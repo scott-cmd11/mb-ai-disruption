@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
+import path from "node:path";
+
+const projectRoot = path.resolve();
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: projectRoot,
+  },
   async redirects() {
     return [
       {

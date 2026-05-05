@@ -412,7 +412,7 @@ function Step5Workforce({
     <div className="flex flex-col gap-4">
       <StepHeader label="Step 5 of 6" heading="Describe your workforce composition." />
       <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)", fontFamily: "var(--font-body)" }}>
-        Approximate percentages — overlaps are fine. Use these to reflect the primary nature of your roles.
+        Approximate the main role mix. Keep the combined total at 100% or less.
       </p>
       <div className="flex flex-col gap-6">
         <SliderRow label="Knowledge workers (office, analysis, admin)" value={kw} onChange={(v) => update({ knowledgeWorkerPct: v })} />
@@ -427,7 +427,7 @@ function Step5Workforce({
         }}
       >
         <span style={{ color: over ? "var(--color-risk-high)" : "var(--color-text-secondary)" }}>
-          {over ? "Total exceeds 100% — please review." : "Totals may overlap — that's expected."}
+          {over ? "Total exceeds 100% - please review." : "Total is within the allowed range."}
         </span>
         <span
           className="font-mono tabular-nums font-semibold"

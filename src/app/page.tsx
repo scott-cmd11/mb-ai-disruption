@@ -102,8 +102,159 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       <section
         aria-labelledby="hero-heading"
+        className="relative overflow-hidden border-b"
+        style={{
+          backgroundColor: "var(--color-paper)",
+          borderColor: "var(--color-text-primary)",
+        }}
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(23,23,23,0.05) 1px, transparent 1px), linear-gradient(rgba(23,23,23,0.04) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+            maskImage: "linear-gradient(180deg, black, transparent 86%)",
+          }}
+        />
+
+        <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+          <div
+            className="mb-8 grid grid-cols-2 gap-3 border-y py-3 text-[0.62rem] font-bold uppercase tracking-[0.22em] sm:grid-cols-4"
+            style={{ borderColor: "var(--color-text-primary)", color: "var(--color-text-secondary)" }}
+          >
+            <span>Manitoba</span>
+            <span>April 2026 baseline</span>
+            <span>20 sectors</span>
+            <span className="text-right sm:text-left">Free assessment</span>
+          </div>
+
+          <div className="grid gap-10 lg:grid-cols-[0.62fr_1.18fr_1.12fr] lg:items-stretch">
+            <aside className="hidden border-r pr-8 lg:block" style={{ borderColor: "var(--color-text-primary)" }}>
+              <p className="text-[0.62rem] font-bold uppercase tracking-[0.24em]" style={{ color: "var(--color-gold)" }}>
+                Civic intelligence file
+              </p>
+              <div className="mt-8 space-y-8">
+                {[
+                  ["Audience", "Business owners and workforce planners"],
+                  ["Method", "Academic exposure indexes + Manitoba labour data"],
+                  ["Output", "A practical 12-month risk signal"],
+                ].map(([label, value]) => (
+                  <div key={label} className="border-t pt-3" style={{ borderColor: "var(--color-border-strong)" }}>
+                    <p className="text-[0.58rem] font-bold uppercase tracking-[0.22em]" style={{ color: "var(--color-text-tertiary)" }}>
+                      {label}
+                    </p>
+                    <p className="mt-1 text-sm leading-snug" style={{ color: "var(--color-text-primary)" }}>
+                      {value}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </aside>
+
+            <div>
+              <p
+                className="mb-5 max-w-xl text-xs font-bold uppercase tracking-[0.28em]"
+                style={{ color: "var(--color-gold)" }}
+              >
+                For Manitoba business owners
+              </p>
+              <h1
+                id="hero-heading"
+                className="font-display font-black leading-[0.92]"
+                style={{
+                  color: "var(--color-text-primary)",
+                  fontSize: "clamp(3rem, 7vw, 5.8rem)",
+                  letterSpacing: "-0.045em",
+                }}
+              >
+                Measure your AI exposure before the market does.
+              </h1>
+              <p
+                className="mt-6 max-w-2xl text-xl leading-snug sm:text-2xl"
+                style={{ color: "var(--color-text-secondary)" }}
+              >
+                Score your sector, benchmark your workforce, and turn a vague AI threat into a concrete Manitoba business planning signal.
+              </p>
+              <div className="mt-9 flex flex-wrap gap-3">
+                <Link href="/calculator" className="btn-primary">
+                  Start the assessment
+                </Link>
+                <Link href="/explorer" className="btn-secondary">
+                  View the sector atlas
+                </Link>
+              </div>
+            </div>
+
+            <aside className="exposure-ledger" aria-label="Highest exposure sectors">
+              <div className="flex items-start justify-between gap-4 border-b pb-5" style={{ borderColor: "rgba(255,248,234,0.24)" }}>
+                <div>
+                  <p className="text-[0.62rem] font-bold uppercase tracking-[0.24em]" style={{ color: "var(--color-gold-light)" }}>
+                    Model extract
+                  </p>
+                  <h2 className="mt-2 font-display text-4xl font-black leading-none" style={{ color: "var(--color-text-inverse)" }}>
+                    Sector exposure ledger
+                  </h2>
+                </div>
+                <div className="text-right">
+                  <p className="text-[0.55rem] font-bold uppercase tracking-[0.2em]" style={{ color: "rgba(255,248,234,0.55)" }}>
+                    High
+                  </p>
+                  <p className="font-display text-5xl font-black leading-none" style={{ color: "var(--color-gold-light)" }}>
+                    {highCount}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 space-y-4">
+                {industries.slice(0, 6).map((industry, index) => (
+                  <div key={industry.naicsCode} className="ledger-row">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <div className="min-w-0">
+                        <p className="text-[0.58rem] font-bold uppercase tracking-[0.18em]" style={{ color: "rgba(255,248,234,0.48)" }}>
+                          #{String(index + 1).padStart(2, "0")} / NAICS {industry.naicsCode}
+                        </p>
+                        <p className="truncate text-base font-semibold" style={{ color: "var(--color-text-inverse)" }}>
+                          {industry.shortName}
+                        </p>
+                      </div>
+                      <p className="font-mono text-xl font-bold" style={{ color: "var(--color-gold-light)" }}>
+                        {industry.sectorRiskScore}
+                      </p>
+                    </div>
+                    <div className="mt-2 h-1.5 bg-[rgba(255,248,234,0.14)]">
+                      <div className="h-full" style={{ width: `${industry.sectorRiskScore}%`, backgroundColor: index < highCount ? "var(--color-gold-light)" : "rgba(255,248,234,0.42)" }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-7 grid grid-cols-3 border-t pt-5 text-center" style={{ borderColor: "rgba(255,248,234,0.24)" }}>
+                {[
+                  ["20", "sectors"],
+                  ["50+", "occupations"],
+                  ["4", "components"],
+                ].map(([num, label]) => (
+                  <div key={label} className="border-r last:border-r-0" style={{ borderColor: "rgba(255,248,234,0.18)" }}>
+                    <p className="font-display text-3xl font-black leading-none" style={{ color: "var(--color-gold-light)" }}>
+                      {num}
+                    </p>
+                    <p className="mt-1 text-[0.55rem] font-bold uppercase tracking-[0.16em]" style={{ color: "rgba(255,248,234,0.55)" }}>
+                      {label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section
+        aria-hidden="true"
         style={{ backgroundColor: "var(--color-navy-deep)" }}
-        className="relative overflow-hidden"
+        className="hidden"
       >
         {/* Grid pattern — blueprint texture, on-brand for a data tool */}
         <div
@@ -126,7 +277,7 @@ export default function HomePage() {
 
               {/* Heading */}
               <h1
-                id="hero-heading"
+                id="legacy-hero-heading"
                 className="anim-hero-1 font-display font-bold leading-[1.05] tracking-tight"
                 style={{
                   color: "var(--color-text-inverse)",
@@ -172,7 +323,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: dramatic stat — spans 2 of 5 columns */}
-            <div className="anim-hero-4 lg:col-span-2 flex flex-col items-start lg:items-center">
+            <div className="anim-hero-4 hidden flex-col items-start sm:flex lg:col-span-2 lg:items-center">
               <div
                 className="relative rounded-2xl p-8 w-full max-w-xs"
                 style={{
@@ -245,11 +396,11 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       <section
         aria-label="Key statistics"
-        style={{ backgroundColor: "var(--color-paper)" }}
-        className="border-b border-slate-100"
+        style={{ backgroundColor: "var(--color-text-primary)" }}
+        className="border-b"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <dl className="grid grid-cols-1 divide-y divide-slate-100 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
+          <dl className="grid grid-cols-1 divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0" style={{ borderColor: "rgba(255,248,234,0.18)" }}>
             {[
               {
                 num: "20",
@@ -267,13 +418,13 @@ export default function HomePage() {
                 desc: "Automation research · AI exposure index · Language AI impact · Sector adoption gap — weighted and adjusted for your business.",
               },
             ].map(({ num, unit, desc }) => (
-              <div key={unit} className="px-8 py-10 flex flex-col gap-2">
+              <div key={unit} className="flex flex-col gap-2 px-8 py-10">
                 <dt className="flex items-baseline gap-2">
                   <span
                     className="font-display font-bold leading-none"
                     style={{
                       fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
-                      color: "var(--color-navy)",
+                      color: "var(--color-gold-light)",
                       letterSpacing: "-0.04em",
                     }}
                   >
@@ -281,14 +432,14 @@ export default function HomePage() {
                   </span>
                   <span
                     className="text-xs font-bold tracking-widest uppercase"
-                    style={{ color: "var(--color-text-tertiary)" }}
+                    style={{ color: "rgba(255,248,234,0.55)" }}
                   >
                     {unit}
                   </span>
                 </dt>
                 <dd
                   className="text-sm leading-relaxed"
-                  style={{ color: "var(--color-text-secondary)" }}
+                  style={{ color: "rgba(255,248,234,0.72)" }}
                 >
                   {desc}
                 </dd>
@@ -303,15 +454,15 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       <section
         aria-label="About this tool"
-        className="border-b border-slate-100"
+        className="border-b"
         style={{ backgroundColor: "var(--color-paper-deep)" }}
       >
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+          <div className="flex flex-col gap-6 border-l-4 py-2 pl-5 sm:flex-row sm:items-start sm:justify-between" style={{ borderColor: "var(--color-text-primary)" }}>
             <div className="flex items-start gap-4 max-w-3xl">
               {/* Left amber accent bar */}
               <div
-                className="shrink-0 w-1 self-stretch rounded-full"
+                className="hidden"
                 style={{ backgroundColor: "var(--color-gold)" }}
                 aria-hidden="true"
               />
@@ -443,11 +594,11 @@ export default function HomePage() {
               <Link
                 key={href}
                 href={href}
-                className="group block rounded-xl border p-5 transition-colors hover:border-[var(--color-gold)]"
+                className="group block border p-5 transition-colors hover:border-[var(--color-gold)]"
                 style={{
                   backgroundColor: "var(--color-surface)",
-                  borderColor: featured ? "var(--color-gold)" : "var(--color-border)",
-                  borderLeftWidth: featured ? "3px" : undefined,
+                  borderColor: featured ? "var(--color-text-primary)" : "var(--color-border)",
+                  borderTopWidth: featured ? "4px" : undefined,
                   borderLeftColor: featured ? "var(--color-gold)" : undefined,
                 }}
               >

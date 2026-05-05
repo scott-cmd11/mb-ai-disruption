@@ -113,7 +113,7 @@ function SidebarPanel({
       naicsCode: industry.naicsCode,
       businessSize: "small",
       aiAdoptionStatus: "not_considering",
-      primaryTasks: [],
+      primaryTasks: ["data_processing"],
       knowledgeWorkerPct: 50,
       manualWorkerPct: 25,
       customerFacingPct: 25,
@@ -122,7 +122,7 @@ function SidebarPanel({
   );
 
   return (
-    <div className="flex flex-col gap-5 h-full overflow-y-auto p-5">
+    <div className="flex flex-col gap-5 p-5 lg:h-full lg:overflow-y-auto">
       {/* Header */}
       <div>
         <div className="flex items-start justify-between gap-2 mb-1">
@@ -238,6 +238,7 @@ export function ExplorerClient({
   const [selectedId, setSelectedId] = useState<string>("52"); // Finance & Insurance
   const [sortMode, setSortMode] = useState<SortMode>("risk");
   const [tierFilter, setTierFilter] = useState<TierFilter>("all");
+  const [showMobileMap, setShowMobileMap] = useState(false);
 
   // Build a lookup map for O(1) access
   const industriesMap = useMemo(
@@ -317,6 +318,16 @@ export function ExplorerClient({
 
   const selectedIndustry = industriesMap.get(selectedId) ?? null;
 
+  const visibleIndustries = useMemo(() => {
+    return industries
+      .filter((industry) => tierFilter === "all" || industry.riskTier === tierFilter)
+      .sort((a, b) => {
+        if (sortMode === "employment") return b.mbEmployment - a.mbEmployment;
+        if (sortMode === "gdp") return b.mbGdpShare - a.mbGdpShare;
+        return b.sectorRiskScore - a.sectorRiskScore;
+      });
+  }, [industries, sortMode, tierFilter]);
+
   const onNodeClick: NodeMouseHandler = useCallback(
     (_evt, node) => setSelectedId(node.id),
     []
@@ -335,18 +346,49 @@ export function ExplorerClient({
     { value: "low", label: "Low" },
   ];
 
+  const graph = (
+    <ReactFlow
+      nodes={nodes}
+      edges={edges}
+      nodeTypes={nodeTypes}
+      onNodeClick={onNodeClick}
+      fitView
+      fitViewOptions={{ padding: 0.12 }}
+      minZoom={0.25}
+      maxZoom={2}
+      nodesDraggable={false}
+      nodesConnectable={false}
+      elementsSelectable={true}
+      panOnScroll={false}
+    >
+      <Background
+        color="var(--color-border)"
+        gap={32}
+        size={1}
+        style={{ backgroundColor: "var(--color-paper-deep)" }}
+      />
+      <Controls
+        style={{
+          backgroundColor: "var(--color-surface)",
+          border: "1px solid var(--color-border)",
+          borderRadius: 4,
+        }}
+      />
+    </ReactFlow>
+  );
+
   return (
     <ReactFlowProvider>
-      <div className="flex flex-col" style={{ height: "calc(100vh - 57px)" }}>
+      <div className="flex min-h-[calc(100vh-57px)] flex-col lg:h-[calc(100vh-57px)]">
         {/* Toolbar */}
         <div
-          className="flex items-center gap-6 px-4 py-2.5 border-b shrink-0"
+          className="flex shrink-0 flex-col gap-3 border-b px-4 py-3 lg:flex-row lg:items-center lg:gap-6 lg:py-2.5"
           style={{
             backgroundColor: "var(--color-paper-deep)",
             borderColor: "var(--color-border)",
           }}
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 lg:overflow-visible lg:pb-0">
             <span className="text-[0.6rem] tracking-[0.15em] uppercase font-bold mr-1" style={{ color: "var(--color-text-tertiary)" }}>
               Size by
             </span>
@@ -356,8 +398,8 @@ export function ExplorerClient({
               </ToolbarButton>
             ))}
           </div>
-          <div className="h-4 w-px" style={{ backgroundColor: "var(--color-border)" }} />
-          <div className="flex items-center gap-2">
+          <div className="hidden h-4 w-px lg:block" style={{ backgroundColor: "var(--color-border)" }} />
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 lg:overflow-visible lg:pb-0">
             <span className="text-[0.6rem] tracking-[0.15em] uppercase font-bold mr-1" style={{ color: "var(--color-text-tertiary)" }}>
               Tier
             </span>
@@ -367,7 +409,7 @@ export function ExplorerClient({
               </ToolbarButton>
             ))}
           </div>
-          <div className="ml-auto flex items-center gap-4 text-[0.6rem]" style={{ color: "var(--color-text-tertiary)" }}>
+          <div className="hidden lg:ml-auto lg:flex lg:items-center lg:gap-4 lg:text-[0.6rem]" style={{ color: "var(--color-text-tertiary)" }}>
             <span className="flex items-center gap-1.5">
               <span style={{ color: "var(--color-risk-high)" }}>●</span> High
             </span>
@@ -380,10 +422,95 @@ export function ExplorerClient({
           </div>
         </div>
 
+        {/* Mobile sector list */}
+        <section
+          className="border-b lg:hidden"
+          style={{ backgroundColor: "var(--color-paper)", borderColor: "var(--color-border)" }}
+          aria-labelledby="mobile-sector-list-heading"
+        >
+          <div className="px-4 py-4">
+            <div className="mb-3 flex items-center justify-between gap-3">
+              <div>
+                <p className="text-[0.6rem] font-bold tracking-[0.2em] uppercase" style={{ color: "var(--color-gold)" }}>
+                  Ranked sectors
+                </p>
+                <h1 id="mobile-sector-list-heading" className="font-display text-xl font-semibold" style={{ color: "var(--color-text-primary)" }}>
+                  Explore Manitoba industries
+                </h1>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowMobileMap((open) => !open)}
+                className="shrink-0 rounded-sm border px-3 py-2 text-xs font-semibold"
+                style={{
+                  borderColor: "var(--color-border-strong)",
+                  color: "var(--color-navy)",
+                  backgroundColor: "var(--color-surface)",
+                }}
+              >
+                {showMobileMap ? "Hide map" : "Show map"}
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 gap-2">
+              {visibleIndustries.map((industry, index) => {
+                const active = industry.naicsCode === selectedId;
+                const badgeClass =
+                  industry.riskTier === "high"
+                    ? "badge-high"
+                    : industry.riskTier === "medium"
+                    ? "badge-medium"
+                    : "badge-low";
+                return (
+                  <button
+                    key={industry.naicsCode}
+                    type="button"
+                    onClick={() => setSelectedId(industry.naicsCode)}
+                    aria-pressed={active}
+                    className="flex items-center gap-3 rounded-sm border px-3 py-3 text-left transition-colors"
+                    style={{
+                      backgroundColor: active ? "var(--color-gold-pale)" : "var(--color-surface)",
+                      borderColor: active ? "var(--color-navy)" : "var(--color-border)",
+                      borderLeftWidth: active ? 3 : 1,
+                      borderLeftColor: active ? "var(--color-gold)" : "var(--color-border)",
+                    }}
+                  >
+                    <span className="w-5 shrink-0 text-right font-mono text-xs" style={{ color: "var(--color-text-tertiary)" }}>
+                      {index + 1}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate text-sm font-semibold" style={{ color: "var(--color-text-primary)" }}>
+                        {industry.shortName}
+                      </span>
+                      <span className="block text-[0.65rem]" style={{ color: "var(--color-text-tertiary)" }}>
+                        {formatEmployment(industry.mbEmployment)} employed - {Math.round(industry.aiAdoptionRate * 100)}% AI adoption
+                      </span>
+                    </span>
+                    <span className="shrink-0 text-right">
+                      <span className="block font-mono text-sm font-bold" style={{ color: "var(--color-text-primary)" }}>
+                        {industry.sectorRiskScore}
+                      </span>
+                      <span className={badgeClass}>
+                        {industry.riskTier}
+                      </span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {showMobileMap && (
+          <div className="h-[420px] border-b lg:hidden" style={{ backgroundColor: "var(--color-paper-deep)", borderColor: "var(--color-border)" }}>
+            {graph}
+          </div>
+        )}
+
         {/* Main split */}
-        <div className="flex flex-1 min-h-0">
+        <div className="flex flex-1 flex-col lg:min-h-0 lg:flex-row">
           {/* Graph — 65% */}
-          <div className="flex-1 min-w-0" style={{ backgroundColor: "var(--color-paper-deep)" }}>
+          <div className="hidden flex-1 min-w-0 lg:block" style={{ backgroundColor: "var(--color-paper-deep)" }}>
             <ReactFlow
               nodes={nodes}
               edges={edges}
@@ -417,21 +544,21 @@ export function ExplorerClient({
 
           {/* Sidebar — 35% */}
           <div
-            className="w-80 shrink-0 border-l flex flex-col"
+            className="flex w-full flex-col border-t lg:w-80 lg:shrink-0 lg:border-l lg:border-t-0"
             style={{
               borderColor: "var(--color-border)",
               backgroundColor: "var(--color-surface)",
             }}
           >
             <div
-              className="px-5 py-3 border-b shrink-0"
+              className="shrink-0 border-b px-5 py-3"
               style={{ borderColor: "var(--color-border)", backgroundColor: "var(--color-paper-deep)" }}
             >
               <p className="text-[0.6rem] tracking-[0.2em] uppercase font-bold" style={{ color: "var(--color-gold)" }}>
                 Sector detail
               </p>
             </div>
-            <div className="flex-1 min-h-0">
+            <div className="flex-1 lg:min-h-0">
               <SidebarPanel industry={selectedIndustry} sectorOccupations={sectorOccupations} />
             </div>
           </div>

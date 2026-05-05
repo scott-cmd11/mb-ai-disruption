@@ -144,15 +144,18 @@ export default function RootLayout({
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <header
-          className="sticky top-0 z-40"
-          style={{ backgroundColor: "var(--color-navy-deep)" }}
+          className="sticky top-0 z-40 border-b"
+          style={{
+            backgroundColor: "rgba(245, 240, 230, 0.94)",
+            borderColor: "var(--color-text-primary)",
+            backdropFilter: "blur(12px)",
+          }}
         >
           {/* Amber top accent stripe — 3px, aria-hidden */}
           <div
-            className="h-[3px] w-full"
+            className="h-[4px] w-full"
             style={{
-              background:
-                "linear-gradient(90deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%)",
+              background: "var(--color-gold)",
             }}
             aria-hidden="true"
           />
@@ -174,7 +177,7 @@ export default function RootLayout({
                 </span>
                 <span
                   className="font-display text-[1.1rem] font-bold"
-                  style={{ color: "var(--color-text-inverse)", letterSpacing: "-0.01em" }}
+                  style={{ color: "var(--color-text-primary)", letterSpacing: "-0.01em" }}
                 >
                   AI Disruption Explorer
                 </span>
@@ -194,7 +197,11 @@ export default function RootLayout({
         {/* ── Footer ─────────────────────────────────────────────────────── */}
         <footer
           aria-label="Site footer"
-          style={{ backgroundColor: "var(--color-navy-deep)" }}
+          className="border-t"
+          style={{
+            backgroundColor: "var(--color-text-primary)",
+            borderColor: "var(--color-text-primary)",
+          }}
         >
           {/* Amber top accent stripe */}
           <div
