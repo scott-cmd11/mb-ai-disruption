@@ -564,9 +564,9 @@ export function CalculatorClient({
     <div className="mx-auto max-w-2xl px-4">
       {/* Page heading */}
       <div className="mb-8 text-center">
-        <h1 className="font-display text-3xl font-light italic" style={{ color: "var(--color-text-primary)" }}>
+        <h2 className="font-display text-3xl font-light italic" style={{ color: "var(--color-text-primary)" }}>
           AI Disruption Assessment
-        </h1>
+        </h2>
         <p className="mt-2 text-sm" style={{ color: "var(--color-text-secondary)", fontFamily: "var(--font-body)" }}>
           6 questions · takes about 2 minutes
         </p>

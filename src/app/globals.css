@@ -430,3 +430,70 @@ html::before {
   border-bottom: 1px solid rgba(255, 248, 234, 0.16);
   padding-bottom: 0.85rem;
 }
+
+/* Interior page hero alignment: paper/report treatment that matches the
+   homepage without changing each page's information architecture. */
+.civic-page-hero {
+  background-color: var(--color-paper) !important;
+  border-bottom: 1px solid var(--color-text-primary);
+}
+
+.civic-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(23, 23, 23, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(23, 23, 23, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(180deg, black, transparent 88%);
+}
+
+.civic-page-hero > [aria-hidden="true"]:not(.survey-grid) {
+  display: none;
+}
+
+.civic-page-hero .survey-grid {
+  opacity: 0.35;
+}
+
+.civic-page-hero h1,
+.civic-page-hero h2 {
+  color: var(--color-text-primary) !important;
+}
+
+.civic-page-hero p,
+.civic-page-hero li,
+.civic-page-hero a,
+.civic-page-hero span {
+  color: var(--color-text-secondary) !important;
+}
+
+.civic-page-hero [style*="var(--color-gold)"],
+.civic-page-hero [style*="#D97706"] {
+  color: var(--color-gold) !important;
+}
+
+.civic-page-hero [style*="#F87171"] {
+  color: var(--color-risk-high) !important;
+}
+
+.civic-page-hero [style*="rgba(255"] {
+  background-color: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+}
+
+.civic-page-hero [style*="backgroundColor: rgba(255,255,255"],
+.civic-page-hero [style*="background-color: rgba(255,255,255"] {
+  background-color: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+}
+
+.civic-page-hero-dark {
+  background-color: var(--color-navy-deep) !important;
+}
+
+.civic-page-hero-dark::before {
+  display: none;
+}

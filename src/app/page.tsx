@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { getIndustriesByRisk } from "@/lib/data";
+import { createPageMetadata } from "@/lib/seo";
 import type { Industry, RiskTier } from "@/types";
+
+export const metadata = createPageMetadata({
+  title: "Manitoba AI Disruption Explorer",
+  description:
+    "Measure AI disruption exposure for Manitoba businesses, industries, and occupations with a free calculator built on labour-market research.",
+  path: "/",
+});
 
 // ── Tier config ────────────────────────────────────────────────────────────────
 

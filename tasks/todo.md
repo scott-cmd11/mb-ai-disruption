@@ -1,5 +1,70 @@
 # Website review - aidisruption.ca
 
+## 2026-05-08 Whole-site audit plan
+
+- [x] Reconfirm local route inventory and production metadata.
+- [x] Build the app and note warnings/errors.
+- [x] Run the site locally and inspect every public route at desktop/mobile sizes.
+- [x] Check core interactions for calculator, explorer, heatmap, occupation, scenarios, and threat simulator.
+- [x] Review SEO surfaces: titles, descriptions, robots, sitemap, social image, structured data, headings, internal links, and crawlable content.
+- [x] Prioritize recommendations by likely impact and implementation effort.
+- [x] Add a review summary with findings and suggested changes.
+
+## 2026-05-08 Audit review
+
+Build verification: `npm run build` passes. Local confirmed origin: `http://127.0.0.1:4556`. Live spot checks for `/`, `/explorer`, `/threat-model`, `/policy`, `/robots.txt`, and `/sitemap.xml` return 200 at `https://www.aidisruption.ca`.
+
+Findings:
+
+- High SEO impact: `/policy` and `/threat-model` are public, indexable routes but are missing from `sitemap.xml`.
+- High SEO/social impact: all routes inherit the same generic Open Graph title and description even when the page title and meta description are route-specific.
+- Medium SEO impact: no canonical links are emitted, so shared URLs with calculator query params and host variants have weaker canonicalization.
+- Medium SEO/UX impact: `/explorer` is client-only and initially renders a blank full-height shell before the lazy React Flow import loads. Its useful content is not present in the initial HTML.
+- Medium conversion impact: `/calculator` has only a title override and inherits the homepage meta description; it should have a route-specific description and social preview.
+- Medium polish impact: homepage visual direction is strong and distinctive, but several interior heroes still use the older dark grid/glow pattern, making the site feel like two design systems.
+- Medium UX impact: the homepage mobile first view is memorable, but the ledger begins immediately below the fold with a very heavy dark block; a lighter transition or smaller mobile ledger would feel calmer.
+- Low polish impact: icon assets from the default Next template still exist in `public/` and can be removed if unused.
+- Low performance impact: current bundle sizes are reasonable for an interactive Next app, but React Flow should stay isolated to `/explorer`; avoid letting it leak into shared routes.
+
+Suggested changes:
+
+- Add `/policy` and `/threat-model` to the sitemap and consider stable `lastModified` dates from content/data updates instead of `new Date()` on every build.
+- Add per-route Open Graph/Twitter metadata and canonicals through metadata alternates.
+- Replace the Explorer blank shell with a meaningful loading skeleton or server-rendered mobile/list fallback containing the top sectors and an H1.
+- Give `/calculator` a route-specific description and structured intro text outside the client component.
+- Unify interior page art direction with the civic atlas/report-cover homepage: reduce dark glows, use paper bands, rule lines, tables, and report-style callouts.
+- Add more crawlable, keyword-relevant page copy around high-intent searches such as "Manitoba AI risk calculator", "AI disruption by industry in Manitoba", and "AI risk by occupation".
+- Add structured data beyond Dataset where useful: WebApplication for the calculator, BreadcrumbList for interior pages, and FAQPage for methodology/privacy questions.
+- Keep performance tight by preserving static generation for content routes and using dynamic imports only on heavy interactive widgets.
+
+## 2026-05-08 Implementation plan
+
+- [x] Add shared SEO metadata helper with canonical, Open Graph, and Twitter defaults.
+- [x] Add page-specific metadata for all public routes, including calculator.
+- [x] Add missing sitemap routes and stable last-modified dates.
+- [x] Add WebApplication and Breadcrumb/FAQ structured data where it helps.
+- [x] Replace the Explorer blank first paint with a crawlable loading fallback.
+- [x] Add a crawlable calculator intro and keyword-relevant page framing.
+- [x] Align interior page hero surfaces with the civic report-cover direction.
+- [x] Build, run local checks, commit, push, and verify the deployed site.
+
+## 2026-05-08 Implementation results
+
+- Added route-level canonical, Open Graph, and Twitter metadata through a shared SEO helper.
+- Added `/policy` and `/threat-model` to the sitemap and replaced build-time `new Date()` sitemap values with a stable 2026-05-08 update date.
+- Added WebApplication and breadcrumb structured data to the calculator route.
+- Added a crawlable calculator intro for "Manitoba AI risk calculator" intent.
+- Replaced the Explorer blank first paint with a ranked, crawlable sector fallback and kept the interactive map behaviour after hydration.
+- Added an accessible Explorer H1 and shifted interior hero treatments toward the homepage's civic report-cover style.
+
+Verification:
+
+- `npm run build` passed.
+- Local production server returned 200 for `/calculator`, `/explorer`, `/occupation`, and `/sitemap.xml`.
+- Local metadata check confirmed route-specific canonical and Open Graph values for `/`, `/calculator`, `/explorer`, `/threat-model`, and `/policy`.
+- Local sitemap check confirmed `/policy` and `/threat-model` are included.
+- Mobile screenshots for `/calculator`, `/explorer`, and `/occupation` were reviewed after the changes.
+
 ## Plan
 
 - [x] Inspect the local Next.js app structure and current uncommitted state.

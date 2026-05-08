@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getThreatScenarios, getIndustries } from "@/lib/data";
+import { createPageMetadata } from "@/lib/seo";
 import { ThreatSimulatorClient } from "./ThreatSimulatorClient";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Lean AI Startup Threat Model",
   description:
     "See how a lean AI-native startup can outperform traditional teams on cost, speed, and output across key Manitoba sectors.",
-};
+  path: "/threat-simulator",
+});
 
 export default function ThreatSimulatorPage() {
   const scenarios = getThreatScenarios();
@@ -19,7 +21,7 @@ export default function ThreatSimulatorPage() {
       <section
         aria-labelledby="threat-heading"
         style={{ backgroundColor: "var(--color-navy-deep)" }}
-        className="relative overflow-hidden"
+        className="civic-page-hero relative overflow-hidden"
       >
         {/* Amber glow */}
         <div

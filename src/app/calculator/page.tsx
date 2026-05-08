@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
 import { getIndustries, getOccupations, getSectorPlaybooks, getThreatScenarios } from "@/lib/data";
+import { BASE_URL, breadcrumbJsonLd, createPageMetadata } from "@/lib/seo";
 import type { AssessmentInput, Industry, Occupation, SectorPlaybook, ThreatScenario } from "@/types";
 import { CalculatorClient } from "./CalculatorClient";
 
-export const metadata: Metadata = {
-  title: "Self-Assessment Calculator",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Manitoba AI Risk Calculator",
+  description:
+    "Answer six questions to estimate your Manitoba business's AI disruption exposure by sector, workforce mix, business size, and AI readiness.",
+  path: "/calculator",
+});
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -47,19 +52,74 @@ export default async function CalculatorPage({
   const threatScenarios: ThreatScenario[] = getThreatScenarios();
   const params = await searchParams;
   const initialInput = params.r ? decodeInput(params.r) : undefined;
+  const calculatorJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Manitoba AI Risk Calculator",
+    url: `${BASE_URL}/calculator`,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Any",
+    isAccessibleForFree: true,
+    description:
+      "A browser-based AI disruption exposure calculator for Manitoba businesses, using sector, workforce, business size, and AI readiness inputs.",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "CAD",
+    },
+  };
 
   return (
-    <div
-      className="min-h-screen py-12"
-      style={{ backgroundColor: "var(--color-paper)" }}
-    >
-      <CalculatorClient
-        industries={industries}
-        occupations={occupations}
-        playbooks={playbooks}
-        threatScenarios={threatScenarios}
-        initialInput={initialInput}
+    <>
+      <JsonLd data={calculatorJsonLd} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Manitoba AI Risk Calculator", path: "/calculator" },
+        ])}
       />
-    </div>
+      <div
+        className="min-h-screen py-12"
+        style={{ backgroundColor: "var(--color-paper)" }}
+      >
+        <section
+          aria-label="Calculator overview"
+          className="mx-auto mb-10 max-w-4xl px-4 sm:px-6 lg:px-8"
+        >
+          <div
+            className="border-y py-5"
+            style={{ borderColor: "var(--color-text-primary)" }}
+          >
+            <p
+              className="text-[0.6rem] font-bold uppercase tracking-[0.24em]"
+              style={{ color: "var(--color-gold)" }}
+            >
+              Manitoba AI risk calculator
+            </p>
+            <h1
+              className="mt-3 font-display text-3xl font-black leading-tight sm:text-4xl"
+              style={{ color: "var(--color-text-primary)", letterSpacing: "-0.02em" }}
+            >
+              Estimate your business exposure in six practical questions.
+            </h1>
+            <p
+              className="mt-3 max-w-2xl text-sm leading-relaxed sm:text-base"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
+              Use this free Manitoba AI disruption calculator to compare your sector,
+              workforce mix, business size, customer model, and AI readiness against
+              labour-market exposure research. Your answers stay in your browser.
+            </p>
+          </div>
+        </section>
+        <CalculatorClient
+          industries={industries}
+          occupations={occupations}
+          playbooks={playbooks}
+          threatScenarios={threatScenarios}
+          initialInput={initialInput}
+        />
+      </div>
+    </>
   );
 }

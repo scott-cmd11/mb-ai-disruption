@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getOccupations, getIndustries } from "@/lib/data";
+import { createPageMetadata } from "@/lib/seo";
 import { OccupationClient } from "./OccupationClient";
 import { RelatedLinks } from "@/components/RelatedLinks";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Occupation Risk Explorer",
   description:
     "Explore AI disruption risk scores for Manitoba occupations — search, filter, and compare by sector, risk tier, and employment.",
-};
+  path: "/occupation",
+});
 
 export default function OccupationPage() {
   const occupations = getOccupations();
@@ -22,7 +24,7 @@ export default function OccupationPage() {
       <section
         aria-labelledby="occupation-heading"
         style={{ backgroundColor: "var(--color-navy-deep)" }}
-        className="relative overflow-hidden"
+        className="civic-page-hero relative overflow-hidden"
       >
         {/* Amber glow */}
         <div

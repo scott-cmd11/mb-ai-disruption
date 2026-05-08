@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RelatedLinks } from "@/components/RelatedLinks";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Research Context",
   description:
     "A synthesis of Canadian and international research on AI workforce disruption, applied to Manitoba's economy.",
-};
+  path: "/policy",
+});
 
 const BIBLIOGRAPHY = [
   {

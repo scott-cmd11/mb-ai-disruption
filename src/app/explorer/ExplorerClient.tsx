@@ -380,6 +380,7 @@ export function ExplorerClient({
   return (
     <ReactFlowProvider>
       <div className="flex min-h-[calc(100vh-57px)] flex-col lg:h-[calc(100vh-57px)]">
+        <h1 className="sr-only">Manitoba industry AI risk explorer</h1>
         {/* Toolbar */}
         <div
           className="flex shrink-0 flex-col gap-3 border-b px-4 py-3 lg:flex-row lg:items-center lg:gap-6 lg:py-2.5"

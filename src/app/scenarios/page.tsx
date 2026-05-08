@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getIndustries } from "@/lib/data";
+import { createPageMetadata } from "@/lib/seo";
 import type { RiskTier } from "@/types";
 import { ScenariosClient, type ScenarioId, type ScenarioIndustry } from "./ScenariosClient";
 import { RelatedLinks } from "@/components/RelatedLinks";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Scenarios",
   description:
     "Compare Manitoba AI disruption risk under four scenarios: current baseline, rapid AI adoption, businesses leading on AI, and businesses lagging.",
-};
+  path: "/scenarios",
+});
 
 // ── Tier helper ────────────────────────────────────────────────────────────────
 
@@ -77,7 +79,7 @@ export default function ScenariosPage() {
       <section
         aria-labelledby="scenarios-heading"
         style={{ backgroundColor: "var(--color-navy-deep)" }}
-        className="relative overflow-hidden"
+        className="civic-page-hero relative overflow-hidden"
       >
         {/* Amber glow */}
         <div

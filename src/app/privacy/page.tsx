@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Privacy Policy",
   description:
     "Privacy Policy for the Manitoba AI Disruption Explorer — what information is collected and how it is used.",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

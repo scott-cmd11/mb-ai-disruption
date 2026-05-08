@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Threat Model",
   description:
     "Research-backed analysis of 5 mechanisms AI-native startups use to outcompete traditional businesses — with real company evidence and Manitoba context.",
-};
+  path: "/threat-model",
+});
 
 export default function ThreatModelPage() {
   return (
@@ -14,7 +16,7 @@ export default function ThreatModelPage() {
       <section
         aria-labelledby="threat-model-heading"
         style={{ backgroundColor: "var(--color-navy-deep)" }}
-        className="relative overflow-hidden"
+        className="civic-page-hero relative overflow-hidden"
       >
         <div
           aria-hidden="true"
@@ -779,7 +781,7 @@ export default function ThreatModelPage() {
       <section
         aria-labelledby="manitoba-heading"
         style={{ backgroundColor: "var(--color-navy-deep)" }}
-        className="relative overflow-hidden"
+        className="civic-page-hero civic-page-hero-dark relative overflow-hidden"
       >
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 survey-grid opacity-30" />
         <div className="relative mx-auto max-w-4xl px-4 py-14 sm:px-6 lg:px-8">

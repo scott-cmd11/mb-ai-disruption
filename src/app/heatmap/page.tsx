@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getOccupations, getIndustries } from "@/lib/data";
+import { createPageMetadata } from "@/lib/seo";
 import type { TaskCategory, RiskTier, HeatmapCell } from "@/types";
 import { HeatmapClient } from "./HeatmapClient";
 import { RelatedLinks } from "@/components/RelatedLinks";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Task Vulnerability Heatmap",
   description:
     "An 8×20 matrix showing employment-weighted AI disruption scores across task categories and Manitoba industry sectors.",
-};
+  path: "/heatmap",
+});
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -126,7 +128,7 @@ export default function HeatmapPage() {
       <section
         aria-labelledby="heatmap-heading"
         style={{ backgroundColor: "var(--color-navy-deep)" }}
-        className="relative overflow-hidden"
+        className="civic-page-hero relative overflow-hidden"
       >
         {/* Amber glow */}
         <div
