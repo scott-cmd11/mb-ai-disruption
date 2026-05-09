@@ -1,5 +1,19 @@
 # Website review - aidisruption.ca
 
+## 2026-05-09 Dark CTA readability fix
+
+- [x] Find the low-contrast button state shown in the screenshot.
+- [x] Patch the affected CTA so text is visible before hover.
+- [x] Run a focused build/check and record the result.
+- [ ] Commit, push, deploy, and verify production.
+
+Review:
+
+- Added an inverse secondary-button variant for dark sections and applied it to the homepage "Research & sources" CTA.
+- `npx tsc --noEmit` passed.
+- Fresh local page on `http://127.0.0.1:4557/` rendered the CTA with light text and a visible light border before hover.
+- Full `npm run build` did not complete within the local timeout window during this pass.
+
 ## 2026-05-08 Whole-site audit plan
 
 - [x] Reconfirm local route inventory and production metadata.

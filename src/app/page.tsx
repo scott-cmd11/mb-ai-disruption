@@ -851,7 +851,7 @@ export default function HomePage() {
               <Link href="/about" className="btn-primary">
                 Read the methodology
               </Link>
-              <Link href="/policy" className="btn-secondary">
+              <Link href="/policy" className="btn-secondary btn-secondary-inverse">
                 Research &amp; sources
               </Link>
             </div>

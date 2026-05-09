@@ -339,6 +339,17 @@ html::before {
   background-color: var(--color-gold-pale);
 }
 
+.btn-secondary-inverse {
+  color: var(--color-text-inverse);
+  border-color: rgba(248, 250, 252, 0.72);
+}
+
+.btn-secondary-inverse:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-gold);
+  background-color: var(--color-gold-pale);
+}
+
 /* ═══════════════════════════════════════════════════════════ */
 /* RISK PILL BADGES                                            */
 /* ═══════════════════════════════════════════════════════════ */
