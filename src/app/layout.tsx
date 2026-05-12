@@ -299,7 +299,7 @@ export default function RootLayout({
                 <span aria-hidden="true" className="mx-1 opacity-60">·</span>
                 <span style={{ color: "rgba(248, 250, 252, 0.45)" }}>Updated April 2026</span>
                 <span aria-hidden="true" className="mx-1 opacity-60">·</span>
-                Built with{" "}
+                Built using{" "}
                 <a
                   href="https://claude.ai/code"
                   target="_blank"
@@ -308,6 +308,16 @@ export default function RootLayout({
                   style={{ color: "rgba(248, 250, 252, 0.45)" }}
                 >
                   Claude Code
+                </a>
+                {" "}and{" "}
+                <a
+                  href="https://openai.com/codex/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:opacity-70 transition-opacity"
+                  style={{ color: "rgba(248, 250, 252, 0.45)" }}
+                >
+                  Codex
                 </a>
                 .
               </p>
