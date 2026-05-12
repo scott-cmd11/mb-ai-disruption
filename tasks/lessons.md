@@ -2,3 +2,4 @@
 
 - When the user asks for a world-class design pass, do not treat it as a functional polish request. Change the actual art direction, spatial composition, typography treatment, and visual system enough that the difference is obvious in the browser.
 - Using `frontend-design` means committing to a distinctive concept before coding, then executing it across the visible surface. Avoid default dark grids, generic cards, and dashboard gradients unless the project specifically calls for them.
+- If a verification command crashes or the session resumes mid-check, rerun the exact requested command after confirming the local process state. Do not leave the record as a workaround if the normal command can be made clean before deploy.

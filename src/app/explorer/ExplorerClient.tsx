@@ -34,6 +34,23 @@ function formatEmployment(n: number): string {
   return n.toString();
 }
 
+function buildCalculatorParam(naicsCode: string): string {
+  return encodeURIComponent(
+    btoa(
+      JSON.stringify({
+        naicsCode,
+        businessSize: "small",
+        aiAdoptionStatus: "not_considering",
+        primaryTasks: ["data_processing"],
+        knowledgeWorkerPct: 50,
+        manualWorkerPct: 25,
+        customerFacingPct: 25,
+        customerModel: "b2b",
+      })
+    )
+  );
+}
+
 function MetricCard({ label, value }: { label: string; value: string }) {
   return (
     <div
@@ -107,19 +124,7 @@ function SidebarPanel({
       ? "risk-bar-medium"
       : "risk-bar-low";
 
-  // Build calculator CTA param — pre-fill naicsCode with sensible defaults
-  const calculatorParam = btoa(
-    JSON.stringify({
-      naicsCode: industry.naicsCode,
-      businessSize: "small",
-      aiAdoptionStatus: "not_considering",
-      primaryTasks: ["data_processing"],
-      knowledgeWorkerPct: 50,
-      manualWorkerPct: 25,
-      customerFacingPct: 25,
-      customerModel: "b2b",
-    })
-  );
+  const calculatorParam = buildCalculatorParam(industry.naicsCode);
 
   return (
     <div className="flex flex-col gap-5 p-5 lg:h-full lg:overflow-y-auto">
@@ -317,6 +322,9 @@ export function ExplorerClient({
   );
 
   const selectedIndustry = industriesMap.get(selectedId) ?? null;
+  const selectedCalculatorHref = selectedIndustry
+    ? `/calculator?r=${buildCalculatorParam(selectedIndustry.naicsCode)}`
+    : "/calculator";
 
   const visibleIndustries = useMemo(() => {
     return industries
@@ -452,6 +460,15 @@ export function ExplorerClient({
                 {showMobileMap ? "Hide map" : "Show map"}
               </button>
             </div>
+
+            {selectedIndustry && (
+              <a
+                href={selectedCalculatorHref}
+                className="btn-primary mb-3 text-sm"
+              >
+                Assess {selectedIndustry.shortName}
+              </a>
+            )}
 
             <div className="grid grid-cols-1 gap-2">
               {visibleIndustries.map((industry, index) => {

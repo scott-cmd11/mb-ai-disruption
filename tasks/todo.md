@@ -181,3 +181,97 @@ Visual verification:
 - Desktop homepage now presents as a civic data publication/report cover rather than a dark SaaS dashboard.
 - Mobile homepage keeps the CTA visible above the fold.
 - `npm run build` passes after the redesign.
+
+## 2026-05-12 Expert task-flow audit
+
+Artifact: `artifacts/html/2026-task-flow-audit.html`
+
+Audit scope:
+
+- [x] Run the app locally and verify the local URL: `http://127.0.0.1:4563`.
+- [x] Compare route availability with production at `https://www.aidisruption.ca`.
+- [x] Inspect major routes: `/`, `/calculator`, `/explorer`, `/occupation`, `/heatmap`, `/scenarios`, `/threat-model`, `/threat-simulator`, `/about`, `/policy`, `/privacy`, `/terms`.
+- [x] Complete the calculator flow on mobile and inspect the generated results URL.
+- [x] Check mobile and desktop horizontal overflow across every major route.
+- [x] Review SEO, sitemap, robots, metadata, static data imports, and calculator shared-result handling.
+
+What works well:
+
+- All audited production routes return 200 and all local routes render with a real H1.
+- The current civic editorial direction is distinctive and much more credible than a generic AI/SaaS surface.
+- Core routes have route-specific metadata, structured data where useful, robots, sitemap, and stable public URLs.
+- The calculator completes successfully and creates a browser-only shared-result URL.
+- Major mobile routes do not show horizontal overflow at 390px.
+- Footer credit now clearly says the site was built using Claude Code and Codex, with links.
+
+Below-2026-quality findings:
+
+- High impact: calculator results are accurate but not oriented around "what should I do next?" early enough. Users see score components and benchmarks before a clear next-step panel.
+- High impact: `/explorer` mobile ranking is usable, but the path from browsing a sector to starting the relevant calculator flow is too low in the page.
+- Medium impact: calculator step navigation lacks visible guidance about why the Continue button is unavailable.
+- Medium impact: calculator result state has a second prominent result heading under the page intro, but focus/scroll behaviour does not intentionally orient screen-reader or keyboard users after completion.
+- Medium impact: secondary/tertiary text and inactive stepper numbers are visually refined but a few states are too low-contrast for a public civic-data tool.
+- Medium impact: shared calculator result validation accepts shape-correct but out-of-range percentages or unknown task values before the compute layer.
+- Low impact: some full-page screenshots show the local Next dev indicator and sticky header stitching artifacts; these are local-verification artifacts, not production UI defects.
+
+Trust and task-completion risks:
+
+- Users who reach results need an immediate interpretation bridge: score, next action, methodology, and sector context.
+- A business owner can browse sectors but may not notice the assessment CTA quickly on mobile.
+- Invalid or hand-edited `r=` query strings should fail closed to the normal calculator instead of carrying bad values into state.
+
+Accessibility and mobile risks:
+
+- Skip link colour contrast is below AA.
+- Inactive step indicator labels/numbers use subdued text on subdued surfaces.
+- The disabled Continue state is visible but should be paired with plain-language guidance.
+- Keyboard focus exists globally, but calculator step/result transitions should move focus intentionally.
+
+Technical/backend/data risks:
+
+- Static JSON imports are reliable for the current deployment shape and keep the public pages fast.
+- The calculator shared-result payload should validate task enums, numeric ranges, total workforce percentage, and sector existence.
+- Avoid broad data-model refactors; score computation and source data should remain untouched in this pass.
+
+## 2026-05-12 Implementation plan
+
+- [x] Strengthen shared accessibility primitives: skip link contrast, tertiary text contrast, and inactive stepper contrast.
+- [x] Improve calculator step ergonomics with explicit disabled-state guidance, accessible step status, and focus/scroll on step changes and results.
+- [x] Add an early results "next actions" panel linking to recommendations, methodology, sector explorer, and threat context.
+- [x] Add result-section anchors so shared result users can move from score to recommendations/methodology/action details.
+- [x] Add a prominent mobile `/explorer` assessment CTA for the currently selected sector while preserving the desktop split view.
+- [x] Harden shared calculator result decoding against invalid tasks, invalid ranges, invalid workforce totals, and unknown sector codes.
+- [x] Verify TypeScript, production build, local desktop/mobile route checks, calculator completion, navigation/footer links, contrast-sensitive states, and no horizontal overflow.
+
+Rollback notes:
+
+- Do not change score formulas, source datasets, or public URLs.
+- Keep React Flow isolated to `/explorer`.
+- If the result-orientation panel feels too heavy, remove that panel only; the calculator/data changes are independent.
+
+Review:
+
+- Improved global readability by raising tertiary text contrast, deepening the high-risk red, and increasing skip-link contrast.
+- Calculator steps now expose accessible step status and a plain-language guidance message explaining what is needed before Continue becomes available.
+- Calculator results now move focus to the result heading and show a "What to do next" panel immediately after the score, with anchors to recommendations, scoring methodology, sector actions, and threat context.
+- The score methodology accordion now exposes expanded/collapsed state to assistive technology.
+- `/explorer` mobile now gives the selected sector a prominent "Assess [sector]" CTA near the ranked list, while the desktop graph/sidebar model is unchanged.
+- Shared calculator result URLs now reject invalid task values, out-of-range percentages, workforce totals over 100%, and unknown sector codes.
+
+Verification:
+
+- `npx tsc --noEmit` initially hit a transient local Node launcher error after the crash (`Could not determine Node.js install directory`), then passed cleanly on retry.
+- Direct local TypeScript checks also passed: `node_modules/.bin/tsc.cmd --noEmit` and `npm exec tsc -- --noEmit`.
+- `npm run build` passed after the clean TypeScript checks, with the existing Next warning: edge runtime disables static generation for that edge page.
+- Local server verified at `http://127.0.0.1:4563`.
+- Desktop and mobile checks passed for `/`, `/calculator`, `/explorer`, `/occupation`, `/heatmap`, `/scenarios`, `/threat-model`, `/threat-simulator`, `/about`, `/policy`, `/privacy`, and `/terms`; all returned 200, had an H1, and had no horizontal overflow.
+- Mobile calculator flow was completed end-to-end and produced a shared result URL.
+- Invalid `/calculator?r=not-valid` falls back to the form instead of showing results.
+- Mobile `/explorer` shows the selected-sector assessment CTA and its link opens a valid prefilled calculator URL.
+- Footer links for Claude Code and Codex are present, and homepage internal nav/footer links checked during verification returned 200.
+
+Hiccup follow-up:
+
+- The earlier `npx`/TypeScript launcher errors were transient after the interrupted session; `npx tsc --noEmit`, `node_modules/.bin/tsc.cmd --noEmit`, and `npm exec tsc -- --noEmit` now pass cleanly.
+- A later local 500 was traced to running `npm run build` while the dev server was still active, which left Turbopack/Next dev manifests in a mixed `.next` state.
+- Fixed the local 500 by stopping only this project dev server processes, clearing the generated `.next` folder, and restarting `http://127.0.0.1:4563`; `/` returns 200 again.

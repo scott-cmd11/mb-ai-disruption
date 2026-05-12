@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import { getIndustries, getOccupations, getSectorPlaybooks, getThreatScenarios } from "@/lib/data";
 import { BASE_URL, breadcrumbJsonLd, createPageMetadata } from "@/lib/seo";
-import type { AssessmentInput, Industry, Occupation, SectorPlaybook, ThreatScenario } from "@/types";
+import type { AssessmentInput, Industry, Occupation, SectorPlaybook, TaskCategory, ThreatScenario } from "@/types";
 import { CalculatorClient } from "./CalculatorClient";
 
 export const metadata: Metadata = createPageMetadata({
@@ -14,19 +14,43 @@ export const metadata: Metadata = createPageMetadata({
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
+const BUSINESS_SIZES = new Set(["micro", "small", "medium", "large"]);
+const AI_ADOPTION_STATUSES = new Set(["using", "exploring", "not_considering"]);
+const TASK_CATEGORIES = new Set<TaskCategory>([
+  "data_processing",
+  "content_creation",
+  "customer_service",
+  "physical_manual",
+  "decision_making",
+  "creative_design",
+  "coordination",
+  "technical_analysis",
+]);
+const CUSTOMER_MODELS = new Set(["b2b", "b2c", "both", "government"]);
+
+function isValidPercentage(value: unknown): value is number {
+  return typeof value === "number" && Number.isFinite(value) && value >= 0 && value <= 100;
+}
+
 function isValidInput(obj: unknown): obj is AssessmentInput {
   if (!obj || typeof obj !== "object") return false;
   const o = obj as Record<string, unknown>;
+  const primaryTasks = o.primaryTasks as unknown[];
+  const workforceTotal =
+    Number(o.knowledgeWorkerPct) + Number(o.manualWorkerPct) + Number(o.customerFacingPct);
+
   return (
     typeof o.naicsCode === "string" &&
-    ["micro", "small", "medium", "large"].includes(o.businessSize as string) &&
-    ["using", "exploring", "not_considering"].includes(o.aiAdoptionStatus as string) &&
+    BUSINESS_SIZES.has(o.businessSize as string) &&
+    AI_ADOPTION_STATUSES.has(o.aiAdoptionStatus as string) &&
     Array.isArray(o.primaryTasks) &&
-    (o.primaryTasks as unknown[]).length > 0 &&
-    typeof o.knowledgeWorkerPct === "number" &&
-    typeof o.manualWorkerPct === "number" &&
-    typeof o.customerFacingPct === "number" &&
-    ["b2b", "b2c", "both", "government"].includes(o.customerModel as string)
+    primaryTasks.length > 0 &&
+    primaryTasks.every((task) => TASK_CATEGORIES.has(task as TaskCategory)) &&
+    isValidPercentage(o.knowledgeWorkerPct) &&
+    isValidPercentage(o.manualWorkerPct) &&
+    isValidPercentage(o.customerFacingPct) &&
+    workforceTotal <= 100 &&
+    CUSTOMER_MODELS.has(o.customerModel as string)
   );
 }
 
@@ -51,7 +75,11 @@ export default async function CalculatorPage({
   const playbooks: SectorPlaybook[] = getSectorPlaybooks();
   const threatScenarios: ThreatScenario[] = getThreatScenarios();
   const params = await searchParams;
-  const initialInput = params.r ? decodeInput(params.r) : undefined;
+  const decodedInput = params.r ? decodeInput(params.r) : undefined;
+  const initialInput =
+    decodedInput && industries.some((industry) => industry.naicsCode === decodedInput.naicsCode)
+      ? decodedInput
+      : undefined;
   const calculatorJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",

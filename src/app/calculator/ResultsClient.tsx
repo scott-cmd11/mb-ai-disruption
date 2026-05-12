@@ -673,6 +673,73 @@ function ThreatPreview({ scenario }: { scenario: ThreatScenario }) {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
+function NextActionsPanel({
+  industryName,
+  hasPlaybook,
+  hasThreatScenario,
+}: {
+  industryName: string;
+  hasPlaybook: boolean;
+  hasThreatScenario: boolean;
+}) {
+  const actions = [
+    {
+      href: "#recommendations",
+      label: "Start with recommendations",
+      body: "See the actions prioritized from your inputs.",
+    },
+    {
+      href: "#score-methodology",
+      label: "Check the methodology",
+      body: "Open the scoring sources and formula notes.",
+    },
+    {
+      href: hasPlaybook ? "#sector-actions" : "/explorer",
+      label: hasPlaybook ? `Review ${industryName} actions` : "Compare sector context",
+      body: hasPlaybook
+        ? "Use the sector playbook for a 12-month planning frame."
+        : "Compare this score with other Manitoba sectors.",
+    },
+    {
+      href: hasThreatScenario ? "#competitive-threat" : "/threat-model",
+      label: "Understand the threat model",
+      body: "Translate exposure into business implications.",
+    },
+  ];
+
+  return (
+    <section
+      aria-labelledby="result-next-actions-heading"
+      className="rounded-sm border p-5 sm:p-6 mb-6"
+      style={{ backgroundColor: "var(--color-paper-cool)", borderColor: "var(--color-border-strong)" }}
+    >
+      <p className="text-[0.6rem] tracking-[0.2em] uppercase font-bold mb-1" style={{ color: "var(--color-gold)" }}>
+        What to do next
+      </p>
+      <h3 id="result-next-actions-heading" className="font-display text-xl font-semibold" style={{ color: "var(--color-text-primary)" }}>
+        Turn the score into a planning path
+      </h3>
+      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+        {actions.map((action) => (
+          <a
+            key={action.href}
+            href={action.href}
+            className="block rounded-sm border p-3 transition-colors hover:border-[var(--color-gold)] hover:bg-[var(--color-surface)]"
+            style={{ borderColor: "var(--color-border)", backgroundColor: "rgba(255, 252, 245, 0.78)" }}
+          >
+            <span className="block text-sm font-semibold" style={{ color: "var(--color-text-primary)" }}>
+              {action.label}
+            </span>
+            <span className="mt-1 block text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+              {action.body}
+            </span>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function ResultsClient({
   result,
   industryName,
@@ -690,12 +757,25 @@ export function ResultsClient({
 }) {
   const { breakdown, riskTier } = result;
   const [provenanceOpen, setProvenanceOpen] = useState(false);
+  const resultHeadingRef = useRef<HTMLHeadingElement>(null);
   const modifierNote =
     breakdown.adoptionModifier < 1
       ? `Your AI adoption reduces exposure by ${Math.round((1 - breakdown.adoptionModifier) * 100)}%.`
       : breakdown.sizeMultiplier > 1
       ? "Smaller businesses face slightly higher relative exposure."
       : null;
+
+  useEffect(() => {
+    const heading = resultHeadingRef.current;
+    if (!heading) return;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    heading.focus({ preventScroll: true });
+    heading.scrollIntoView({
+      block: "start",
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    });
+  }, []);
 
   return (
     <div className="mx-auto max-w-3xl px-4 pb-16">
@@ -704,9 +784,14 @@ export function ResultsClient({
         <p className="text-[0.6rem] tracking-[0.25em] uppercase font-bold mb-2" style={{ color: "var(--color-gold)" }}>
           Assessment results · {industryName}
         </p>
-        <h1 className="font-display text-3xl font-light italic" style={{ color: "var(--color-text-primary)" }}>
+        <h2
+          ref={resultHeadingRef}
+          tabIndex={-1}
+          className="font-display text-3xl font-light italic"
+          style={{ color: "var(--color-text-primary)" }}
+        >
           Your AI Disruption Score
-        </h1>
+        </h2>
       </div>
 
       {/* Gauge + modifiers */}
@@ -722,8 +807,15 @@ export function ResultsClient({
         )}
       </div>
 
+      <NextActionsPanel
+        industryName={industryName}
+        hasPlaybook={!!playbook}
+        hasThreatScenario={!!threatScenario}
+      />
+
       {/* Score breakdown */}
       <div
+        id="score-breakdown"
         className="rounded-sm border p-6 sm:p-8 mb-6"
         style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
       >
@@ -791,9 +883,11 @@ export function ResultsClient({
       )}
 
       {/* ── Data Provenance Panel ─────────────────────────────── */}
-      <div className="rounded-xl border overflow-hidden mt-4" style={{ borderColor: "var(--color-border)" }}>
+      <div id="score-methodology" className="rounded-xl border overflow-hidden mt-4" style={{ borderColor: "var(--color-border)" }}>
         <button
           onClick={() => setProvenanceOpen(!provenanceOpen)}
+          aria-expanded={provenanceOpen}
+          aria-controls="score-methodology-panel"
           className="w-full flex items-center justify-between px-4 py-3 text-left transition-colors hover:bg-[var(--color-surface-muted)]"
         >
           <span className="text-sm font-semibold" style={{ color: "var(--color-text-primary)" }}>
@@ -803,7 +897,9 @@ export function ResultsClient({
         </button>
 
         {provenanceOpen && (
-          <div className="border-t px-4 py-4 text-xs leading-relaxed flex flex-col gap-3"
+          <div
+            id="score-methodology-panel"
+            className="border-t px-4 py-4 text-xs leading-relaxed flex flex-col gap-3"
             style={{ borderColor: "var(--color-border)", backgroundColor: "var(--color-surface-muted)", color: "var(--color-text-secondary)" }}>
 
             <p>
@@ -838,6 +934,7 @@ export function ResultsClient({
 
       {/* Recommendations */}
       <div
+        id="recommendations"
         className="rounded-sm border p-6 sm:p-8 mb-8"
         style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
       >
@@ -848,6 +945,7 @@ export function ResultsClient({
       {/* Action Roadmap (from sector playbook) */}
       {playbook && (
         <div
+          id="sector-actions"
           className="rounded-sm border p-6 sm:p-8 mb-6"
           style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
         >
@@ -866,6 +964,7 @@ export function ResultsClient({
       {/* Competitive Threat Preview */}
       {threatScenario && (
         <div
+          id="competitive-threat"
           className="rounded-sm border p-6 sm:p-8 mb-8"
           style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
         >

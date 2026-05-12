@@ -18,6 +18,7 @@ import { ResultsClient } from "./ResultsClient";
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 const TOTAL_STEPS = 6;
+const STEP_LABELS = ["Industry", "Size", "Adoption", "Activities", "Workforce", "Model"];
 
 const TASK_LABELS: Record<TaskCategory, string> = {
   data_processing: "Data Processing",
@@ -60,49 +61,84 @@ function isStepValid(draft: Partial<AssessmentInput>, step: number): boolean {
   }
 }
 
+function getStepGuidance(draft: Partial<AssessmentInput>, step: number, valid: boolean): string {
+  if (valid) return "Ready to continue.";
+
+  switch (step) {
+    case 0:
+      return "Choose the closest Manitoba industry sector to continue.";
+    case 1:
+      return "Choose your business size to continue.";
+    case 2:
+      return "Choose your current AI adoption stage to continue.";
+    case 3:
+      return "Select at least one primary activity to continue.";
+    case 4: {
+      const total =
+        (draft.knowledgeWorkerPct ?? 0) +
+        (draft.manualWorkerPct ?? 0) +
+        (draft.customerFacingPct ?? 0);
+
+      return total > 100
+        ? "Adjust the workforce mix so the total is 100% or less."
+        : "Review the workforce mix before continuing.";
+    }
+    case 5:
+      return "Choose your primary customer model to view results.";
+    default:
+      return "Complete this step to continue.";
+  }
+}
+
 // ── Sub-components ────────────────────────────────────────────────────────────
 
 // Step indicator
 function StepIndicator({ step }: { step: number }) {
-  const labels = ["Industry", "Size", "Adoption", "Activities", "Workforce", "Model"];
   return (
-    <div className="flex items-center justify-center mb-10 gap-0">
-      {labels.map((label, i) => {
+    <ol className="flex items-center justify-center mb-10 gap-0" aria-label="Assessment progress">
+      {STEP_LABELS.map((label, i) => {
         const done = i < step;
         const active = i === step;
         return (
-          <div key={i} className="flex items-center">
+          <li
+            key={i}
+            className="flex items-center"
+            aria-current={active ? "step" : undefined}
+            aria-label={`${label}: ${active ? "current step" : done ? "completed" : "not started"}`}
+          >
             <div className="flex flex-col items-center gap-1">
               <div
-                className="w-7 h-7 rounded-full flex items-center justify-center text-[0.6rem] font-bold transition-colors"
+                aria-hidden="true"
+                className="w-7 h-7 rounded-full border flex items-center justify-center text-[0.6rem] font-bold transition-colors"
                 style={{
                   backgroundColor: done
                     ? "var(--color-gold)"
                     : active
                     ? "var(--color-navy)"
-                    : "var(--color-border)",
-                  color: done || active ? "var(--color-text-inverse)" : "var(--color-text-tertiary)",
+                    : "var(--color-surface)",
+                  borderColor: done || active ? "transparent" : "var(--color-border-strong)",
+                  color: done || active ? "var(--color-text-inverse)" : "var(--color-text-primary)",
                 }}
               >
                 {done ? "✓" : i + 1}
               </div>
               <span
                 className="text-[0.55rem] tracking-[0.12em] uppercase hidden sm:block"
-                style={{ color: active ? "var(--color-navy)" : "var(--color-text-tertiary)" }}
+                style={{ color: active ? "var(--color-navy)" : "var(--color-text-secondary)" }}
               >
                 {label}
               </span>
             </div>
-            {i < labels.length - 1 && (
+            {i < STEP_LABELS.length - 1 && (
               <div
                 className="w-8 sm:w-12 h-px mb-5 mx-1"
                 style={{ backgroundColor: i < step ? "var(--color-gold)" : "var(--color-border)" }}
               />
             )}
-          </div>
+          </li>
         );
       })}
-    </div>
+    </ol>
   );
 }
 
@@ -559,6 +595,7 @@ export function CalculatorClient({
   }
 
   const valid = isStepValid(draft, step);
+  const stepGuidance = getStepGuidance(draft, step, valid);
 
   return (
     <div className="mx-auto max-w-2xl px-4">
@@ -586,8 +623,21 @@ export function CalculatorClient({
         {step === 4 && <Step5Workforce draft={draft} update={update} />}
         {step === 5 && <Step6CustomerModel draft={draft} update={update} />}
 
+        <p
+          id="calculator-step-guidance"
+          aria-live="polite"
+          className="mt-6 rounded-sm border px-3 py-2 text-xs"
+          style={{
+            borderColor: valid ? "var(--color-risk-low-border)" : "var(--color-border)",
+            backgroundColor: valid ? "var(--color-risk-low-bg)" : "var(--color-paper-deep)",
+            color: valid ? "var(--color-risk-low)" : "var(--color-text-secondary)",
+          }}
+        >
+          {stepGuidance}
+        </p>
+
         {/* Navigation */}
-        <div className="flex justify-between items-center mt-8 pt-6 border-t" style={{ borderColor: "var(--color-border)" }}>
+        <div className="flex justify-between items-center gap-3 mt-6 pt-6 border-t" style={{ borderColor: "var(--color-border)" }}>
           <button
             onClick={() => setStep((s) => Math.max(0, s - 1))}
             disabled={step === 0}
@@ -601,6 +651,7 @@ export function CalculatorClient({
             <button
               onClick={() => setStep((s) => s + 1)}
               disabled={!valid}
+              aria-describedby="calculator-step-guidance"
               className="inline-flex items-center rounded-sm px-6 py-2.5 text-sm font-medium tracking-wide transition-colors disabled:opacity-40"
               style={{ backgroundColor: "var(--color-navy)", color: "var(--color-text-inverse)" }}
             >
@@ -610,6 +661,7 @@ export function CalculatorClient({
             <button
               onClick={handleSubmit}
               disabled={!valid}
+              aria-describedby="calculator-step-guidance"
               className="inline-flex items-center rounded-sm px-6 py-2.5 text-sm font-medium tracking-wide transition-colors disabled:opacity-40"
               style={{ backgroundColor: "var(--color-navy)", color: "var(--color-text-inverse)" }}
             >

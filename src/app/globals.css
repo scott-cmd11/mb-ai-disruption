@@ -30,7 +30,7 @@
   /* ── Text (all pass WCAG AA on white) ───────────────────── */
   --color-text-primary:   #171717;
   --color-text-secondary: #4A4842;
-  --color-text-tertiary:  #767064;
+  --color-text-tertiary:  #5F5A50;
   --color-text-inverse:   #FFF8EA;
 
   /* ── Borders ─────────────────────────────────────────────── */
@@ -38,7 +38,7 @@
   --color-border-strong: #171717;
 
   /* ── Risk tiers (WCAG AA on white) ──────────────────────── */
-  --color-risk-high:          #DC2626;  /* red-600    — 5.9:1 ✓ */
+  --color-risk-high:          #B91C1C;  /* red-700    - passes WCAG AA on white and pale red */
   --color-risk-medium:        #B45309;  /* amber-700  — 7.5:1 ✓ */
   --color-risk-low:           #15803D;  /* green-700  — 7.2:1 ✓ */
   --color-risk-high-bg:       #FEF2F2;
@@ -128,7 +128,7 @@ p {
   top: -100%;
   left: 1rem;
   z-index: 10000;
-  background-color: var(--color-gold);
+  background-color: var(--color-gold-light);
   color: var(--color-navy-deep);
   font-family: var(--font-body);
   font-weight: 700;
@@ -228,12 +228,12 @@ html::before {
 /* RISK BAR GRADIENTS                                          */
 /* ═══════════════════════════════════════════════════════════ */
 
-.risk-bar-high   { background: linear-gradient(90deg, #DC2626 0%, #F87171 100%); }
+.risk-bar-high   { background: linear-gradient(90deg, #B91C1C 0%, #F87171 100%); }
 .risk-bar-medium { background: linear-gradient(90deg, #D97706 0%, #FCD34D 100%); }
 .risk-bar-low    { background: linear-gradient(90deg, #15803D 0%, #4ADE80 100%); }
 
 /* Text colours (on white backgrounds) */
-.risk-badge-high   { color: #DC2626; }
+.risk-badge-high   { color: #B91C1C; }
 .risk-badge-medium { color: #B45309; }
 .risk-badge-low    { color: #15803D; }
 
@@ -536,7 +536,7 @@ textarea:focus-visible {
 
 .badge-high {
   background-color: #FEF2F2;
-  color: #DC2626;
+  color: #B91C1C;
   border-color: #FECACA;
 }
 .badge-high::before { content: "\25B2"; } /* ▲ */
