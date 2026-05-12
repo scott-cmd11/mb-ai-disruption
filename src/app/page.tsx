@@ -129,7 +129,7 @@ export default function HomePage() {
 
         <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
           <div
-            className="mb-8 grid grid-cols-2 gap-3 border-y py-3 text-[0.62rem] font-bold uppercase tracking-[0.22em] sm:grid-cols-4"
+            className="mb-8 grid grid-cols-2 gap-3 border-y bg-[rgba(255,252,245,0.62)] px-3 py-3 text-[0.62rem] font-bold uppercase tracking-[0.18em] sm:grid-cols-4"
             style={{ borderColor: "var(--color-text-primary)", color: "var(--color-text-secondary)" }}
           >
             <span>Manitoba</span>
@@ -177,13 +177,13 @@ export default function HomePage() {
                   letterSpacing: "-0.045em",
                 }}
               >
-                Measure your AI exposure before the market does.
+                AI disruption exposure for Manitoba business planning.
               </h1>
               <p
                 className="mt-6 max-w-2xl text-xl leading-snug sm:text-2xl"
                 style={{ color: "var(--color-text-secondary)" }}
               >
-                Score your sector, benchmark your workforce, and turn a vague AI threat into a concrete Manitoba business planning signal.
+                Score your sector, benchmark your workforce, and turn a vague AI threat into a concrete planning signal before the market moves.
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link href="/calculator" className="btn-primary">
@@ -404,11 +404,11 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       <section
         aria-label="Key statistics"
-        style={{ backgroundColor: "var(--color-text-primary)" }}
-        className="border-b"
+        style={{ backgroundColor: "var(--color-paper-cool)" }}
+        className="civic-tool-band border-b"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <dl className="grid grid-cols-1 divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0" style={{ borderColor: "rgba(255,248,234,0.18)" }}>
+          <dl className="grid grid-cols-1 divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0" style={{ borderColor: "rgba(21,33,42,0.16)" }}>
             {[
               {
                 num: "20",
@@ -432,7 +432,7 @@ export default function HomePage() {
                     className="font-display font-bold leading-none"
                     style={{
                       fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
-                      color: "var(--color-gold-light)",
+                      color: "var(--color-navy-deep)",
                       letterSpacing: "-0.04em",
                     }}
                   >
@@ -440,14 +440,14 @@ export default function HomePage() {
                   </span>
                   <span
                     className="text-xs font-bold tracking-widest uppercase"
-                    style={{ color: "rgba(255,248,234,0.55)" }}
+                    style={{ color: "var(--color-gold)" }}
                   >
                     {unit}
                   </span>
                 </dt>
                 <dd
                   className="text-sm leading-relaxed"
-                  style={{ color: "rgba(255,248,234,0.72)" }}
+                  style={{ color: "var(--color-text-secondary)" }}
                 >
                   {desc}
                 </dd>
@@ -463,10 +463,10 @@ export default function HomePage() {
       <section
         aria-label="About this tool"
         className="border-b"
-        style={{ backgroundColor: "var(--color-paper-deep)" }}
+        style={{ backgroundColor: "var(--color-surface)" }}
       >
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-6 border-l-4 py-2 pl-5 sm:flex-row sm:items-start sm:justify-between" style={{ borderColor: "var(--color-text-primary)" }}>
+          <div className="civic-panel civic-panel-strong flex flex-col gap-6 p-5 sm:flex-row sm:items-start sm:justify-between" style={{ borderColor: "var(--color-text-primary)" }}>
             <div className="flex items-start gap-4 max-w-3xl">
               {/* Left amber accent bar */}
               <div
@@ -515,7 +515,8 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       <section
         aria-labelledby="explore-heading"
-        style={{ backgroundColor: "var(--color-paper)" }}
+        className="civic-tool-band"
+        style={{ backgroundColor: "var(--color-paper-cool)" }}
       >
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <p
@@ -602,7 +603,7 @@ export default function HomePage() {
               <Link
                 key={href}
                 href={href}
-                className="group block border p-5 transition-colors hover:border-[var(--color-gold)]"
+                className="civic-panel group block border p-5 transition-colors hover:border-[var(--color-gold)]"
                 style={{
                   backgroundColor: "var(--color-surface)",
                   borderColor: featured ? "var(--color-text-primary)" : "var(--color-border)",
@@ -710,7 +711,7 @@ export default function HomePage() {
           {/* Industry table — semantic <table> for screen reader column context.
               Horizontal scroll fallback on narrow viewports keeps the bar + score readable. */}
           <div
-            className="rounded-xl border shadow-sm overflow-x-auto"
+            className="civic-table overflow-x-auto"
             style={{ borderColor: "var(--color-border)" }}
           >
             <table
@@ -810,19 +811,9 @@ export default function HomePage() {
       >
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div
-            className="rounded-2xl px-8 py-12 sm:px-12 text-center relative overflow-hidden"
-            style={{ backgroundColor: "var(--color-navy-deep)" }}
+            className="civic-panel civic-panel-strong px-6 py-10 text-center relative overflow-hidden sm:px-12"
+            style={{ backgroundColor: "var(--color-surface)" }}
           >
-            {/* Decorative glow */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 rounded-2xl"
-              style={{
-                background:
-                  "radial-gradient(ellipse 60% 80% at 50% 0%, rgba(217,119,6,0.12) 0%, transparent 70%)",
-              }}
-            />
-
             <p
               className="relative text-xs font-bold tracking-[0.2em] uppercase mb-3"
               style={{ color: "var(--color-gold)" }}
@@ -832,7 +823,7 @@ export default function HomePage() {
             <h2
               className="relative font-display font-bold"
               style={{
-                color: "var(--color-text-inverse)",
+                color: "var(--color-text-primary)",
                 fontSize: "clamp(1.6rem, 4vw, 2.5rem)",
                 letterSpacing: "-0.025em",
               }}
@@ -841,7 +832,7 @@ export default function HomePage() {
             </h2>
             <p
               className="relative mt-3 text-base max-w-lg mx-auto"
-              style={{ color: "rgba(248, 250, 252, 0.65)" }}
+              style={{ color: "var(--color-text-secondary)" }}
             >
               Composite scores combine Frey &amp; Osborne (2013), the AI Occupation Exposure
               index (Felten et al.), language-model exposure research, and Statistics Canada
@@ -851,7 +842,7 @@ export default function HomePage() {
               <Link href="/about" className="btn-primary">
                 Read the methodology
               </Link>
-              <Link href="/policy" className="btn-secondary btn-secondary-inverse">
+              <Link href="/policy" className="btn-secondary">
                 Research &amp; sources
               </Link>
             </div>

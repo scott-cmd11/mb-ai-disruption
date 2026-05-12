@@ -56,7 +56,7 @@ export function NavMenu() {
           aria-expanded={open}
           aria-controls="mobile-nav-menu"
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-          className="flex items-center justify-center w-11 h-11 rounded-lg transition-colors"
+          className="flex items-center justify-center w-11 h-11 rounded-lg transition-colors hover:bg-[rgba(185,71,42,0.12)]"
           style={{
             color: "var(--color-text-primary)",
             backgroundColor: open ? "rgba(185,71,42,0.12)" : "transparent",
@@ -85,7 +85,7 @@ export function NavMenu() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="block py-3 px-3 text-sm font-medium rounded-lg transition-colors"
+                    className="block py-3 px-3 text-sm font-medium rounded-lg transition-colors hover:bg-[rgba(49,84,103,0.08)]"
                     style={{
                       color: pathname === href
                         ? "var(--color-gold)"

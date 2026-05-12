@@ -136,7 +136,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: datasetJsonLdSafe }}
         />
       </head>
-      <body>
+      <body className="site-shell">
         {/* ── Skip link — first focusable element ──────────────────────── */}
         <a href="#main-content" className="skip-to-main">
           Skip to main content
@@ -144,7 +144,7 @@ export default function RootLayout({
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <header
-          className="sticky top-0 z-40 border-b"
+          className="site-header sticky top-0 z-40 border-b"
           style={{
             backgroundColor: "rgba(245, 240, 230, 0.94)",
             borderColor: "var(--color-text-primary)",
@@ -167,7 +167,7 @@ export default function RootLayout({
               <Link
                 href="/"
                 aria-label="Manitoba AI Disruption Explorer — home"
-                className="focus-inverse group flex flex-col justify-center py-4 leading-none"
+                className="site-wordmark focus-inverse group flex flex-col justify-center py-4 leading-none"
               >
                 <span
                   className="text-[0.6rem] font-bold tracking-[0.3em] uppercase"
@@ -197,7 +197,7 @@ export default function RootLayout({
         {/* ── Footer ─────────────────────────────────────────────────────── */}
         <footer
           aria-label="Site footer"
-          className="border-t"
+          className="site-footer border-t"
           style={{
             backgroundColor: "var(--color-text-primary)",
             borderColor: "var(--color-text-primary)",

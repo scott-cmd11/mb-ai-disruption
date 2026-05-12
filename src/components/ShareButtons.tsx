@@ -122,18 +122,10 @@ export function ShareButtons() {
           target={external === false ? undefined : "_blank"}
           rel={external === false ? undefined : "noopener noreferrer"}
           aria-label={label}
-          className="flex items-center justify-center w-8 h-8 rounded-lg transition-colors"
+          className="flex items-center justify-center w-8 h-8 rounded-lg transition-colors hover:bg-[rgba(255,255,255,0.1)] focus:bg-[rgba(255,255,255,0.1)]"
           style={{
-            color: "rgba(248,250,252,0.4)",
+            color: "rgba(248,250,252,0.72)",
             backgroundColor: "transparent",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = "rgba(248,250,252,0.9)";
-            e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = "rgba(248,250,252,0.4)";
-            e.currentTarget.style.backgroundColor = "transparent";
           }}
         >
           {icon}
@@ -145,22 +137,10 @@ export function ShareButtons() {
         type="button"
         onClick={handleCopy}
         aria-label={copied ? "Link copied" : "Copy link to this page"}
-        className="flex items-center justify-center w-8 h-8 rounded-lg transition-colors"
+        className="flex items-center justify-center w-8 h-8 rounded-lg transition-colors hover:bg-[rgba(255,255,255,0.1)] focus:bg-[rgba(255,255,255,0.1)]"
         style={{
-          color: copied ? "var(--color-gold)" : "rgba(248,250,252,0.4)",
+          color: copied ? "var(--color-gold-light)" : "rgba(248,250,252,0.72)",
           backgroundColor: copied ? "rgba(217,119,6,0.15)" : "transparent",
-        }}
-        onMouseEnter={(e) => {
-          if (!copied) {
-            e.currentTarget.style.color = "rgba(248,250,252,0.9)";
-            e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)";
-          }
-        }}
-        onMouseLeave={(e) => {
-          if (!copied) {
-            e.currentTarget.style.color = "rgba(248,250,252,0.4)";
-            e.currentTarget.style.backgroundColor = "transparent";
-          }
         }}
       >
         {copied ? <CheckIcon /> : <CopyIcon />}
@@ -169,7 +149,7 @@ export function ShareButtons() {
       {copied && (
         <span
           className="text-xs font-medium ml-1 animate-in fade-in"
-          style={{ color: "var(--color-gold)" }}
+          style={{ color: "var(--color-gold-light)" }}
         >
           Copied!
         </span>

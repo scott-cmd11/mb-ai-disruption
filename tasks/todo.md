@@ -1,5 +1,41 @@
 # Website review - aidisruption.ca
 
+## 2026-05-11 2026 design standards pass
+
+Audit notes:
+
+- Local audit origin confirmed: `http://127.0.0.1:4560`.
+- The strongest existing direction is the civic intelligence atlas/report-cover system on the homepage.
+- The main polish gap is route-to-route consistency: older dark hero treatments, repeated ad hoc rounded cards, one-off inline control styles, and several tool surfaces that look less designed than the homepage.
+- Shared leverage points are `src/app/globals.css`, `src/app/layout.tsx`, `src/components/RelatedLinks.tsx`, the homepage sections, and the client-heavy tool files for calculator, explorer, occupation, scenarios, and threat simulator.
+- Risk areas to avoid heavy rewrites: React Flow geometry in `/explorer`, heatmap cell sizing, calculator state flow, and occupation detail-panel behaviour.
+
+Design strategy:
+
+- Chosen direction: "Prairie civic intelligence desk" - a refined 2026 public-data product using report rules, quiet paper/cool-grey surfaces, black ink, clay/red accents, restrained steel-blue and sage support colours, and dense but readable tool panels.
+- Visual system updates: reduce global beige dominance with cooler information bands; make buttons chunkier and clearer; add reusable civic panel/card/table/control treatments; sharpen focus states; make hover states add emphasis without hiding content; remove legacy decorative motion from visible surfaces.
+- Homepage updates: make the hero more composed and less brittle, remove the hidden legacy hero block, convert the key-stat strip and tool cards into more intentional data-publication sections, and replace the final dark CTA card with a high-contrast report-style CTA surface.
+- Interior route updates: normalize civic page heroes, panels, tables, related links, legal/editorial pages, and tool surfaces through shared CSS classes/selectors before touching individual logic-heavy components.
+- Tool route updates: improve calculator cards/controls, Explorer panels, occupation controls/cards, scenarios tables, threat simulator cards, and heatmap framing without changing their domain logic.
+- Verification plan: run TypeScript and production build, inspect all major routes at desktop and mobile, check no horizontal overflow, click/snapshot core interactive surfaces, and record results here.
+
+Implementation checklist:
+
+- [x] Add/refine shared 2026 civic design primitives in `globals.css`.
+- [x] Polish shell/header/footer and shared related-link/card treatments.
+- [x] Polish homepage above/below the fold without changing content intent.
+- [x] Normalize interior route hero and editorial/legal page treatments.
+- [x] Polish calculator, explorer, occupation, heatmap, scenarios, and threat simulator surfaces.
+- [x] Verify desktop and mobile routes, type/build checks, and browser screenshots.
+
+Review:
+
+- Added a cooler civic data palette, sharper button states, stronger focus treatment, reusable civic panels/tables/tool bands, and dark-surface contrast fixes.
+- Polished the site shell, mobile nav, footer, share buttons, related-links strip, homepage hero/stat/tool/table/CTA sections, calculator intro, and scenarios table overflow behaviour.
+- Fixed the dark `civic-page-hero-dark` text override risk and improved default visibility for footer/share controls and keyboard-focused calculator tiles.
+- Verification passed: `npx tsc --noEmit`, `npm run build`, local `http://127.0.0.1:4560/` served 200 after a clean dev-server restart, and browser checks found no horizontal overflow on `/`, `/calculator`, `/explorer`, `/occupation`, `/heatmap`, `/scenarios`, `/threat-model`, `/threat-simulator`, `/about`, `/policy`, `/privacy`, or `/terms` at mobile width.
+- Visual screenshots reviewed for homepage desktop/mobile, calculator mobile, explorer mobile, scenarios mobile, and threat-model desktop dark-section contrast.
+
 ## 2026-05-09 Dark CTA readability fix
 
 - [x] Find the low-contrast button state shown in the screenshot.

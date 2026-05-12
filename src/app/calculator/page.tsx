@@ -87,7 +87,7 @@ export default async function CalculatorPage({
           className="mx-auto mb-10 max-w-4xl px-4 sm:px-6 lg:px-8"
         >
           <div
-            className="border-y py-5"
+            className="civic-panel civic-panel-strong px-5 py-6"
             style={{ borderColor: "var(--color-text-primary)" }}
           >
             <p

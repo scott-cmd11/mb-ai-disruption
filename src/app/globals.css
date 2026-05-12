@@ -7,21 +7,25 @@
   --font-mono:    ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
 
   /* ── Surfaces ───────────────────────────────────────────── */
-  --color-paper:         #F5F0E6;
-  --color-paper-deep:    #E9E0D0;
-  --color-surface:       #FFFCF4;
-  --color-surface-muted: #EFE6D6;
+  --color-paper:         #F4EFE5;
+  --color-paper-deep:    #E8DDCB;
+  --color-paper-cool:    #E9EEF0;
+  --color-surface:       #FFFCF5;
+  --color-surface-muted: #ECE2D2;
+  --color-surface-cool:  #F2F6F5;
 
   /* ── Brand navy ─────────────────────────────────────────── */
-  --color-navy:          #17202A;
-  --color-navy-deep:     #101417;
-  --color-navy-mid:      #2E3A40;
+  --color-navy:          #15212A;
+  --color-navy-deep:     #0E1418;
+  --color-navy-mid:      #2D414A;
+  --color-steel:         #315467;
+  --color-sage:          #5D735F;
 
   /* ── Amber accent ────────────────────────────────────────── */
   /* amber-600 (#D97706) is 5.04:1 on navy-deep — passes WCAG AA */
-  --color-gold:          #B9472A;
-  --color-gold-light:    #E2A94F;
-  --color-gold-pale:     #F5DFC2;
+  --color-gold:          #A7472D;
+  --color-gold-light:    #D79A3B;
+  --color-gold-pale:     #F1D7B5;
 
   /* ── Text (all pass WCAG AA on white) ───────────────────── */
   --color-text-primary:   #171717;
@@ -30,7 +34,7 @@
   --color-text-inverse:   #FFF8EA;
 
   /* ── Borders ─────────────────────────────────────────────── */
-  --color-border:        #D7CBB9;
+  --color-border:        #CEC0AA;
   --color-border-strong: #171717;
 
   /* ── Risk tiers (WCAG AA on white) ──────────────────────── */
@@ -45,9 +49,9 @@
   --color-risk-low-border:    #BBF7D0;
 
   /* ── Accent aliases ──────────────────────────────────────── */
-  --color-accent:       #1A3557;
-  --color-accent-hover: #2A5080;
-  --color-accent-gold:  #D97706;
+  --color-accent:       #274C61;
+  --color-accent-hover: #183544;
+  --color-accent-gold:  #A7472D;
 }
 
 /* ═══════════════════════════════════════════════════════════ */
@@ -75,9 +79,10 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(23, 23, 23, 0.035) 1px, transparent 1px),
-    linear-gradient(rgba(23, 23, 23, 0.03) 1px, transparent 1px);
-  background-size: 72px 72px;
+    linear-gradient(90deg, rgba(21, 33, 42, 0.026) 1px, transparent 1px),
+    linear-gradient(rgba(21, 33, 42, 0.022) 1px, transparent 1px),
+    radial-gradient(circle at 18% 0%, rgba(49, 84, 103, 0.08), transparent 32%);
+  background-size: 84px 84px, 84px 84px, 100% 100%;
 }
 
 /* Modern type rendering — balance headings, pretty-wrap body copy.
@@ -152,7 +157,7 @@ html::before {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.035;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size: 256px 256px;
 }
@@ -173,14 +178,14 @@ html::before {
   display: inline-flex;
   align-items: center;
   min-height: 44px;            /* WCAG 2.5.5 touch target */
-  color: rgba(23, 23, 23, 0.68);
+  color: rgba(23, 23, 23, 0.72);
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
   text-decoration: none;
   transition: color 0.15s ease;
-  padding: 0 0.25rem;
+  padding: 0 0.35rem;
 }
 
 .nav-link::after {
@@ -295,21 +300,24 @@ html::before {
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  padding: 0 1.5rem;
-  background-color: var(--color-text-primary);
+  padding: 0 1.45rem;
+  background-color: var(--color-navy-deep);
   color: var(--color-text-inverse);
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.875rem;
-  letter-spacing: 0.02em;
-  border-radius: 2px;
+  font-size: 0.88rem;
+  letter-spacing: 0;
+  border-radius: 6px;
   text-decoration: none;
-  transition: background-color 0.15s ease, transform 0.1s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
   border: 2px solid transparent;
+  box-shadow: 0 1px 0 rgba(14, 20, 24, 0.28);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-gold);
+  background-color: #000;
+  border-color: var(--color-gold-light);
+  box-shadow: 0 0 0 4px rgba(167, 71, 45, 0.16);
 }
 
 .btn-primary:active {
@@ -321,22 +329,23 @@ html::before {
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  padding: 0 1.5rem;
+  padding: 0 1.45rem;
   background-color: transparent;
   color: var(--color-text-primary);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.875rem;
-  letter-spacing: 0.02em;
-  border-radius: 2px;
+  font-size: 0.88rem;
+  letter-spacing: 0;
+  border-radius: 6px;
   border: 2px solid var(--color-text-primary);
   text-decoration: none;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-gold);
+  border-color: var(--color-text-primary);
   background-color: var(--color-gold-pale);
+  box-shadow: 0 0 0 4px rgba(167, 71, 45, 0.12);
 }
 
 .btn-secondary-inverse {
@@ -348,6 +357,153 @@ html::before {
   color: var(--color-text-primary);
   border-color: var(--color-gold);
   background-color: var(--color-gold-pale);
+}
+
+@media (max-width: 640px) {
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
+.hover\:opacity-70:hover,
+.hover\:opacity-80:hover {
+  opacity: 1 !important;
+}
+
+.rounded-lg,
+.rounded-xl,
+.rounded-2xl {
+  border-radius: 8px !important;
+}
+
+.rounded-sm {
+  border-radius: 4px !important;
+}
+
+.civic-kicker {
+  color: var(--color-gold);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.civic-panel,
+.rounded-lg.border,
+.rounded-xl.border,
+.rounded-sm.border {
+  border-color: var(--color-border) !important;
+  box-shadow: 0 1px 0 rgba(23, 23, 23, 0.04);
+}
+
+.civic-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0)),
+    var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.civic-panel-strong {
+  border-top: 4px solid var(--color-text-primary);
+  box-shadow: 10px 10px 0 rgba(49, 84, 103, 0.1);
+}
+
+.civic-table {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--color-surface);
+}
+
+.civic-tool-band {
+  background:
+    linear-gradient(90deg, rgba(49, 84, 103, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(49, 84, 103, 0.055) 1px, transparent 1px),
+    var(--color-paper-cool);
+  background-size: 56px 56px;
+  border-block: 1px solid var(--color-border);
+}
+
+.site-shell {
+  position: relative;
+}
+
+.site-header {
+  box-shadow: 0 1px 0 rgba(23, 23, 23, 0.06);
+}
+
+.site-wordmark {
+  border-left: 4px solid var(--color-gold);
+  padding-left: 0.75rem;
+}
+
+.site-footer a:hover {
+  color: var(--color-text-inverse) !important;
+}
+
+.site-footer [style*="rgba(248, 250, 252, 0.35)"],
+.site-footer [style*="rgba(248, 250, 252, 0.4)"],
+.site-footer [style*="rgba(248, 250, 252, 0.45)"],
+.site-footer [style*="rgba(248, 250, 252, 0.5)"] {
+  color: rgba(255, 248, 234, 0.68) !important;
+}
+
+.site-footer [style*="rgba(248, 250, 252, 0.55)"],
+.site-footer [style*="rgba(248, 250, 252, 0.6)"] {
+  color: rgba(255, 248, 234, 0.76) !important;
+}
+
+input,
+select,
+textarea {
+  border-radius: 6px !important;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  border-color: var(--color-navy-deep) !important;
+  outline: 3px solid var(--color-gold-light);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(215, 154, 59, 0.18);
+}
+
+.react-flow {
+  background-color: var(--color-paper-cool) !important;
+}
+
+.react-flow__controls {
+  box-shadow: 0 2px 14px rgba(21, 33, 42, 0.12) !important;
+}
+
+#hero-heading {
+  font-size: 3.05rem !important;
+  letter-spacing: -0.035em !important;
+}
+
+.civic-page-hero h1 {
+  font-size: 2.35rem !important;
+  letter-spacing: -0.025em !important;
+}
+
+@media (min-width: 640px) {
+  #hero-heading {
+    font-size: 4.35rem !important;
+  }
+
+  .civic-page-hero h1 {
+    font-size: 3rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero-heading {
+    font-size: 5.35rem !important;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════ */
@@ -414,10 +570,11 @@ html::before {
   overflow: hidden;
   border: 1px solid var(--color-text-primary);
   background:
-    linear-gradient(135deg, rgba(255, 248, 234, 0.08), rgba(255, 248, 234, 0) 48%),
+    linear-gradient(135deg, rgba(255, 248, 234, 0.1), rgba(255, 248, 234, 0) 48%),
+    linear-gradient(180deg, rgba(49, 84, 103, 0.22), rgba(49, 84, 103, 0)),
     #101417;
   padding: clamp(1.25rem, 3vw, 2rem);
-  box-shadow: 14px 14px 0 rgba(23, 23, 23, 0.12);
+  box-shadow: 12px 12px 0 rgba(49, 84, 103, 0.12);
 }
 
 .exposure-ledger::before {
@@ -445,7 +602,7 @@ html::before {
 /* Interior page hero alignment: paper/report treatment that matches the
    homepage without changing each page's information architecture. */
 .civic-page-hero {
-  background-color: var(--color-paper) !important;
+  background-color: var(--color-paper-cool) !important;
   border-bottom: 1px solid var(--color-text-primary);
 }
 
@@ -455,10 +612,11 @@ html::before {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(23, 23, 23, 0.05) 1px, transparent 1px),
-    linear-gradient(rgba(23, 23, 23, 0.04) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: linear-gradient(180deg, black, transparent 88%);
+    linear-gradient(90deg, rgba(21, 33, 42, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(21, 33, 42, 0.045) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(255, 252, 245, 0.7), transparent 46%);
+  background-size: 72px 72px, 72px 72px, 100% 100%;
+  mask-image: linear-gradient(180deg, black, transparent 92%);
 }
 
 .civic-page-hero > [aria-hidden="true"]:not(.survey-grid) {
@@ -466,7 +624,7 @@ html::before {
 }
 
 .civic-page-hero .survey-grid {
-  opacity: 0.35;
+  opacity: 0.18;
 }
 
 .civic-page-hero h1,
@@ -481,6 +639,12 @@ html::before {
   color: var(--color-text-secondary) !important;
 }
 
+.civic-page-hero nav a {
+  color: var(--color-accent) !important;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .civic-page-hero [style*="var(--color-gold)"],
 .civic-page-hero [style*="#D97706"] {
   color: var(--color-gold) !important;
@@ -491,7 +655,7 @@ html::before {
 }
 
 .civic-page-hero [style*="rgba(255"] {
-  background-color: var(--color-surface) !important;
+  background-color: rgba(255, 252, 245, 0.74) !important;
   border-color: var(--color-border) !important;
 }
 
@@ -507,4 +671,55 @@ html::before {
 
 .civic-page-hero-dark::before {
   display: none;
+}
+
+.civic-page-hero-dark h1,
+.civic-page-hero-dark h2,
+.civic-page-hero-dark h3 {
+  color: var(--color-text-inverse) !important;
+}
+
+.civic-page-hero-dark p,
+.civic-page-hero-dark li,
+.civic-page-hero-dark span {
+  color: rgba(255, 248, 234, 0.78) !important;
+}
+
+.civic-page-hero-dark a {
+  color: var(--color-gold-light) !important;
+}
+
+.site-footer [style*="var(--color-gold)"],
+.exposure-ledger [style*="var(--color-gold)"],
+[style*="var(--color-navy-deep)"] [style*="var(--color-gold)"] {
+  color: var(--color-gold-light) !important;
+}
+
+label:has(input:focus-visible),
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--color-gold-light);
+  outline-offset: 3px;
+}
+
+label:has(input:focus-visible) {
+  border-color: var(--color-navy-deep) !important;
+  box-shadow: 0 0 0 4px rgba(215, 154, 59, 0.26);
+}
+
+table {
+  font-variant-numeric: tabular-nums;
+}
+
+th {
+  letter-spacing: 0.12em !important;
+}
+
+@media (max-width: 640px) {
+  [class*="text-[0.55rem]"],
+  [class*="text-[0.58rem]"],
+  [class*="text-[0.6rem]"] {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.14em !important;
+  }
 }

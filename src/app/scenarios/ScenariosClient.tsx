@@ -255,11 +255,11 @@ export function ScenariosClient({
 
       {/* ── Comparison table ──────────────────────────────────────── */}
       <div
-        className="rounded-xl border overflow-hidden shadow-sm"
+        className="civic-table overflow-x-auto"
         style={{ borderColor: "var(--color-border)" }}
       >
         <table
-          className="w-full border-collapse"
+          className="w-full min-w-[640px] border-collapse"
           aria-label={`Manitoba sector risk scores — ${activeScenario.label}`}
         >
           <caption className="sr-only">

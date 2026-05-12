@@ -26,16 +26,14 @@ export function RelatedLinks({
   return (
     <section
       aria-label="Related pages"
-      className="border-t"
+      className="civic-tool-band border-t"
       style={{
-        backgroundColor: "var(--color-surface-muted)",
         borderColor: "var(--color-border)",
       }}
     >
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <p
-          className="text-xs font-bold tracking-[0.2em] uppercase mb-1"
-          style={{ color: "var(--color-gold)" }}
+          className="civic-kicker mb-1"
         >
           {eyebrow}
         </p>
@@ -53,9 +51,8 @@ export function RelatedLinks({
             <li key={href}>
               <Link
                 href={href}
-                className="block h-full rounded-lg border p-5 transition-all hover:shadow-sm focus-default"
+                className="civic-panel block h-full border p-5 transition-all hover:shadow-sm focus-default"
                 style={{
-                  backgroundColor: "var(--color-paper)",
                   borderColor: "var(--color-border)",
                 }}
               >
